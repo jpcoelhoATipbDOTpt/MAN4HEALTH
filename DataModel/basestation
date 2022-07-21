@@ -1,0 +1,41 @@
+    basestation:
+      title: BaseStation
+      type: object
+      description: Base-station where information is concentrated and relayed.
+      properties:
+        id:
+          description: Base-station Identifier
+          type: string
+          format: uri
+          example: urn:baseStationID
+          x-ngsi:
+            type: Property
+            
+        location:
+          description: Base-station geographical location (latitude and longitude)
+          type: object
+          title: Geolocation
+          properties:
+            latitude:
+              description: The base-station latitude
+              type: number         
+              example: -25.96
+              x-ngsi:
+                model: https://schema.org/latitude
+                type: Property
+            longitude:
+              description: The base-station longitude
+              type: number         
+              example: 32.56
+              x-ngsi:
+                model: https://schema.org/longitude
+                type: Property
+          required:
+            - latitude
+            - longitude
+          x-ngsi:
+            model: https://schema.org/GeoCoordinates
+            type: Property
+        
+      required:
+        - id
