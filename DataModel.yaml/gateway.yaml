@@ -1,135 +1,58 @@
-    organization:
-      title: Organization
+    gateway:
+      title: Gateway
       type: object
-      description: Describes the organization entity
+      description: LoRa gateway
       properties:
         id:
-          description: Organization Identifier
+          description: Gateway Identifier
           type: string
           format: uri
-          example: urn:organizationNBR
+          example: urn:dragino-20f208
           x-ngsi:
             type: Property
             
-        legalName: 
-          description: Organization's legal name
+        model: 
+          description: Gateway model
           type: string
-          example: BIOMA
+          example: DLOS8
           x-ngsi:
             model: https://schema.org/legalName
             type: Property
             
-        taxID:
-          description: The organization's tax number
+        maker:
+          description: Gateway brand
           type: string
-          pattern: '^\d{10}$'
-          example: 6000123456
+          example: Dragino
           x-ngsi:
             model: https://schema.org/taxID
             type: Property
             
-        ssnID:
-          description: The organization's social security number
+        frequency:
+          description: Gateway frequency
           type: string
-          pattern: '^\d{10}$'
-          example: 25665541125
+          example: 868 MHz
+          x-ngsi:
+            type: Property
+   
+        mqtt:
+          description: MQTT brocker URL
+          type: string
+          example: broker.hivemq.com
+          x-ngsi:
+            type: Property
+
+        LTE_WAN_RSSI:
+          description: LTE RSSI
+          type: string
+          example: -20 dBm
           x-ngsi:
             type: Property
             
-        caeID:
-          description: The organization's economic activity code
+        WiFi_WAN_RSSI:
+          description: WiFi RSSI
           type: string
-          pattern: '^\d{9}$'
-          example: 123456789
+          example: -20 dBm
           x-ngsi:
-            type: Property 
-            
-        address:
-          description: The company's headquarters address
-          type: object
-          title: Address
-          properties:
-            streetAddress:
-              description: Street name
-              type: string         
-              example: Rua de São Bento
-              x-ngsi:
-                model: https://schema.org/streetAddress
-                type: Property
-            postalCode:
-              description: Postal code
-              type: string
-              example: 1249-068
-              x-ngsi:
-                model: https://schema.org/postalCode
-                type: Property              
-            addressLocality:
-              description: Name of the city or location
-              type: string
-              example: Lisboa
-              x-ngsi:
-                model: https://schema.org/addressLocality
-                type: Property             
-            addressCountry:
-              description: Country where the company has its headquarter
-              type: string
-              example: Portugal
-              x-ngsi:
-                model: https://schema.org/addressCountry
-                type: Property
-          x-ngsi:
-            model: https://schema.org/address
-            type: Property
-            
-        email:
-          description: Contact email address
-          type: string
-          format: email
-          example: 11CAEOT@ar.parlamento.pt
-          x-ngsi:
-            model: https://schema.org/email
-            type: Property
-            
-            
-        telephone:
-          description: Mobile or telephone contact
-          type: string
-          example: 213919596
-          x-ngsi:
-            model: https://schema.org/telephone
-            type: Property       
-        
-        
-        location:
-          description: Company's geographic location (latitude and longitude)
-          type: object
-          title: Geolocation
-          properties:
-            latitude:
-              description: The company's latitude
-              type: number         
-              example: -25.96
-              x-ngsi:
-                model: https://schema.org/latitude
-                type: Property
-            longitude:
-              description: The company's longitude
-              type: number         
-              example: 32.56
-              x-ngsi:
-                model: https://schema.org/longitude
-                type: Property
-          required:
-            - latitude
-            - longitude
-          x-ngsi:
-            model: https://schema.org/GeoCoordinates
-            type: Property
-        
-        
+            type: Property            
       required:
         - id
-        - legalName
-        - taxID
-        - ssnID
-        - email
