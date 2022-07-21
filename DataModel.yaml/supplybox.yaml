@@ -55,7 +55,7 @@ supplybox:
                               minimum: 0
                               example: 65
                               x-ngsi:
-                                  units: E09
+                                  units: AMH
                                   type: Property
                         chargeLevel:
                               description: Actual battery charge level in percentage.
@@ -64,7 +64,7 @@ supplybox:
                               maximum: 100
                               example: 75
                               x-ngsi:
-                                  units: E09
+                                  units: P1
                                   type: Property
                         
                 solarPanel:
@@ -108,7 +108,7 @@ supplybox:
                               minimum: 0
                               example: 235
                               x-ngsi:
-                                  units: E09
+                                  units: WTT
                                   type: Property
                 chargeRegulator:
                     description: Technical characteristics of the battery charge controller.
@@ -132,14 +132,14 @@ supplybox:
                             type: integer
                             example: 10
                             x-ngsi:
-                                units: A
+                                units: AMP
                                 type: Property                                                   
                         temperature:
                               description: Charge controller temperature.
                               type: integer
-                              example: 235
+                              example: 65
                               x-ngsi:
-                                  units: E09
+                                  units: CEL
                                   type: Property                                  
                    
                       
