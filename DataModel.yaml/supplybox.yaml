@@ -140,8 +140,4 @@ supplybox:
                               example: 65
                               x-ngsi:
                                   units: CEL
-                                  type: Property                                  
-                   
-                      
-
-
+                                  type: Property
