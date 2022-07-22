@@ -20,9 +20,9 @@ components:
     Gateway:
       $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel.yaml/gateway.yaml#/gateway"
     Supplybox:
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH//main/DataModel.yaml/supplybox.yaml#/supplybox"
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel.yaml/supplybox.yaml#/supplybox"
     Node:
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH//main/DataModel.yaml/node.yaml#/node"
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel.yaml/node.yaml#/node"
 
 paths:
   /ngsi-ld/v1/entities:
