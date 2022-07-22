@@ -1,0 +1,37 @@
+# BIOMA, @2021
+# 
+
+openapi: 3.0.0
+
+# General Data Model Information
+info:
+  title: siBIO@BIOMA Project
+  description: Data model for the siBIO component developped under the BIOMA project
+  version: 0.0.1
+  contact:
+    name: Bioeconomia para a mobilização da cadeia Agroalimentar
+    url: https://projetobioma.pt/
+  
+components:
+  schemas: 
+    Organization: 
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/organization.yaml#/organization"
+    Process:
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/process.yaml#/process"
+    Asset:
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/asset.yaml#/asset"
+    Node:
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/node.yaml#/node"
+    Worker:
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/worker.yaml#/worker"
+
+paths:
+  /ngsi-ld/v1/entities:
+    get:
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/ld+json:
+              schema:
+                type: object
