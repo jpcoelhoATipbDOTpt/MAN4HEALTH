@@ -24,43 +24,4 @@ supplybox:
                             type: string
                             example: UltraCell
                             x-ngsi:
-                                type: Property                                               
-                        model:
-                            description: Battery model
-                            type: string
-                            example: UL18-12
-                            x-ngsi:
                                 type: Property
-                        technology:
-                            description: Type of battery tecnology.
-                            type: string
-                            enum:
-                                - LiPo
-                                - LiIon
-                                - LiFePO
-                                - NiCd
-                                - NiMH
-                                - Lead-Acid
-                                - Gel-Acid
-                                - Non-recheargeable
-                                - Other
-                            example: Gel-Acid
-                            x-ngsi:
-                                type: Property                                                       
-                        capacity:
-                            description: Battery charge value expressed in Ah. In the case of battery packs, the total charge must be indicated.
-                              type: integer
-                              minimum: 0
-                              example: 65
-                              x-ngsi:
-                                  units: AMH
-                                  type: Property
-                        chargeLevel:
-                              description: Actual battery charge level in percentage.
-                              type: integer
-                              minimum: 0
-                              maximum: 100
-                              example: 75
-                              x-ngsi:
-                                  units: P1
-                                  type: Property
