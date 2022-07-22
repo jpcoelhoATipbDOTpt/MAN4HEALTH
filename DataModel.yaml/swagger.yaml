@@ -1,29 +1,28 @@
-# BIOMA, @2021
+# MAN4HEALTH
+# 2021/2022/2023
 # 
 
 openapi: 3.0.0
 
 # General Data Model Information
 info:
-  title: siBIO@BIOMA Project
-  description: Data model for the siBIO component developped under the BIOMA project
+  title: MAN4HEALTH Project
+  description: Data model for the MAN4HEALTH project
   version: 0.0.1
   contact:
-    name: Bioeconomia para a mobilização da cadeia Agroalimentar
-    url: https://projetobioma.pt/
+    name: New management strategies in olive groves for improving soil health and crop yield
+    url: https://man4health.ipb.pt/
   
 components:
   schemas: 
-    Organization: 
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/organization.yaml#/organization"
-    Process:
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/process.yaml#/process"
-    Asset:
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/asset.yaml#/asset"
+    Basestation: 
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/DataModel.yaml/basestation.yaml#/organization"
+    Gateway:
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/DataModel.yaml/gateway.yaml#/gateway"
+    Supplybox:
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/DataModel.yaml/supplybox.yaml#/supplybox"
     Node:
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/node.yaml#/node"
-    Worker:
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/worker.yaml#/worker"
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/DataModel.yaml/node.yaml#/node"
 
 paths:
   /ngsi-ld/v1/entities:
