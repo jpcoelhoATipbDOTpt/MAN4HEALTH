@@ -5,13 +5,15 @@ supplybox:
     properties:
         id:
             description: Power supply box identifier
+            title: ID
             type: string
             format: uri
-            example: urn:organization:process:asset:nodeNBR
+            example: urn:basestation:supplyboxNbr1
             x-ngsi:
                 type: Property
         powerSupply:
             description: Describes the power supply elements within the supply box
+            title: Power Supply
             type: object
             properties:
                 battery:
@@ -22,6 +24,31 @@ supplybox:
                         brand:
                             description: Battery brand.
                             type: string
+                            title: Battery Brand
                             example: UltraCell
                             x-ngsi:
                                 type: Property
+                        model:
+                            description: Battery model
+                            type: string
+                            title: Model
+                            example: UL18-12
+                            x-ngsi:
+                                type: Property
+                        technology:
+                            description: Type of battery tecnology.
+                            type: string
+                            title: Technology
+                            enum:
+                                - LiPo
+                                - LiIon
+                                - LiFePO
+                                - NiCd
+                                - NiMH
+                                - Lead-Acid
+                                - Gel-Acid
+                                - Non-recheargeable
+                                - Other
+                            example: Gel-Acid
+                            x-ngsi:
+                                type: Property 
