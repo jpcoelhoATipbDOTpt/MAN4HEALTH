@@ -1,7 +1,7 @@
 node:
     title: Node
     type: object
-    description: Describes a given node within an asset
+    description: Describes a measurement node
     properties:
         id:
             description: Measurement node identifier
@@ -10,46 +10,37 @@ node:
             example: urn:organization:process:asset:nodeNBR
             x-ngsi:
                 type: Property
-
-
-              name:
-                description: The IoT's device name
-                type: string         
-                example: XPTO
-                x-ngsi:
-                    model: https://schema.org/name
-                    type: Property
-              software:
-                  description: Describes the device's software layer.
-                  type: object
-                  title: Software
-                  properties:
-                      OS:
-                          description: Describe the operating system installed on the device
-                                    * `Baremetal` - No operating system or custom-made OS
-                                    * `freeRTOS` - Measures introduced by a human operator
-                                    * `Linux` - Raspberry Pi OS, Ubuntu, etc.
-                                    * `Zephyr`- Linux based real-time OS
-                                    * `Other` - Other OS
-                          type: string
-                          enum:
-                              - Baremetal
-                              - FreeRTOS
-                              - Linux
-                              - Zephyr
-                              - Other
-                          example: Baremetal
-                          x-ngsi:
-                            type: Property
-                      Firmware:
-                          description: Firmware version.
-                          type: string
-                          example: 1.0.0
-                          x-ngsi:
-                            type: Property                          
+        software:
+            description: Describes the device's software layer.
+            type: object
+            title: Software
+            properties:
+                OS:
+                    description: Describe the operating system installed on the device
+                            * `Baremetal` - No operating system or custom-made OS
+                            * `freeRTOS` - Measures introduced by a human operator
+                            * `Linux` - Raspberry Pi OS, Ubuntu, etc.
+                            * `Zephyr`- Linux based real-time OS
+                            * `Other` - Other OS
+                    type: string
+                    enum:
+                      - Baremetal
+                      - FreeRTOS
+                      - Linux
+                      - Zephyr
+                      - Other
+                    example: Baremetal
+                    x-ngsi:
+                        type: Property
+                Firmware:
+                    description: Firmware version.
+                    type: string
+                    example: 1.0.0
+                    x-ngsi:
+                        type: Property                          
                                 
               hardware:
-                  description: Describes the device's hardware layer.
+                  description: Describes the device hardware.
                   type: object
                   title: Hardware
                   properties:
@@ -59,35 +50,27 @@ node:
                           example: ARM Cortex M4
                           x-ngsi:
                               type: Property
-
-                    
+                              
                       connectivity:
-                          description: Data communication capability of the device.
                           title: connectivity
-                          type: object
-                          properties:
-                              transceivers:
-                                  description: Describe the network connectivity transceivers available on the device
-                                            * `None` - No wired or wireless connectivity available
-                                            * `Wifi` - Wifi available
-                                            * `Bluetooth` - Bluetooth availble
-                                            * `Ethernet` - Wired network connection
-                                            * `GSM/GPRS` - GSM or 2G data transfer system available
-                                            * `NFC` - Near-field communication
-                                            * `LPWAN` - Can be any of the availble low power wide area network such as NB-IoT, LoRa, SigFox, etc.
-                                  type: array
-                                  items: {}
-                                  example: ["WiFi","Bluetooth",{"LPWAN":"LoRa"}]
-                                  x-ngsi:
-                                      type: Property                                  
-                              rssi:
-                                  description: Indicate the value of the RSSI (in dBm) of available wireless transceivers.
-                                  type: array
-                                  items: {}
-                                  example: ["WiFi":"-10","LPWAN.LoRa":"-95"]
-                                  x-ngsi:
-                                      units: DBM   
-                                      type: Property                                  
+                          description: Describe the network connectivity transceivers available on the device
+                                    * `None` - No wired or wireless connectivity available
+                                    * `Wifi` - Wifi available
+                                    * `Bluetooth` - Bluetooth availble
+                                    * `Ethernet` - Wired network connection
+                                    * `GSM/GPRS` - GSM or 2G data transfer system available
+                                    * `LTE/5G` - 4G/Long term evolution or 5G cellular network 
+                                    * `NFC` - Near-field communication
+                                    * `NB-IoT` - Narrow-band IoT
+                                    * `LoRa` - Spread spectrum long range communication 
+                                    * `SigFox` - SigFox long range communication
+                                    * `OTHER` - Other type of transmission infrastructure
+                          type: array
+                          items: {}
+                          example: ["WiFi","Bluetooth","LoRa"]
+                          x-ngsi:
+                              type: Property 
+                                                              
                       powerSupply:
                           description: Describes the types of power supply availble on a given device.
                           type: object
@@ -114,7 +97,7 @@ node:
                                             units: P1
                                             type: Property
                                       details:
-                                          description: Details on the eventual installed batteries
+                                          description: Battery details
                                           type: object
                                           title: Battery details
                                           properties:
@@ -161,14 +144,14 @@ node:
                                                 description: Type of solar panel tecnology.
                                                 type: string
                                                 enum:
-                                                   - Monocrystalline
+                                                    - Monocrystalline
                                                     - Polycrystalline
                                                     - Other
                                                 example: Polycrystalline
                                                 x-ngsi:
                                                     type: Property                                                   
                                               power:
-                                                description: Total installed power in watts.
+                                                description: Total installed power in watts-peak.
                                                 type: integer
                                                 minimum: 0
                                                 example: 10
@@ -213,9 +196,6 @@ node:
                     x-ngsi:
                         model: https://schema.org/longitude
                         type: Property
-            required:
-                - latitude
-                - longitude
             x-ngsi:
                 model: https://schema.org/GeoCoordinates
                 type: Property
