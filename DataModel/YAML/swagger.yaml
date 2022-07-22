@@ -16,13 +16,13 @@ info:
 components:
   schemas: 
     Basestation: 
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel.yaml/basestation.yaml#/basestation"
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/YAML/basestation.yaml#/basestation"
     Gateway:
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel.yaml/gateway.yaml#/gateway"
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/YAML/gateway.yaml#/gateway"
     Supplybox:
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel.yaml/supplybox.yaml#/supplybox"
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/YAML/supplybox.yaml#/supplybox"
     Node:
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel.yaml/node.yaml#/node"
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/YAML/node.yaml#/node"
 
 paths:
   /ngsi-ld/v1/entities:
