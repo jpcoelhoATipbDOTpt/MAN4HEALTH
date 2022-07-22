@@ -119,3 +119,38 @@ supplybox:
                               x-ngsi:
                                   units: WTT
                                   type: Property
+                chargeRegulator:
+                    description: Technical characteristics of the battery charge controller.
+                    type: object
+                    title: Charge controller
+                    properties:
+                        brand:
+                            description: Charge controller brand.
+                            type: string
+                            title: Brand Name
+                            example: EPEVER
+                            x-ngsi:
+                                type: Property                                               
+                        model:
+                            description: Charge controller model
+                            type: string
+                            title: Model
+                            example: Tracer-AN
+                            x-ngsi:
+                                type: Property
+                        nominalLoad:
+                            description: Nominal load current
+                            title: Nominal Load Current
+                            type: integer
+                            example: 10
+                            x-ngsi:
+                                units: AMP
+                                type: Property                                                   
+                        temperature:
+                              description: Charge controller temperature
+                              type: float
+                              title: Actual Temperature
+                              example: 45.3
+                              x-ngsi:
+                                  units: CEL
+                                  type: Property                                  
