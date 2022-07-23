@@ -115,39 +115,6 @@ node:
                                                       units: E09
                                                       type: Property
                                                       
-                              solar:
-                                  description: If present, describe the details of the solar panel structure installed to supply or recharge the device's batteries.
-                                  type: object
-                                  title: Solar panels
-                                  properties:
-                                      available:
-                                          description: Indicate if solar panels are available .
-                                          type: boolean
-                                          example: true
-                                          x-ngsi:
-                                              type: Property                                             
-                                      details:
-                                          description: Details on the installed solar panels
-                                          type: object
-                                          title: Solar panel details
-                                          properties:
-                                              technology:
-                                                description: Type of solar panel tecnology.
-                                                type: string
-                                                enum:
-                                                    - Monocrystalline
-                                                    - Polycrystalline
-                                                    - Other
-                                                example: Polycrystalline
-                                                x-ngsi:
-                                                    type: Property                                                   
-                                              power:
-                                                description: Total installed power in watts-peak.
-                                                type: integer
-                                                minimum: 0
-                                                example: 10
-                                                x-ngsi:
-                                                    units: WTT
-                                                    type: Property                                                   
+                                                 
  
 
