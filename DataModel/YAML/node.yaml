@@ -160,12 +160,12 @@ node:
                             example: false
                             x-ngsi:
                                 type: Property                                      
-                        sensors:
-                            description: Enumerate the sensors attached to the IoT device.
-                            type: array
-                            items: 
-                                $ref: https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/sensors.yaml#/sensors
-                            example: [energyConsumption,waterConsumption]
+                sensors:
+                    description: Enumerate the sensors attached to the IoT device.
+                    type: array
+                    items: 
+                        $ref: https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/sensors.yaml#/sensors
+                    example: [energyConsumption,waterConsumption]
                         
                 location:
                     description: Node's geographic location (latitude and longitude)
@@ -186,7 +186,7 @@ node:
                             x-ngsi:
                                 model: https://schema.org/longitude
                                 type: Property
-
                     x-ngsi:
                         model: https://schema.org/GeoCoordinates
                         type: Property
+                                            
