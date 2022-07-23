@@ -15,7 +15,8 @@ node:
             type: object
             title: Software
             properties:
-                OS:
+                os:
+                    title: Operating system
                     description: Describe the operating system installed on the device
                             * `Baremetal` - No operating system or custom-made OS
                             * `freeRTOS` - Measures introduced by a human operator
@@ -32,13 +33,14 @@ node:
                     example: Baremetal
                     x-ngsi:
                         type: Property
-                Firmware:
+                firmware:
+                    title: Firmware
                     description: Firmware version
                     type: string
                     example: 1.0.0
                     x-ngsi:
                         type: Property                                      
-                Hardware:
+                hardware:
                     description: Describes the device hardware.
                     type: object
                     title: Hardware
@@ -149,23 +151,26 @@ node:
                                                     units: WTT
                                                     type: Property
                         poe:
+                            title: Power-over-Ethernet
                             description: Device supplied by power-over-ethernet?
                             type: boolean
                             example: false
                             x-ngsi:
                                 type: Property                                      
                         mains:
+                            title: Mains voltage
                             description: Device supplied by mains voltage?
                             type: boolean
                             example: false
                             x-ngsi:
                                 type: Property                                      
                 sensors:
+                    title: Sensors intalled
                     description: Enumerate the sensors attached to the IoT device.
                     type: array
                     items: 
-                        $ref: https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/sensors.yaml#/sensors
-                    example: [energyConsumption,waterConsumption]
+                        $ref: https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/YAML/sensors.yaml#/sensors
+                    example: [airTemperature,soilMoisture]
                         
                 location:
                     description: Node's geographic location (latitude and longitude)
