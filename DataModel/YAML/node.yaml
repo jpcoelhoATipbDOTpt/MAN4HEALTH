@@ -69,3 +69,82 @@ node:
                             example: ["WiFi","Bluetooth","LoRa"]
                             x-ngsi:
                                 type: Property
+   
+                        powerSupply:
+                            description: Describes the types of power supply availble on a given device.
+                            type: object
+                            title: Power supply
+                            properties:
+                              battery:
+                                  description: Indicate if the device is battery operated and, if so, the electric characteristics of the batteries.
+                                  type: object
+                                  title: Battery
+                                  properties:
+                                      available:
+                                          description: Indicate if the device is powered by battery or not.
+                                          type: boolean
+                                          example: true
+                                          x-ngsi:
+                                              type: Property                                               
+                                      details:
+                                          description: Battery details
+                                          type: object
+                                          title: Battery details
+                                          properties:
+                                            technology:
+                                                description: Type of battery tecnology.
+                                                type: string
+                                                enum:
+                                                      - LiPo
+                                                      - LiIon
+                                                      - LiFePO
+                                                      - NiCd
+                                                      - NiMH
+                                                      - Lead-Acid
+                                                      - Non-recheargeable
+                                                      - Other
+                                                example: LiPo
+                                                x-ngsi:
+                                                    type: Property                                                       
+                                            charge:
+                                                description: Battery charge value expressed in mAh. In the case of battery packs, this is the charge sum of all batteries in the pack.
+                                                type: integer
+                                                minimum: 0
+                                                example: 2300
+                                                x-ngsi:
+                                                    units: E09
+                                                    type: Property
+                        solar:
+                                  description: If present, describe the details of the solar panel structure installed to supply or recharge the device's batteries.
+                                  type: object
+                                  title: Solar panels
+                                  properties:
+                                      available:
+                                          description: Indicate if solar panels are available .
+                                          type: boolean
+                                          example: true
+                                          x-ngsi:
+                                              type: Property                                             
+                                      details:
+                                          description: Details on the installed solar panels
+                                          type: object
+                                          title: Solar panel details
+                                          properties:
+                                              technology:
+                                                description: Type of solar panel tecnology.
+                                                type: string
+                                                enum:
+                                                    - Monocrystalline
+                                                    - Polycrystalline
+                                                    - Other
+                                                example: Polycrystalline
+                                                x-ngsi:
+                                                    type: Property                                                   
+                                              power:
+                                                description: Total installed power in watts-peak.
+                                                type: integer
+                                                minimum: 0
+                                                example: 10
+                                                x-ngsi:
+                                                    units: WTT
+                                                    type: Property  
