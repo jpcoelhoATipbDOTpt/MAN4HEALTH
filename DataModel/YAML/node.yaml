@@ -147,4 +147,46 @@ node:
                                                 example: 10
                                                 x-ngsi:
                                                     units: WTT
-                                                    type: Property  
+                                                    type: Property
+                        poe:
+                            description: Device supplied by power-over-ethernet?
+                            type: boolean
+                            example: false
+                            x-ngsi:
+                                type: Property                                      
+                        mains:
+                            description: Device supplied by mains voltage?
+                            type: boolean
+                            example: false
+                            x-ngsi:
+                                type: Property                                      
+                        sensors:
+                            description: Enumerate the sensors attached to the IoT device.
+                            type: array
+                            items: 
+                                $ref: https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/sensors.yaml#/sensors
+                            example: [energyConsumption,waterConsumption]
+                        
+                location:
+                    description: Node's geographic location (latitude and longitude)
+                    type: object
+                    title: Geolocation
+                    properties:
+                        latitude:
+                            description: The measurement node's latitude
+                            type: number         
+                            example: -25.96
+                            x-ngsi:
+                                model: https://schema.org/latitude
+                                type: Property
+                        longitude:
+                            description: The measurement node's longitude
+                            type: number         
+                            example: 32.56
+                            x-ngsi:
+                                model: https://schema.org/longitude
+                                type: Property
+
+                    x-ngsi:
+                        model: https://schema.org/GeoCoordinates
+                        type: Property
