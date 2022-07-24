@@ -1,1 +1,161 @@
+version: "3.5"
 
+services:
+    # @context file is served from here
+    ld-context:
+        image: httpd:alpine
+        hostname: context
+        container_name: fiware-ld-context
+        ports:
+            - "3004:80"
+        volumes:
+            - ../data-models:/usr/local/apache2/htdocs/
+        healthcheck:
+            test: (wget --server-response --spider --quiet  http://ld-context/ngsi-context.jsonld 2>&1 | awk 'NR==1{print $$2}'|  grep -q -e "200") || exit 1
+
+    # Orion is the context broker
+    orion:
+        image: fiware/orion-ld:0.8.2
+        hostname: orion
+        container_name: fiware-orion
+        restart: always
+        depends_on:
+            - mongo-db
+        networks:
+            - default
+        ports:
+            - "1026:1026" # localhost:1026
+        environment:
+            - ORIONLD_TROE=TRUE
+            - ORIONLD_TROE_USER=orion
+            - ORIONLD_TROE_PWD=orion
+            - ORIONLD_TROE_HOST=timescale-db
+            - ORIONLD_MONGO_HOST=mongo-db
+            - ORIONLD_MULTI_SERVICE=TRUE
+            - ORIONLD_DISABLE_FILE_LOG=TRUE
+        command: -dbhost mongo-db -logLevel ERROR -troePoolSize 10 -forwarding 
+        healthcheck:
+          test: curl --fail -s http://orion:1026/version || exit 1
+          interval: 10s
+ 
+  # IoT-Agent is configured for the JSON Protocol
+    iot-agent:
+        image: fiware/iotagent-json:1.19.0-distroless
+        hostname: iot-agent
+        container_name: fiware-iot-agent
+        depends_on:
+            - mongo-db
+            - ld-context
+        networks:
+            - default
+        #    expose:
+        #      - "4041"
+        #      - "7896"
+        ports:
+            - "4041:4041" # localhost:4041
+            - "7896:7896" # localhost:7896
+        environment:
+            - IOTA_CB_HOST=orion # name of the context broker to update context
+            - IOTA_CB_PORT=1026 # port the context broker listens on to update context
+            - IOTA_NORTH_PORT=4041
+            - IOTA_REGISTRY_TYPE=mongodb #Whether to hold IoT device info in memory or in a database
+            - IOTA_LOG_LEVEL=INFO # The log level of the IoT Agent (também pode ser DEBUG)
+            - IOTA_TIMESTAMP=true # Supply timestamp information with each measurement
+            - IOTA_AUTOCAST=true # Ensure Ultralight number values are read as numbers not strings
+            - IOTA_MONGO_HOST=mongo-db # The host name of MongoDB
+            - IOTA_MONGO_PORT=27017 # The port mongoDB is listening on
+            - IOTA_MONGO_DB=iotagentjson # The name of the database used in mongoDB
+            - IOTA_HTTP_PORT=7896 # The port used for device traffic over HTTP
+            - IOTA_PROVIDER_URL=http://iot-agent:4041
+            - IOTA_DEFAULT_RESOURCE=/iot/json
+            - IOTA_CB_NGSI_VERSION=ld # use NGSI-LD when sending updates for active attributes
+            - IOTA_JSON_LD_CONTEXT=https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/bioma-datamodel.jsonld #!!!!!!!!!!!!!!!
+            - IOTA_FALLBACK_TENANT=openiot
+            - IOTA_MQTT_HOST=mosquitto # The host name of the MQTT Broker
+            - IOTA_MQTT_PORT=1883 # The port the MQTT Broker is listening on to receive topics            
+        healthcheck:
+            interval: 30s
+
+    # Database
+    mongo-db:
+        image: mongo:4.4
+        hostname: mongo-db
+        container_name: db-mongo
+        expose:
+            - "27017"
+        ports:
+            - "27017:27017" # localhost:27017
+        networks:
+            - default
+        volumes:
+            - mongo-db:/data
+        healthcheck:
+            interval: 10s
+      
+    # Other services
+    mosquitto:
+        image: eclipse-mosquitto:1.6.14
+        hostname: mosquitto
+        container_name: mosquitto
+        expose:
+            - "1883"
+            - "9001"
+        ports:
+            - "1883:1883"
+            - "9001:9001"
+        networks:
+            - default
+
+    mintaka:
+        image: fiware/mintaka:0.3.28-distroless
+        hostname: mintaka
+        container_name: fiware-mintaka
+        depends_on:
+            - timescale-db
+        environment:
+            - DATASOURCES_DEFAULT_HOST=timescale-db
+            - DATASOURCES_DEFAULT_USERNAME=orion
+            - DATASOURCES_DEFAULT_PASSWORD=orion
+            - DATASOURCES_DEFAULT_DATABASE=orion
+            - DATASOURCES_DEFAULT_MAXIMUM_POOL_SIZE=2
+            - ENDPOINTS_INFO_ENABLED=true
+            - ENDPOINTS_INFO_SENSITIVE=false
+        expose:
+            - "8080"
+        ports:
+            - "8080:8080"
+
+    timescale-db:
+        image: timescale/timescaledb-postgis:1.7.5-pg12
+        hostname: timescale-db
+        container_name: db-timescale
+        healthcheck:
+            test: [ "CMD-SHELL", "pg_isready -U orion" ]
+            interval: 15s
+            timeout: 15s
+            retries: 5
+            start_period: 60s
+        environment:
+            - POSTGRES_USER=orion
+            - POSTGRES_PASSWORD=orion
+            - POSTGRES_HOST_AUTH_METHOD=trust
+        command: ["postgres", "-c", "log_statement=none"]
+        expose:
+            - "5432"
+        ports:
+            - "5432:5432"
+        networks:
+            - default
+        volumes:
+            - timescale-db:/var/lib/postgresql/data
+
+networks:
+    default:
+        ipam:
+            config:
+                - subnet: 172.18.1.0/24
+
+volumes:
+    mongo-db: ~
+    data-models: ~
+    timescale-db: ~
