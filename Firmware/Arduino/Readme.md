@@ -1,1 +1,1 @@
-# Bibliotecas externas utilizadas para compilar o Firmware
+# Bibliotecas externas utilizadas pelo Arduino IDE para compilar o Firmware
