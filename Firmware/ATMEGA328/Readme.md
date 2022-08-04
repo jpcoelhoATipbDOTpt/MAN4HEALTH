@@ -3,3 +3,5 @@
 Primeira versão do firmware
 ## Firmware-01-8-2022-ver1-1
 Relativamente à anterior, inclui frequency shuffle para ir de encontro à especificação LoRaWAN
+## Firmware-04-8-2022-ver1-1
+Resolve o problema associado à referência analógica externa
