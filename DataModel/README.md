@@ -11,9 +11,9 @@ Definem-se as seguintes entidades:
 
 - [Parcel](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Parcel/README.md). A parcela, dentro do terreno, a monitorizar.
 
-- [IoTDevice](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/edit/main/DataModel/Device/README.md). Os dispositivos IoT colocados numa parcela.
+- [Device](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/edit/main/DataModel/Device/README.md). Os dispositivos IoT colocados numa parcela.
 
-- [ManualDevice](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/edit/main/DataModel/ManualDevice/README.md). As observações e resultados dos ensaios realizados manualmente sobre uma parcela.
+- [Experimental](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/edit/main/DataModel/ManualDevice/README.md). As observações e resultados dos ensaios experimentais realizados manualmente sobre uma parcela (e.g. valor do NPK)
 
 - [ControlBoard](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/edit/main/DataModel/ControlBoard/README.md).O quadro elétrico geral do dispositivo concentrador.
 
