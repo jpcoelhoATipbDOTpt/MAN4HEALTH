@@ -7,7 +7,7 @@ openapi: 3.0.0
 # Informação sobre o modelo
 info:
   title: Parcel@MAN4HEALTH
-  description: Modelo de dados da entidade Parcela relativo ao projeto MAN4HEALTH
+  description: Modelo de dados da entidade "Parcela"
   version: 0.0.1
   contact:
     name: New management strategies in olive groves for improving soil health and crop yield
@@ -17,7 +17,6 @@ components:
   schemas: 
     Parcel: 
       $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/model.yaml#/Parcel"
-
 
 paths: 
   /ngsi-ld/v1/entities: 
