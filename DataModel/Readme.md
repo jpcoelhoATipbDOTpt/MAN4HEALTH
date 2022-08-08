@@ -1,4 +1,4 @@
-[![MAN4HEALTH](https://man4health.ipb.pt]
+[![MAN4HEALTH](Assets/man4health_small.png "Logo")](https://man4health.ipb.pt)
 
 # Modelo de dados
 # Versão: 0.0.1
