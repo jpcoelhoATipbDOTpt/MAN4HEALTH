@@ -9,7 +9,7 @@ Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.Blá 
 Definem-se as seguintes entidades:
 - [Terrain](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/DataModel/Terrain/README.md). O terreno onde os ensaios são efetuados.
 
-- [Parcel](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/DataModel/Parcel/README.md). A parcela, dentro do terreno, a monitorizar.
+- [Parcel](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/README.md). A parcela, dentro do terreno, a monitorizar.
 
 - [IoTDevice](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/edit/main/DataModel/Device/README.md). Os dispositivos IoT colocados numa parcela.
 
