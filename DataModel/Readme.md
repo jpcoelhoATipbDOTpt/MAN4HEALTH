@@ -19,4 +19,4 @@ Definem-se as seguintes entidades:
 
 
 ### Autores
-[Link](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/contributors.yaml) das pessoas que contribuiram para este modelo de dados.
+[Link](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/contribuidores.yaml) das pessoas que contribuiram para este modelo de dados.
