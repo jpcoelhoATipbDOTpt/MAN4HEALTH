@@ -30,7 +30,7 @@ paths:
           required: true
           schema: 
             enum: 
-              - Device
+              - Parcel
             type: string
       responses: 
         ? "200"
