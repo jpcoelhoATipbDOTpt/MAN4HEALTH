@@ -1,5 +1,3 @@
-[![MAN4HEALTH](Assets/man4health_small.png "Logo")](https://man4health.ipb.pt)
-
 # Modelo de dados
 # Versão: 0.0.1
 
@@ -9,14 +7,16 @@ Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.Blá 
 ### List of data models
 
 Definem-se as seguintes entidades:
-- [Terrain](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/Streetlight/README.md). A Street light
+- [Terrain](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/edit/main/DataModel/Terrain/README.md). O terreno onde os ensaios são efetuados.
 
-- [Parcel](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/StreetlightControlCabinet/README.md). A Streetlight control cabinet
+- [Parcel](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/edit/main/DataModel/Parcel/README.md). A parcela, dentro do terreno, a monitorizar.
 
-- [Device](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/StreetlightGroup/README.md). A Street light group
+- [IoTDevice](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/edit/main/DataModel/Device/README.md). Os dispositivos IoT colocados numa parcela.
 
-- [ControlBoard](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/StreetlightFeeder/README.md). A streetlight control panel Data Model.
+- [ManualDevice](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/edit/main/DataModel/ManualDevice/README.md). Observações e resultados dos ensaios realizados manualmente sobre uma parcela.
+
+- [ControlBoard](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/edit/main/DataModel/ControlBoard/README.md). Quadro geral do dispositivo concentrador.
 
 
-### Contributors
+### Autores
 [Link](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/contributors.yaml) das pessoas que contribuiram para este modelo de dados.
