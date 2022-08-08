@@ -1,44 +1,22 @@
-[![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)
+[![MAN4HEALTH](https://man4health.ipb.pt]
 
-# StreetlightControlCabinet
-Version: 0.0.1
+# Modelo de dados
+# Versão: 0.0.1
 
-## Description 
+## Descrição 
+Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.
 
-A Streetlight control cabinet
-### Specification
+### List of data models
 
-Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Streetlighting/StreetlightControlCabinet/swagger.yaml)
+Definem-se as seguintes entidades:
+- [Terrain](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/Streetlight/README.md). A Street light
 
-Link to the [specification](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/StreetlightControlCabinet/doc/spec.md)
+- [Parcel](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/StreetlightControlCabinet/README.md). A Streetlight control cabinet
 
-Enlace a la [Especificación en español](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/StreetlightControlCabinet/doc/spec_ES.md)
+- [Device](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/StreetlightGroup/README.md). A Street light group
 
-Lien vers le [spécification en français](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/StreetlightControlCabinet/doc/spec_FR.md)
+- [ControlBoard](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/StreetlightFeeder/README.md). A streetlight control panel Data Model.
 
-Link zur [deutschen Spezifikation](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/StreetlightControlCabinet/doc/spec_DE.md)
 
-Link alla [specifica](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/StreetlightControlCabinet/doc/spec_IT.md)
-
-[仕様へのリンク](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/StreetlightControlCabinet/doc/spec_JA.md)
-### Examples
-
-Link to the [example](https://smart-data-models.github.io/dataModel.Streetlighting/StreetlightControlCabinet/examples/example.json) (keyvalues) for NGSI v2
-
-Link to the [example](https://smart-data-models.github.io/dataModel.Streetlighting/StreetlightControlCabinet/examples/example.jsonld) (keyvalues) for NGSI-LD
-
-Link to the [example](https://smart-data-models.github.io/dataModel.Streetlighting/StreetlightControlCabinet/examples/example-normalized.json) (normalized) for NGSI-V2
-
-Link to the [example](https://smart-data-models.github.io/dataModel.Streetlighting/StreetlightControlCabinet/examples/example-normalized.jsonld) (normalized) for NGSI-LD
-
-Link to the [example](https://smart-data-models.github.io/dataModel.Streetlighting/StreetlightControlCabinet/examples/example-geojsonfeature.json) (geojson feature) for NGSI-LD
-### Dynamic Examples generation
-
-Link to the [Generator](https://smartdatamodels.org/extra/ngsi-ld_generator.php?schemaUrl=https://raw.githubusercontent.com/smart-data-models/dataModel.Streetlighting/master/StreetlightControlCabinet/schema.json&email=info@smartdatamodels.org) of NGSI-LD normalized payloads compliant with this data model. Refresh for new values
-
-Link to the [Generator](https://smartdatamodels.org/extra/ngsi-ld_generator_keyvalues.php?schemaUrl=https://raw.githubusercontent.com/smart-data-models/dataModel.Streetlighting/master/StreetlightControlCabinet/schema.json&email=info@smartdatamodels.org) of NGSI-LD keyvalues payloads compliant with this data model. Refresh for new values
-
-Link to the [Generator](https://smartdatamodels.org/extra/geojson_features_generator.php?schemaUrl=https://raw.githubusercontent.com/smart-data-models/dataModel.Streetlighting/master/StreetlightControlCabinet/schema.json&email=info@smartdatamodels.org) of geojson feature format payloads compliant with this data model. Refresh for new values
-### Contribution
-
- If you have any issue on this data model you can raise an [issue](https://github.com/smart-data-models/dataModel.Streetlighting/issues)  or contribute with a [PR](https://github.com/smart-data-models/dataModel.Streetlighting/pulls)
+### Contributors
+[Link](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/contributors.yaml) das pessoas que contribuiram para este modelo de dados.
