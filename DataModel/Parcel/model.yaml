@@ -6,6 +6,13 @@ Parcel:
     - type    
     - location
   properties:
+    type:
+      description: 'Tipo Parcel de entidade NGSI.'
+      enum:
+        - Parcel
+      type: string
+      x-ngsi:
+        type: Property
     specification:
       description: 'Descrição das caraterísticas da parcela'
       type: string
