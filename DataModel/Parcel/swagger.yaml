@@ -16,7 +16,7 @@ info:
 components:
   schemas: 
     Parcel: 
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/model.yaml#/Parcel""
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/model.yaml#/Parcel"
 
 
 paths: 
