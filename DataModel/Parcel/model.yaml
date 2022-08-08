@@ -22,3 +22,55 @@
                 description: 'Unique identifier of the entity'    
                 x-ngsi:    
                     type: Property
+            location:    
+                description: 'Localização geográfica da parcela num dos seguintes dois formatos: ponto ou polígono    
+                oneOf:
+
+                    - description: 'Referência Geojson da entidade sobre a forma de ponto'    
+                        properties:    
+                            bbox:
+                                items:    
+                                    type: number    
+                                minItems: 4    
+                                type: array    
+                            coordinates:    
+                                items:    
+                                    type: number    
+                                minItems: 2    
+                                type: array    
+                            type:    
+                                enum:    
+                                    - Point    
+                                type: string
+                            required:    
+                                - type    
+                                - coordinates    
+                            title: 'GeoJSON Point'    
+                            type: object    
+
+                    - description: 'Referência Geojson da entidade sobre a forma de polígono'    
+                        properties:    
+                            bbox:    
+                              items:    
+                                type: number    
+                              minItems: 4    
+                              type: array    
+                            coordinates:    
+                                items:    
+                                    items:    
+                                        items:    
+                                            type: number    
+                                        minItems: 2    
+                                        type: array    
+                                    minItems: 4    
+                                    type: array    
+                                type: array    
+                            type:    
+                              enum:    
+                                - Polygon    
+                          type: string    
+                        required:    
+                        - type    
+                        - coordinates    
+                        title: 'Polígono GeoJSON'    
+                        type: object    
