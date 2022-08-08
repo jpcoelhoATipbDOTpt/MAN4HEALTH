@@ -1,76 +1,91 @@
-    Parcel:    
-        description: 'Entidade que representa uma parcela dentro do terreno'
-
-        type: object  
-
-        properties:
-            specification:    
-                description: 'Descrição e especificação das caraterísticas da parcela'    
-                type: string    
-                x-ngsi:    
-                    type: Property
-            id:    
-                anyOf: &parcel_-_properties_-_owner_-_items_-_anyof    
-                    - description: 'Property. Identifier format of any NGSI entity'    
-                      maxLength: 256    
-                      minLength: 1    
-                      pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
-                      type: string    
-                    - description: 'Property. Identifier format of any NGSI entity'    
-                      format: uri    
-                      type: string    
-                description: 'Unique identifier of the entity'    
-                x-ngsi:    
-                    type: Property
-            location:    
-                description: 'Localização geográfica da parcela num dos seguintes dois formatos: ponto ou polígono    
-                oneOf:
-
-                    - description: 'Referência Geojson da entidade sobre a forma de ponto'    
-                        properties:    
-                            bbox:
-                                items:    
-                                    type: number    
-                                minItems: 4    
-                                type: array    
-                            coordinates:    
-                                items:    
-                                    type: number    
-                                minItems: 2    
-                                type: array    
-                            type:    
-                                enum:    
-                                    - Point    
-                                type: string
-                            required:    
-                                - type    
-                                - coordinates    
-                            title: 'GeoJSON Point'    
-                            type: object    
-
-                    - description: 'Referência Geojson da entidade sobre a forma de polígono'    
-                        properties:    
-                            bbox:    
-                              items:    
-                                type: number    
-                              minItems: 4    
-                              type: array    
-                            coordinates:    
-                                items:    
-                                    items:    
-                                        items:    
-                                            type: number    
-                                        minItems: 2    
-                                        type: array    
-                                    minItems: 4    
-                                    type: array    
-                                type: array    
-                            type:    
-                              enum:    
-                                - Polygon    
-                          type: string    
-                        required:    
-                        - type    
-                        - coordinates    
-                        title: 'Polígono GeoJSON'    
-                        type: object    
+Parcel:
+  description: 'Entidade que representa uma parcela dentro do terreno'
+  type: object
+  required:
+    - id    
+    - type    
+    - location
+  properties:
+    specification:
+      description: 'Descrição das caraterísticas da parcela'
+      type: string
+      x-ngsi:
+        type: Property
+    id:
+      description: 'Unique identifier of the entity'    
+      anyOf: &parcel_-_properties_-_owner_-_items_-_anyof    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          format: uri    
+          type: string    
+      x-ngsi:    
+        type: Property
+    location:    
+      description: 'Localização geográfica da parcela num dos seguintes dois formatos: ponto ou polígono'
+      oneOf:
+        - description: 'Referência Geojson da entidade sobre a forma de ponto'  
+          title: 'GeoJSON Point'    
+          type: object    
+          properties:    
+            bbox:
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                type: number    
+              minItems: 2    
+              type: array    
+            type:    
+              enum:    
+                - Point    
+              type: string
+            required:    
+              - type    
+              - coordinates    
+        - description: 'Referência Geojson da entidade sobre a forma de polígono'
+          title: 'Polígono GeoJSON'    
+          type: object 
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                items:    
+                  items:    
+                    type: number    
+                  minItems: 2    
+                  type: array    
+                minItems: 4    
+                type: array    
+              type: array    
+            type:    
+              enum:    
+                - Polygon    
+              type: string    
+          required:    
+            - type    
+            - coordinates
+    refDevices:    
+      description: 'Lista de entidades do tipo Device que pertencem a esta parcela. Deve existir integridade topológica entre a localização dos Devices e a localização da parcela no sentido de que um Device deve estar localizado dentro de uma Parcel.' 
+      type: Relationship    
+      uniqueItems: true
+      items:    
+        anyOf:    
+          - description: 'Identificador NGSI da entidade Device'    
+            maxLength: 256    
+            minLength: 1    
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+            type: string    
+          - description: 'Identificador NGSI da entidade Device'    
+            format: uri    
+            type: string    
+            minItems: 1
