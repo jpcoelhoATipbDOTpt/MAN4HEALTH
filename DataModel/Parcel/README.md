@@ -7,6 +7,7 @@ Modelo de dados associado a uma parcela do terreno.
 ### Especificação
 
 Abrir no [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/swagger.yaml).
+
 Abrir no [Swagger FIWARE](https://swagger.lab.fiware.org/?url=https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/swagger.yaml)
 
 Link to the [specification](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/Streetlight/doc/spec.md)
