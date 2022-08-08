@@ -4,8 +4,8 @@
         type: object  
 
         properties:
-            description:    
-                description: 'Descrição das caraterísticas da parcela'    
+            specification:    
+                description: 'Descrição e especificação das caraterísticas da parcela'    
                 type: string    
                 x-ngsi:    
                     type: Property
