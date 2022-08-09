@@ -12,7 +12,7 @@
   
   "@context": [
   "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-  "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Context/context.jsonld"
+  "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/Context/context-normalized.jsonld"
   ]
   
 }
