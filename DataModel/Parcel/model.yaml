@@ -1,5 +1,6 @@
 Parcel:
   description: 'Entidade que representa uma parcela dentro do terreno'
+  title: 'Parcel'
   type: object
   required:
     - id    
@@ -87,27 +88,27 @@ Parcel:
       uniqueItems: true
       items:    
         anyOf:    
-          - description: 'Identificador NGSI da entidade <Device>'    
+          - description: 'Identificador NGSI da entidade -Device-'    
             maxLength: 256    
             minLength: 1    
             pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
             type: string    
-          - description: 'Identificador NGSI da entidade <Device>'    
+          - description: 'Identificador NGSI da entidade -Device-'    
             format: uri    
             type: string    
             minItems: 1
     refExperimental:    
-      description: 'Lista de entidades do tipo <Experimental> que pertencem a esta parcela.' 
+      description: 'Lista de entidades do tipo -Experimental- que pertencem a esta parcela.' 
       type: Relationship    
       uniqueItems: true
       items:    
         anyOf:    
-          - description: 'Identificador NGSI da entidade <Experimental>'    
+          - description: 'Identificador NGSI da entidade -Experimental-'    
             maxLength: 256    
             minLength: 1    
             pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
             type: string    
-          - description: 'Identificador NGSI da entidade <Experimental>'    
+          - description: 'Identificador NGSI da entidade -Experimental-'    
             format: uri    
             type: string    
             minItems: 1
