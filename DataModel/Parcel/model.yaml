@@ -97,7 +97,7 @@ Parcel:
           required:    
             - type    
             - coordinates
-          title: 'Polígono GeoJSON'    
+          title: 'Poliiiiiigono GeoJSON'    
           type: object             
       x-ngsi:
         type: Geoproperty
