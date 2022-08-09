@@ -1,6 +1,5 @@
 # Parcel@MAN4HEALTH
 # 2021/2022/2023
-# 
 
 openapi: 3.0.0
 
@@ -18,49 +17,39 @@ components:
     Parcel: 
       $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/model.yaml#/Parcel"
 
-paths:
-  /ngsi-ld/v1/entities:
-    get:
-      responses:
-        '200':
-          description: 'OK'
-          content:
-            application/ld+json:
-              schema:
-                type: object
-#paths: 
-#  /ngsi-ld/v1/entities: 
-#    get: 
-#      description: "Retrieve a set of entities which matches a specific query from an NGSI-LD system"
-#      parameters: 
-#        - 
-#          in: query
-#          name: type
-#          required: true
-#          schema: 
-#            enum: 
-#              - Parcel
-#            type: string
-#      responses: 
-#        ? "200"
-#        : 
-#          content: 
-#            application/ld+json: 
-#              examples: 
-#                keyvalues: 
-#                  summary: "Key-Values Pairs"
-#                  value: 
-#                    - 
-#                      $ref: "https://smart-data-models.github.io/dataModel.Device/Device/examples/example.json"
-#                normalized: 
-#                  summary: "Normalized NGSI-LD"
-#                  value: 
-#                    - 
-#                      $ref: "https://smart-data-models.github.io/dataModel.Device/Device/examples/example-normalized.jsonld"
-#          description: OK
-#      tags: 
-#        - ngsi-ld
-#tags: 
-#  - 
-#    description: "NGSI-LD Linked-data Format"
-#    name: ngsi-ld
+paths: 
+  /ngsi-ld/v1/entities: 
+    get: 
+      description: "Retrieve a set of entities which matches a specific query from an NGSI-LD system"
+      parameters: 
+        - 
+          in: query
+          name: type
+          required: true
+          schema: 
+            enum: 
+              - Parcel
+            type: string
+      responses: 
+        ? "200"
+        : 
+          content: 
+            application/ld+json: 
+              examples: 
+                keyvalues: 
+                  summary: "Key-Values Pairs"
+                  value: 
+                    - 
+                      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/examples/example.json"
+                normalized: 
+                  summary: "Normalized NGSI-LD"
+                  value: 
+                    - 
+                      $ref: ""https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/examples/example-normalized.jsonld"
+          description: OK
+      tags: 
+        - ngsi-ld
+tags: 
+  - 
+    description: "NGSI-LD Linked-data Format"
+    name: ngsi-ld
