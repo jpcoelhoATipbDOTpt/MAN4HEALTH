@@ -1,0 +1,145 @@
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "fiware": "https://uri.fiware.org/ns/data-models#",
+        "schema": "https://schema.org/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "Parcel": "fiware:Parcel",
+        "refDevices": {
+            "@id": "fiware:refDevices",
+            "@type": "@id"
+        },
+        "refExperimental": {
+            "@id": "fiware:refExperimental",
+            "@type": "@id"
+        },
+        "refTerrain": {
+            "@id": "fiware:refTerrain",
+            "@type": "@id"
+        },
+        "specification": {
+            "@id": "fiware:specification",
+            "@type": "xsd:string"
+        }
+    },
+    "@graph": [
+        {
+            "@id": "fiware:Parcel",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Entity that represent a parcel within a terrain"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Parcel"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Unique identifier of the entity"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:location",
+            "@type": "ngsi-ld:Geoproperty",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Geogrphic location of a -Parcel- in one of two possible formats: point or polygon"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "location"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:specification",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Description of relevant parcel characteristics"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "specification"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:refDevices",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "List of entities of type -Device- associated to the current -Parcel-. Topological integrity must exist between the device and parcel locations since a -Device. must be within a -Parcel-."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "refDevices"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:refExperimental",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "List of entities of type -Experimental- associated to the current -Parcel-."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "refExperimental"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:refTerrain",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Reference to the -Terrain- that this -Parcel- belongs to."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "refTerrain"
+                }
+            ]
+        }
+    ]
+}
