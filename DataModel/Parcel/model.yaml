@@ -20,3 +20,55 @@ Parcel:
           type: string    
       x-ngsi:    
         type: Property
+    location:    
+      description: 'Localização geográfica da parcela num dos seguintes dois formatos: ponto ou polígono'
+      oneOf:
+        - description: 'Referência Geojson da entidade sobre a forma de ponto'  
+          title: 'GeoJSON Point'    
+          type: object    
+          properties:    
+            bbox:
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                type: number    
+              minItems: 2    
+              type: array    
+            type:    
+              enum:    
+                - Point    
+              type: string
+            required:    
+              - type    
+              - coordinates    
+        - description: 'Referência Geojson da entidade sobre a forma de polígono'
+          title: 'Polígono GeoJSON'    
+          type: object 
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                items:    
+                  items:    
+                    type: number    
+                  minItems: 2    
+                  type: array    
+                minItems: 4    
+                type: array    
+              type: array    
+            type:    
+              enum:    
+                - Polygon    
+              type: string    
+          required:    
+            - type    
+            - coordinates
+      x-ngsi:
+        type: Geoproperty
