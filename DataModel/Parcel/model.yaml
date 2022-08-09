@@ -118,5 +118,18 @@ Parcel:
             type: string    
       x-ngsi:
         type: Relationship
+    refTerrain:
+      anyOf:
+      - description: 'Property. Identifier format of any NGSI entity'
+        maxLength: 256
+        minLength: 1
+        pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+        type: string
+      - description: 'Property. Identifier format of any NGSI entity'
+        format: uri
+        type: string
+      description: 'Streetlight''s group, if this streetlight belongs to any group.'
+      x-ngsi:
+        type: Relationship        
   x-model-schema: https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Parcel/schema.json
   x-version: 0.1.0
