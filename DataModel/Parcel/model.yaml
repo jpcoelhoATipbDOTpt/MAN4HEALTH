@@ -1,5 +1,5 @@
 Parcel:
-  description: 'Entidade que representa uma parcela dentro do terreno'
+  description: 'Entity that represent a parcel within a terrain'
   title: 'Parcel'
   type: object
   required:
@@ -21,59 +21,32 @@ Parcel:
       x-ngsi:    
         type: Property
     location:    
-      description: 'Localização geográfica da parcela num dos seguintes dois formatos: ponto ou polígono'
+      description: 'Geogrphic location of a -Parcel- in one of two possible formats: point or polygon'
       oneOf:
-      
-        - description: 'Geoproperty. Geojson reference to the item. Point'
-          properties:
+        - description: 'Geojson point format for the -Parcel- entity location'  
+          title: 'GeoJSON Point'    
+          type: object    
+          properties:    
             bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
-                type: number
-              minItems: 2
-              type: array
-            type:
-              enum:
-                - Point
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                type: number    
+              minItems: 2    
+              type: array    
+            type:    
+              enum:    
+                - Point    
               type: string
-          required:
-            - type
-            - coordinates
-          title: 'GeoJSON Point'
-          type: object
-
-        - description: 'Geoproperty. Geojson reference to the item. Polygon'
-          properties:
-            bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
-                items:
-                  items:
-                    type: number
-                  minItems: 2
-                  type: array
-                minItems: 4
-                type: array
-              type: array
-            type:
-              enum:
-                - Polygon
-              type: string
-          required:
-            - type
-            - coordinates
-          title: 'GeoJSON Polygon'
-          type: object
-          
-        - description: 'Referência Geojson da entidade sobre a forma de polígono'
+            required:    
+              - type    
+              - coordinates    
+        - description: 'Geojson polygon format for the -Parcel- entity location'
+          title: 'GeoJSON polygon'    
+          type: object 
           properties:    
             bbox:    
               items:    
@@ -97,7 +70,66 @@ Parcel:
           required:    
             - type    
             - coordinates
-          title: 'Poliiiiiigono GeoJSON'    
-          type: object             
       x-ngsi:
         type: Geoproperty
+    type:
+      description: 'NGSI entity type for -Parcel-.'
+      enum:
+        - Parcel
+      type: string
+      x-ngsi:
+        type: Property
+    specification:
+      description: 'Description of relevant parcel characteristics'
+      type: string
+      x-ngsi:
+        type: Property            
+    refDevices:    
+      description: 'List of entities of type -Device- associated to the current -Parcel-. Topological integrity must exist between the device and parcel locations since a -Device. must be within a -Parcel-.' 
+      type: array    
+      uniqueItems: true
+      minItems: 1
+      items:    
+        anyOf:    
+          - description: '-Device- NGSI entity identifier'    
+            maxLength: 256    
+            minLength: 1    
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+            type: string    
+          - description: 'Identificador NGSI da entidade -Device-'    
+            format: uri    
+            type: string    
+      x-ngsi:
+        type: Relationship
+    refExperimental:    
+      description: 'List of entities of type -Experimental- associated to the current -Parcel-.' 
+      type: array    
+      uniqueItems: true
+      minItems: 1
+      items:    
+        anyOf:    
+          - description: '-Experimental- NGSI entity identifier'    
+            maxLength: 256    
+            minLength: 1    
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+            type: string    
+          - description: 'Identificador NGSI da entidade -Experimental-'    
+            format: uri    
+            type: string    
+      x-ngsi:
+        type: Relationship
+    refTerrain:
+      description: To what -Terrain- this  -Parcel- belongs to.'
+      anyOf:
+      - description: 'Property. Identifier format of any NGSI entity'
+        maxLength: 256
+        minLength: 1
+        pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+        type: string
+      - description: 'Property. Identifier format of any NGSI entity'
+        format: uri
+        type: string
+      x-ngsi:
+        type: Relationship        
+  x-model-schema: https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Parcel/schema.json
+  x-version: 0.1.0
