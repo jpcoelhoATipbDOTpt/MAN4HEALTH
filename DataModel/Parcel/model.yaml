@@ -83,7 +83,7 @@ Parcel:
       x-ngsi:
         type: Property            
     refDevices:    
-      description: 'Lista de entidades do tipo <Device> que pertencem a esta parcela. Deve existir integridade topológica entre a localização dos Devices e a localização da parcela no sentido de que um Device deve estar localizado dentro de uma <Parcel>.' 
+      description: 'Lista de entidades do tipo -Device- que pertencem a esta parcela. Deve existir integridade topológica entre a localização dos Devices e a localização da parcela no sentido de que um Device deve estar localizado dentro de uma -Parcel-.' 
       type: Relationship    
       uniqueItems: true
       items:    
