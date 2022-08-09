@@ -49,18 +49,18 @@ paths:
 #              examples: 
 #                keyvalues: 
 #                  summary: "Key-Values Pairs"
-                  value: 
-                    - 
-                      $ref: "https://smart-data-models.github.io/dataModel.Device/Device/examples/example.json"
-                normalized: 
-                  summary: "Normalized NGSI-LD"
-                  value: 
-                    - 
-                      $ref: "https://smart-data-models.github.io/dataModel.Device/Device/examples/example-normalized.jsonld"
-          description: OK
-      tags: 
-        - ngsi-ld
-tags: 
-  - 
-    description: "NGSI-LD Linked-data Format"
-    name: ngsi-ld
+#                  value: 
+#                    - 
+#                      $ref: "https://smart-data-models.github.io/dataModel.Device/Device/examples/example.json"
+#                normalized: 
+#                  summary: "Normalized NGSI-LD"
+#                  value: 
+#                    - 
+#                      $ref: "https://smart-data-models.github.io/dataModel.Device/Device/examples/example-normalized.jsonld"
+#          description: OK
+#      tags: 
+#        - ngsi-ld
+#tags: 
+#  - 
+#    description: "NGSI-LD Linked-data Format"
+#    name: ngsi-ld
