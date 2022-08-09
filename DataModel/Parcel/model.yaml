@@ -82,17 +82,32 @@ Parcel:
       x-ngsi:
         type: Property            
     refDevices:    
-      description: 'Lista de entidades do tipo Device que pertencem a esta parcela. Deve existir integridade topológica entre a localização dos Devices e a localização da parcela no sentido de que um Device deve estar localizado dentro de uma Parcel.' 
+      description: 'Lista de entidades do tipo <Device> que pertencem a esta parcela. Deve existir integridade topológica entre a localização dos Devices e a localização da parcela no sentido de que um Device deve estar localizado dentro de uma <Parcel>.' 
       type: Relationship    
       uniqueItems: true
       items:    
         anyOf:    
-          - description: 'Identificador NGSI da entidade Device'    
+          - description: 'Identificador NGSI da entidade <Device>'    
             maxLength: 256    
             minLength: 1    
             pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
             type: string    
-          - description: 'Identificador NGSI da entidade Device'    
+          - description: 'Identificador NGSI da entidade <Device>'    
+            format: uri    
+            type: string    
+            minItems: 1
+    refExperimental:    
+      description: 'Lista de entidades do tipo <Experimental> que pertencem a esta parcela.' 
+      type: Relationship    
+      uniqueItems: true
+      items:    
+        anyOf:    
+          - description: 'Identificador NGSI da entidade <Experimental>'    
+            maxLength: 256    
+            minLength: 1    
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+            type: string    
+          - description: 'Identificador NGSI da entidade <Experimental>'    
             format: uri    
             type: string    
             minItems: 1
