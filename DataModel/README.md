@@ -4,7 +4,7 @@
 ## Descrição 
 Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.
 
-### List of data models
+### Lista dos modelos de dados
 
 Definem-se as seguintes entidades:
 - [Terrain](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/DataModel/Terrain/README.md). O terreno onde os ensaios são efetuados.
