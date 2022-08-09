@@ -70,8 +70,8 @@ Parcel:
           required:    
             - type    
             - coordinates
-      x-ngsi:
-        type: Geoproperty
+#      x-ngsi:
+#        type: Geoproperty
     type:
       description: 'Tipo <Parcel> de entidade NGSI.'
       enum:
