@@ -23,27 +23,29 @@ Parcel:
     location:    
       description: 'Localização geográfica da parcela num dos seguintes dois formatos: ponto ou polígono'
       oneOf:
-        - description: 'Referência Geojson da entidade sobre a forma de ponto'   
-          properties:    
+      
+        - description: 'Geoproperty. Geojson reference to the item. Point'
+          properties:
             bbox:
-              items:    
-                type: number    
-              minItems: 4    
-              type: array    
-            coordinates:    
-              items:    
-                type: number    
-              minItems: 2    
-              type: array    
-            type:    
-              enum:    
-                - Point    
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                type: number
+              minItems: 2
+              type: array
+            type:
+              enum:
+                - Point
               type: string
-            required:    
-              - type    
-              - coordinates
-          title: 'GeoJSON Point'    
-          type: object                 
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON Point'
+          type: object
+
         - description: 'Referência Geojson da entidade sobre a forma de polígono'
           properties:    
             bbox:    
