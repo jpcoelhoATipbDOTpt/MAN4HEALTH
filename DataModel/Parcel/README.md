@@ -10,7 +10,7 @@ Abrir no [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubuserc
 
 Abrir no [Swagger FIWARE](https://swagger.lab.fiware.org/?url=https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/swagger.yaml).
 
-Link para [especificação](https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/datamodels.md).
+Link para [especificação](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Parcel/datamodels.md).
 
 ### Examplos
 
