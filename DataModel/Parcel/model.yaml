@@ -94,9 +94,9 @@ Parcel:
               enum:    
                 - Polygon    
               type: string    
-            required:    
-              - type    
-              - coordinates
+          required:    
+            - type    
+            - coordinates
           title: 'Polígono GeoJSON'    
           type: object             
       x-ngsi:
