@@ -112,5 +112,5 @@ Parcel:
             format: uri    
             type: string    
             minItems: 1
-# x-model-schema: https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Parcel/schema.json
-# x-version: 0.1.0
+x-model-schema: https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Parcel/schema.json
+x-version: 0.1.0
