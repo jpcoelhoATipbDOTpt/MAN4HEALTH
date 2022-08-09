@@ -70,6 +70,8 @@ Parcel:
           required:    
             - type    
             - coordinates
+      x-ngsi:
+        type: Geoproperty
     type:
       description: 'Tipo <Parcel> de entidade NGSI.'
       enum:
@@ -84,8 +86,9 @@ Parcel:
         type: Property            
     refDevices:    
       description: 'Lista de entidades do tipo -Device- que pertencem a esta parcela. Deve existir integridade topológica entre a localização dos Devices e a localização da parcela no sentido de que um Device deve estar localizado dentro de uma -Parcel-.' 
-      type: Relationship    
+      type: array    
       uniqueItems: true
+      minItems: 1
       items:    
         anyOf:    
           - description: 'Identificador NGSI da entidade -Device-'    
@@ -96,11 +99,13 @@ Parcel:
           - description: 'Identificador NGSI da entidade -Device-'    
             format: uri    
             type: string    
-            minItems: 1
+      x-ngsi:
+        type: Relationship
     refExperimental:    
       description: 'Lista de entidades do tipo -Experimental- que pertencem a esta parcela.' 
-      type: Relationship    
+      type: array    
       uniqueItems: true
+      minItems: 1
       items:    
         anyOf:    
           - description: 'Identificador NGSI da entidade -Experimental-'    
@@ -111,6 +116,7 @@ Parcel:
           - description: 'Identificador NGSI da entidade -Experimental-'    
             format: uri    
             type: string    
-            minItems: 1
+      x-ngsi:
+        type: Relationship
   x-model-schema: https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Parcel/schema.json
   x-version: 0.1.0
