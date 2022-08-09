@@ -10,7 +10,7 @@ Abrir no [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubuserc
 
 Abrir no [Swagger FIWARE](https://swagger.lab.fiware.org/?url=https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/swagger.yaml)
 
-Link to the [specification](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/Streetlight/doc/spec.md)
+Link para [especificação](https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/datamodels.md)
 
 ### Examplos
 
