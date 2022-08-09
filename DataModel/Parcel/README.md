@@ -12,13 +12,11 @@ Abrir no [Swagger FIWARE](https://swagger.lab.fiware.org/?url=https://raw.github
 
 Link to the [specification](https://github.com/smart-data-models/dataModel.Streetlighting/blob/master/Streetlight/doc/spec.md)
 
-### Examples
+### Examplos
 
-Link to the [example](https://smart-data-models.github.io/dataModel.Streetlighting/Streetlight/examples/example.jsonld) (keyvalues) for NGSI-LD
+Link para [exemplo](https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/examples/example.jsonld) (keyvalues)
 
-Link to the [example](https://smart-data-models.github.io/dataModel.Streetlighting/Streetlight/examples/example-normalized.jsonld) (normalized) for NGSI-LD
-
-Link to the [example](https://smart-data-models.github.io/dataModel.Streetlighting/Streetlight/examples/example-geojsonfeature.json) (geojson feature) for NGSI-LD
+Link para [exemplo](https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/example-normalized.jsonld) (normalized)
 
 ### Dynamic Examples generation
 
