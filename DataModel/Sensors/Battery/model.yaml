@@ -1,0 +1,14 @@
+
+
+    batteryLevel:
+      description: 'Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when transiently cannot be determined.'
+      oneOf:
+        - maximum: 1
+          minimum: 0
+          type: number
+        - maximum: -1
+          minimum: -1
+          type: number
+      x-ngsi:
+        model: https://schema.org/Number
+        type: Property
