@@ -7,7 +7,7 @@ temperature:
       description: Sensor identifier
       type: string
       format: uri
-      example: urn:organization:process:asset:node:sensorNBR
+      example: urn:device:temperature:sensorNBR
       x-ngsi:
         type: Property
     measuringMedium:
