@@ -1,0 +1,35 @@
+sensors:
+  title: Sensors
+  type: object
+  description: Sensor's description and physical variables
+  properties:
+    id:
+      description: Sensor identifier
+      type: string
+      format: uri
+      example: urn:organization:process:asset:node:sensorNBR
+      x-ngsi:
+        type: Property    
+    energyConsumption:
+      description: Electrical energy consumed by a given asset/kWh
+      minimum: 0
+      type: number
+      x-ngsi:
+        type: Property
+        units: KWH
+    waterConsumption:
+      description: Water consumption by a given asset within a process (e.g. machine, irrigation line, etc.)/m3
+      minimum: 0
+      type: number
+      x-ngsi:
+        type: Property
+        units: MTQ
+    dateObserved:
+      description: The date and time of this observation as defined by RFC 3339.
+      type: string
+      format: date-time
+      x-ngsi:
+          model: https://schema.org/DateTime
+          type: Property
+  required:
+    - id
