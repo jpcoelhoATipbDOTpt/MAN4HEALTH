@@ -11,14 +11,24 @@ lora:
       x-ngsi:
         type: Property
     rssi:
-      description: Indicate the value of the RSSI (in dBm)
+      description: Indicate the value of the RSSI
       title: RSSI
-      type: number
-      example: -95
-      x-ngsi:
-        units: DBM   
-        type: number
-        model: https://schema.org/Number
+      properties:
+        measuredValue:
+          description: Measured value (in dBm)
+          type: number
+          example: -95
+          x-ngsi:
+            units: DBM   
+            type: number
+            model: https://schema.org/Number
+        dateObserved:
+          description: The date and time of this observation as defined by RFC 3339.
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property
     NwkSkey:
       description: Network session key (16 bytes)
       title: NwkSkey
@@ -46,15 +56,8 @@ lora:
       example: {0x03, 0xFF, 0x00, 0x01}
       x-ngsi:
           type: Text
-    dateObserved:
-      description: The date and time of this observation as defined by RFC 3339.
-      type: string
-      format: date-time
-      x-ngsi:
-          model: https://schema.org/DateTime
-          type: Property
     refDevice:
-      description: 'Reference of the -Device- to which this sensor belongs.'
+      description: 'Reference of the -Device- to which this transceiver belongs.'
       anyOf:
       - description: 'Property. Identifier format of any NGSI entity'
         maxLength: 256
