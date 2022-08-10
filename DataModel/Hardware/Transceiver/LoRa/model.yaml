@@ -1,58 +1,51 @@
-battery:
-  title: Battery measurement
+lora:
+  title: LoRa transceiver and protocol
   type: object
-  description: Defines the battery status of a given -Device-
+  description: Defines the LoRA transceiver and protocol associated to a given -Device-
   properties:
     id:
-      description: Battery identifier
+      description: LoR transceiver identifier
       type: string
       format: uri
-      example: urn:device:battery:battery_number_id
+      example: urn:device:transceiver:lora:lora_number_id
       x-ngsi:
         type: Property
-    batteryLevel:
-      description: 'Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when cannot be determined.'
-      type: Property      
-      title: Battery details
-      oneOf:
-        - maximum: 1
-          minimum: 0
-          type: number
-        - maximum: -1
-          minimum: -1
-          type: number
+    rssi:
+      description: Indicate the value of the RSSI (in dBm)
+      title: RSSI
+      type: number
+      example: -95
       x-ngsi:
+        units: DBM   
+        type: number
         model: https://schema.org/Number
-    batteryDetails:
-        description: Technical details about the batteries
-        type: object
-        title: Battery details
-        batteryTechnology:
-            description: Battery technology
-            title: Battery technology
-            type: string
-            enum:
-                - LiPo
-                - LiIon
-                - LiFePO
-                - NiCd
-                - NiMH
-                - Lead-Acid
-                - Non-recheargeable
-                - Other
-            example: LiPo
-            x-ngsi:
-                model: https://schema.org/Text
-                type: Property              
-        batteryCharge:
-            description: Battery charge value expressed in mAh. In the case of battery packs, this is the charge sum of all batteries in the pack.
-            title: Battery charge in mAh
-            type: number
-            minimum: 0
-            example: 2300
-            x-ngsi:
-                model: https://schema.org/Number
-                units: E09
+    NwkSkey:
+      description: Network session key (16 bytes)
+      title: NwkSkey
+      type: array
+      items:
+        type: string
+      example: {0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C}
+      x-ngsi:
+          type: Text    
+    AppSkey:
+      description: Application session key (16 bytes)
+      title: AppSkey
+      type: array
+      items:
+        type: string
+      example: {0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C}
+      x-ngsi:
+          type: Text
+    DevAddr:
+      description: Device address (4 bytes)
+      title: DevAddr
+      type: array
+      items:
+        type: string
+      example: {0x03, 0xFF, 0x00, 0x01}
+      x-ngsi:
+          type: Text
     dateObserved:
       description: The date and time of this observation as defined by RFC 3339.
       type: string
