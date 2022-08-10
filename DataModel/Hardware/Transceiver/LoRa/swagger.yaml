@@ -1,0 +1,29 @@
+# Hardware/Transceiver/LoRa@MAN4HEALTH
+# 2021/2022/2023
+
+openapi: 3.0.0
+
+# Informação sobre o modelo
+info:
+  title: Hardware/Transceiver/LoRa@MAN4HEALTH
+  description: Modelo de dados da entidade "lora"
+  version: 0.0.1
+  contact:
+    name: New management strategies in olive groves for improving soil health and crop yield
+    url: https://man4health.ipb.pt/
+  
+components:
+  schemas: 
+    lora: 
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/Transceiver/LoRa/model.yaml#/lora"
+
+paths:
+  /ngsi-ld/v1/entities:
+    get:
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/ld+json:
+              schema:
+                type: object
