@@ -13,7 +13,8 @@ Device:
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
         - description: 'Property. Identifier format of any NGSI entity'    
-          format: uri    
+          format: uri
+          example: urn:Terrain:Parcel:Device:device_number_id
           type: string    
       x-ngsi:    
         type: Property
@@ -25,7 +26,7 @@ Device:
       x-ngsi:
         type: Property        
     name:
-      description: 'The name of this item.'
+      description: 'The name of this -Device-.'
       type: string
       x-ngsi:
         type: Property
@@ -34,18 +35,6 @@ Device:
       type: string
       x-ngsi:
         model: https://schema.org/Text
-        type: Property
-    batteryLevel:
-      description: 'Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when transiently cannot be determined.'
-      oneOf:
-        - maximum: 1
-          minimum: 0
-          type: number
-        - maximum: -1
-          minimum: -1
-          type: number
-      x-ngsi:
-        model: https://schema.org/Number
         type: Property
     configuration:
       description: 'Device''s technical configuration. This attribute is intended to be a array properties and their values which capture parameters which have to do with the configuration of a device (timeouts, reporting periods, etc.) and which are not currently covered by the standard attributes defined by this model.'
