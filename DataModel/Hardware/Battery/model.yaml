@@ -1,0 +1,78 @@
+battery:
+  title: Battery measurement
+  type: object
+  description: Defines the battery status of a given -Device-
+  properties:
+    id:
+      description: Battery identifier
+      type: string
+      format: uri
+      example: urn:device:battery:battery_number_id
+      x-ngsi:
+        type: Property
+    batteryLevel:
+      description: 'Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when cannot be determined.'
+      type: Property      
+      title: Battery details
+      oneOf:
+        - maximum: 1
+          minimum: 0
+          type: number
+        - maximum: -1
+          minimum: -1
+          type: number
+      x-ngsi:
+        model: https://schema.org/Number
+    batteryDetails:
+        description: Technical details about the batteries
+        type: object
+        title: Battery details
+        batteryTechnology:
+            description: Battery technology
+            title: Battery technology
+            type: string
+            enum:
+                - LiPo
+                - LiIon
+                - LiFePO
+                - NiCd
+                - NiMH
+                - Lead-Acid
+                - Non-recheargeable
+                - Other
+            example: LiPo
+            x-ngsi:
+                model: https://schema.org/Text
+                type: Property              
+        batteryCharge:
+            description: Battery charge value expressed in mAh. In the case of battery packs, this is the charge sum of all batteries in the pack.
+            title: Battery charge in mAh
+            type: number
+            minimum: 0
+            example: 2300
+            x-ngsi:
+                model: https://schema.org/Number
+                units: E09
+    dateObserved:
+      description: The date and time of this observation as defined by RFC 3339.
+      type: string
+      format: date-time
+      x-ngsi:
+          model: https://schema.org/DateTime
+          type: Property
+    refDevice:
+      description: 'Reference of the -Device- to which this sensor belongs.'
+      anyOf:
+      - description: 'Property. Identifier format of any NGSI entity'
+        maxLength: 256
+        minLength: 1
+        pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+        type: string
+      - description: 'Property. Identifier format of any NGSI entity'
+        format: uri
+        type: string
+      x-ngsi:
+        type: Relationship       
+  required:
+    - id
+    - refDevice
