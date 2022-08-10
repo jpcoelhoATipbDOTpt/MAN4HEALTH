@@ -13,7 +13,7 @@ Entity that represent a parcel within a terrain
 -  `specification`: Description of relevant parcel characteristics
    -  Attribute type: **Property**. 
    -  Optional
--  `refDevices`: List of entities of type -Device- associated to the current -Parcel-. Topological integrity must exist between the device and parcel locations since a -Device. must be within a -Parcel-.
+-  `refDevice`: List of entities of type -Device- associated to the current -Parcel-. Topological integrity must exist between the device and parcel locations since a -Device. must be within a -Parcel-.
    -  Attribute type: **Relationship**. 
    -  Optional
 -  `refExperimental`: List of entities of type -Experimental- associated to the current -Parcel-.
@@ -45,7 +45,7 @@ Entity that represent a parcel within a terrain
             ]
         },
         "specification": "Parcela com coordenada A1 associada ao terreno localizado em Mirandela",
-        "refDevices": [
+        "refDevice": [
             "urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q",
             "urn:ngsi-ld:Device:k8w8C8O868Y8N838889"
         ],
@@ -72,7 +72,7 @@ Entity that represent a parcel within a terrain
             "type": "Point"
         },
         "specification": "Parcela com coordenada A1 associada ao terreno localizado em Mirandela",
-        "refDevices": [
+        "refDevice": [
             "urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q",
             "urn:ngsi-ld:Device:k8w8C8O868Y8N838889"
         ],
