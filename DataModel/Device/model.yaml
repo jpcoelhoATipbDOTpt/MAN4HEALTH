@@ -1,9 +1,11 @@
 Device:
   description: 'An IoT device that will be used to get and relay measurement values from sensors.'
+  type: object
   required:
     - id
-    - type 
+    - type
   properties:
+  
     id:
       description: 'Unique identifier of the entity'    
       anyOf: &device_-_properties_-_owner_-_items_-_anyof    
@@ -18,152 +20,92 @@ Device:
           type: string    
       x-ngsi:    
         type: Property
+        
     type:
       description: 'NGSI Entity type. It has to be Device'
       enum:
         - Device
       type: string
       x-ngsi:
-        type: Property        
-    name:
-      description: 'The name of this -Device-.'
-      type: string
-      x-ngsi:
         type: Property
-    areaServed:
-      description: 'The logical coordinate, within a -Parcel-, where the -Device- can be found'
-      type: string
-      x-ngsi:
-        model: https://schema.org/Text
-        type: Property
-    configuration:
-      description: 'Device''s technical configuration. This attribute is intended to be a array properties and their values which capture parameters which have to do with the configuration of a device (timeouts, reporting periods, etc.) and which are not currently covered by the standard attributes defined by this model.'
-      items:
-        properties:
-          parameter:
-            type: string
-          value:
-            type: string
-        type: object
-      type: array
-      x-ngsi:
-        model: https://schema.org/StructuredValue
-        type: Property
-    controlledProperty:
-      description: 'Anything that can be sensed, measured or controlled by. '
-      items:
-        enum:
-          - batteryLife
-          - conductivity
-          - humidity
-          - pH
-          - soilMoisture
-          - solarRadiation
-          - temperature
-        type: string
-      type: array
-      x-ngsi:
-        model: https://schema.org/Text
-        type: Property
+        
     dateInstalled:
       description: 'A timestamp which denotes when the device was installed (if it requires installation).'
       format: date-time
       type: string
       x-ngsi:
         model: https://schema.org/DateTime
+        type: Property      
+    
+    name:
+      description: 'The name of this -Device-.'
+      type: string
+      x-ngsi:
         type: Property
+        
     description:
       description: 'A description of this item'
       type: string
       x-ngsi:
         type: Property
-    firmwareVersion:
-      description: 'The firmware version of this device.'
+        
+    hardware:
+        description: 'Describes the -Device- hardware'
+        type: object
+        title: Hardware
+        properties:
+            CPU:
+              description: 'CPU installed on the device'
+              type: string
+              example: ARM Cortex M4
+              x-ngsi:
+                type: Property
+            hardwareVersion:
+              description: 'The hardware version of this device.'
+              type: string
+              x-ngsi:
+                model: https://schema.org/Text
+                type: Property
+        
+            firmwareVersion:
+              description: 'The firmware version of this device.'
+              type: string
+              x-ngsi:
+                model: https://schema.org/Text
+                
+            refTransceivers:
+              description: 'Array of transceivers associated to the current -Device-'
+              type: array
+              title: Transceivers
+              items:
+                type: string
+              example: ["uri:device:hardware:transceiver:lora:A8X9df4","uri:device:transceiver:gnss:W1ad45F"]
+              x-ngsi:
+                type: Relationship                                  
+                                 
+            refPowerSupply:
+              description: 'Describes the power supply options vailble on the -Device-'
+              type: array
+              title: 'Power supply'
+              items:
+                type: string
+              example: ["uri:device:hardware:battery:A01T54gH"]
+              x-ngsi:
+                  type: Relationship                     
+                                 
+            refSensors:
+              description: 'Enumerate the sensors attached to the IoT -Device-'
+              type: array
+              title: 'Sensors'
+              items: 
+                type: string
+              example: ["uri:device:hardware:sensors:temperature:X9dfGg8","uri:device:hardware:sensors:moisture:MyU7IO"]    
+              x-ngsi:
+                type: Relationship
+    
+    refParcel:
+      description: 'The -Parcel- to which the -Device- is associated'
       type: string
+      example: "uri:parcel:a1"
       x-ngsi:
-        model: https://schema.org/Text
-        type: Property
-    hardwareVersion:
-      description: 'The hardware version of this device.'
-      type: string
-      x-ngsi:
-        model: https://schema.org/Text
-        type: Property
-    ipAddress:
-      description: 'List of IP address of the device. It can be a comma separated list of values if the device has more than one IP address.'
-      items:
-        oneOf:
-          - format: ipv4
-          - format: ipv6
-        type: string
-      type: array
-      x-ngsi:
-        model: https://schema.org/Text
-        type: Property
-    location:
-      description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'
-      properties:
-        bbox:
-          items:
-            type: number
-          minItems: 4
-          type: array
-        coordinates:
-          items:
-            type: number
-          minItems: 2
-          type: array
-        type:
-          enum:
-            - Point
-          type: string
-      required:
-        - type
-        - coordinates
-      title: 'GeoJSON Point'
-      type: object
-    rssi:
-      description: 'Received signal strength indicator for a wireless enabled device. It must be expressed in dBm or mW, use unitcode to set it out. '
-      type: number
-      x-ngsi:
-        model: https://schema.org/Number
-        type: Property
-    softwareVersion:
-      description: 'The software version of this device.'
-      type: string
-      x-ngsi:
-        model: https://schema.org/Text
-        type: Property
-    supportedProtocol:
-      description: 'Supported protocol(s) or networks'
-      items:
-        enum:
-          - 3g
-          - bluetooth
-          - 'bluetooth LE'
-          - cat-m
-          - coap
-          - ec-gsm-iot
-          - gprs
-          - http
-          - lwm2m
-          - lora
-          - lte-m
-          - mqtt
-          - nb-iot
-          - onem2m
-          - sigfox
-          - ul20
-          - websocket
-        type: string
-      type: array
-      x-ngsi:
-        model: '3g, bluetooth, bluetooth LE, cat-m, coap, ec-gsm-iot, gprs, http, lwm2m, lora, lte-m, mqtt, nb-iot, onem2m, sigfox, ul20, websocket'
-        type: Property
-    value:
-      description: 'A observed or reported value. For actuator devices, it is an attribute that allows a controlling application to change the actuation setting. For instance, a switch device which is currently _on_ can report a value ''on'' of type ''Text''. Obviously, in order to toggle the referred switch, this attribute value will have to be changed to ''off''.'
-      type: string
-      x-ngsi:
-        model: https://schema.org/QuantitativeValue
-        type: Property
-  type: object
+        type: Relationship
