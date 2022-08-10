@@ -15,7 +15,7 @@
     "value": "Parcela com coordenada A1 associada ao terreno localizado em Mirandela"
   },
 
-  "refDevices": {
+  "refDevice": {
     "type": "Relationship",
     "value":  ["urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q", "urn:ngsi-ld:Device:k8w8C8O868Y8N838889"]
   },
