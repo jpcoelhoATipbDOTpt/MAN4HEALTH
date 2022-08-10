@@ -1,0 +1,11 @@
+    ipAddress:
+      description: 'List of IP address of the device. It can be a comma separated list of values if the device has more than one IP address.'
+      items:
+        oneOf:
+          - format: ipv4
+          - format: ipv6
+        type: string
+      type: array
+      x-ngsi:
+        model: https://schema.org/Text
+        type: Property
