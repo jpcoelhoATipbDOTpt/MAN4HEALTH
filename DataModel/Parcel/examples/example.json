@@ -6,7 +6,7 @@
     "coordinates": [41.488698, -7.248216]
   },
   "specification":"Parcela com coordenada A1 associada ao terreno localizado em Mirandela",
-  "refDevices": ["urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q", "urn:ngsi-ld:Device:k8w8C8O868Y8N838889"],
+  "refDevice": ["urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q", "urn:ngsi-ld:Device:k8w8C8O868Y8N838889"],
   "refExperimental": ["urn:ngsi-ld:Experimental:C8g8B8R8j818V8F8p8n"],
   "refTerrain": "urn:ngsi-ld:Terrain:MDLA4172"
 }
