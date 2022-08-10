@@ -1,0 +1,62 @@
+temperature:
+  title: Temperature Sensor
+  type: object
+  description: Defines a given temperature sensor to be used in a -Device-
+  properties:
+    id:
+      description: Sensor identifier
+      type: string
+      format: uri
+      example: urn:device:temperature:sensorNBR
+      x-ngsi:
+        type: Property
+    measuringMedium:
+      description: Define tthe medium from where the measurement is taken
+          * `air` - Air temperature
+          * `soil` - Soil temperatture
+          * `water` - Water temperature    
+      items:
+        enum:
+          - air
+          - soil
+          - water
+        type: string
+      type: array
+      x-ngsi:
+        model: https://schema.org/Text
+        type: Property
+    dephtOrAltitude:
+      description: Defines the depth or altitude at which the measurement is taken (in centimeters)
+      type: number
+      x-ngsi:
+        type: Property
+        units: CMT     
+    measuredValue:
+      description: Measured temperature (in degrees Celsius)
+      type: number
+      x-ngsi:
+        type: Property
+        units: CEL
+    dateObserved:
+      description: The date and time of this observation as defined by RFC 3339.
+      type: string
+      format: date-time
+      x-ngsi:
+          model: https://schema.org/DateTime
+          type: Property
+    refDevice:
+      description: 'Reference of the -Device- to which this sensor belongs.'
+      anyOf:
+      - description: 'Property. Identifier format of any NGSI entity'
+        maxLength: 256
+        minLength: 1
+        pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+        type: string
+      - description: 'Property. Identifier format of any NGSI entity'
+        format: uri
+        type: string
+      x-ngsi:
+        type: Relationship       
+  required:
+    - id
+    - refDevice
