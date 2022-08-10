@@ -84,7 +84,7 @@ Parcel:
       type: string
       x-ngsi:
         type: Property            
-    refDevices:    
+    refDevice:    
       description: 'List of entities of type -Device- associated to the current -Parcel-. Topological integrity must exist between the device and parcel locations since a -Device. must be within a -Parcel-.' 
       type: array    
       uniqueItems: true
