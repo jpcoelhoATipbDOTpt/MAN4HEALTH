@@ -32,7 +32,7 @@ Device:
         type: Property
         
     dateInstalled:
-      description: 'A timestamp which denotes when the device was deployed'
+      description: 'A timestamp which denotes when the - Device- was deployed'
       title: 'Date Installed'
       format: date-time
       type: string
@@ -54,7 +54,7 @@ Device:
         
         properties:
             CPU:
-              description: 'CPU installed on the device'
+              description: 'CPU installed on the -Device-'
               title: 'CPU'
               type: string
               example: ARM Cortex M4
@@ -62,7 +62,7 @@ Device:
                 type: Property
                 
             hardwareVersion:
-              description: 'The hardware version of this device.'
+              description: 'The hardware version of this -Device-'
               title: 'Hardware Version'
               type: string
               x-ngsi:
@@ -70,7 +70,7 @@ Device:
                 type: Property
         
             firmwareVersion:
-              description: 'The firmware version of this device.'
+              description: 'The firmware version of this -Device-'
               title: 'Firmware Version'
               type: string
               x-ngsi:
