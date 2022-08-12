@@ -12,8 +12,6 @@ moisture:
         type: Property
     measuringMedium:
       description: 'Define the medium from where the measurement is taken'
-          * `air` 'Air humidity'
-          * `soil` 'Soil moisture' 
       items:
         enum:
           - air
