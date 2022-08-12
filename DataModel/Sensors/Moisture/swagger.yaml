@@ -5,7 +5,7 @@ openapi: 3.0.0
 
 # Informação sobre o modelo
 info:
-  title: Parcel@MAN4HEALTH
+  title: DataModel/Sensors/Moisture@MAN4HEALTH
   description: Modelo de dados da entidade "Moisture Sensor"
   version: 0.0.1
   contact:
