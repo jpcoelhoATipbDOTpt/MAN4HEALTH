@@ -1,0 +1,30 @@
+{
+    "id": "urn:device:moisture:AF95DdfR5",
+    "type": "moisture",
+    "measuringMedium": {
+        "type": "Property",
+        "value": "soil"
+    },
+    "dephtOrAltitude": {
+        "type": "Property",
+        "value": 5
+    },
+    "measuredValue": {
+        "type": "Property",
+        "value": 45
+    },
+    "observationDateTime": {
+        "type": "Property",
+        "value": {
+            "@type": "DateTime",
+            "@value": "2022-08-12T07:58:07+00:00"
+        }
+    "refDevices": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q"
+    },
+
+    "@context": [
+        "iudx:moisture"
+    ]
+}
