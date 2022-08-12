@@ -1,9 +1,9 @@
-# Parcel
+# Moisture Sensor
 Version: 0.1.0
 
 ## Descrição
 
-Modelo de dados associado a uma parcela do terreno.
+Modelo de dados associado a um sensor de humidade.
 ### Especificação
 
 Abrir no [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Sensors/Moisture/swagger.yaml).
