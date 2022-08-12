@@ -1,19 +1,19 @@
 moisture:
-  title: Humidity Sensor
+  title: 'moisture'
   type: object
-  description: Defines a given humidity sensor to be used in a -Device-
+  description: 'Defines a given humidity sensor to be used in a -Device-'
   properties:
     id:
-      description: Sensor identifier
+      description: 'Sensor identifier'
       type: string
       format: uri
-      example: urn:device:moisture:sensorNBR
+      example: 'urn:device:moisture:AF95DdfR5'
       x-ngsi:
         type: Property
     measuringMedium:
-      description: Define the medium from where the measurement is taken
-          * `air` - Air temperature
-          * `soil` - Soil temperatture 
+      description: 'Define the medium from where the measurement is taken'
+          * `air` 'Air humidity'
+          * `soil` 'Soil moisture' 
       items:
         enum:
           - air
@@ -24,19 +24,19 @@ moisture:
         model: https://schema.org/Text
         type: Property
     dephtOrAltitude:
-      description: Defines the depth or altitude at which the measurement is taken (in centimeters)
+      description: 'Defines the depth or altitude at which the measurement is taken (in centimeters)'
       type: number
       x-ngsi:
         type: Property
         units: CMT     
     measuredValue:
-      description: Measured humidity (in percentage)
+      description: 'Measured humidity (in percentage)'
       type: number
       x-ngsi:
         type: Property
         units: P1
     dateObserved:
-      description: The date and time of this observation as defined by RFC 3339.
+      description: 'The date and time of this observation as defined by RFC 3339'
       type: string
       format: date-time
       x-ngsi:
