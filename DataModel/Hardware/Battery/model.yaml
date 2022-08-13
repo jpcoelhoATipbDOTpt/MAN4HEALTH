@@ -1,5 +1,5 @@
 battery:
-  title: Battery measurement
+  title: battery
   type: object
   description: Defines the battery status of a given -Device-
   properties:
