@@ -23,43 +23,44 @@ battery:
           type: number
       x-ngsi:
         model: https://schema.org/Number
-    batteryDetails:
-        description: Technical details about the batteries
-        type: object
-        title: Battery details
-        batteryTechnology:
-            description: Battery technology
-            title: Battery technology
-            type: string
-            enum:
-                - LiPo
-                - LiIon
-                - LiFePO
-                - NiCd
-                - NiMH
-                - Lead-Acid
-                - Non-recheargeable
-                - Other
-            example: LiPo
-            x-ngsi:
-                model: https://schema.org/Text
-                type: Property              
-        batteryCharge:
-            description: Battery charge value expressed in mAh. In the case of battery packs, this is the charge sum of all batteries in the pack.
-            title: Battery charge in mAh
-            type: number
-            minimum: 0
-            example: 2300
-            x-ngsi:
-                model: https://schema.org/Number
-                units: E09
     dateObserved:
       description: The date and time of this observation as defined by RFC 3339.
       type: string
       format: date-time
       x-ngsi:
           model: https://schema.org/DateTime
-          type: Property
+          type: Property        
+    batteryDetails:
+        description: Technical details about the batteries
+        type: object
+        title: Battery details
+        properties:
+          batteryTechnology:
+              description: Battery technology
+              title: Battery technology
+              type: string
+              enum:
+                  - LiPo
+                  - LiIon
+                  - LiFePO
+                  - NiCd
+                  - NiMH
+                  - Lead-Acid
+                  - Non-recheargeable
+                  - Other
+              example: LiPo
+              x-ngsi:
+                  model: https://schema.org/Text
+                  type: Property              
+          batteryCharge:
+              description: Battery charge value expressed in mAh. In the case of battery packs, this is the charge sum of all batteries in the pack.
+              title: Battery charge in mAh
+              type: number
+              minimum: 0
+              example: 2300
+              x-ngsi:
+                  model: https://schema.org/Number
+                  units: E09
     refDevice:
       description: 'Reference of the -Device- to which this sensor belongs.'
       anyOf:
