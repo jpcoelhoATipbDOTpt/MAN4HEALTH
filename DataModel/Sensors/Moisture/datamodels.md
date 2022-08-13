@@ -41,7 +41,7 @@ Defines a given humidity sensor to be used in a -Device-
         "refDevice": "urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q",
         "@context": [
             "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-            "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Sensors/Moisture/Context/context-normalized.jsonld"
+            "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Sensors/Moisture/Context/context-keyvalues.jsonld"
         ]
     }
 ]
