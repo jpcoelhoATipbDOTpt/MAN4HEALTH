@@ -1,1 +1,150 @@
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "fiware": "https://uri.fiware.org/ns/data-models#",
+        "schema": "https://schema.org/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "dateObserved": {
+            "@id": "fiware:dateObserved",
+            "@type": "xs:dateTime"
+        },
+        "dephtOrAltitude": {
+            "@id": "fiware:dephtOrAltitude",
+            "@type": "xsd:number"
+        },
+        "measuredValue": {
+            "@id": "fiware:measuredValue",
+            "@type": "xsd:number"
+        },
+        "measuringMedium": {
+            "@id": "fiware:measuringMedium",
+            "@type": "xsd:array"
+        },
+        "refDevice": {
+            "@id": "fiware:refDevice",
+            "@type": "@id"
+        },
+        "temperature": "fiware:temperature"
+    },
+    "@graph": [
+        {
+            "@id": "fiware:temperature",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Defines a given temperature sensor to be used in a -Device-"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "temperature"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Sensor identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:measuringMedium",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Define tthe medium from where the measurement is taken"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "measuringMedium"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dephtOrAltitude",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Defines the depth or altitude at which the measurement is taken (in centimeters)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dephtOrAltitude"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:measuredValue",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Measured temperature (in degrees Celsius)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "measuredValue"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dateObserved",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The date and time of this observation as defined by RFC 3339."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateObserved"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:refDevice",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Reference of the -Device- to which this sensor belongs."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "refDevice"
+                }
+            ]
+        }
+    ]
+}
 
