@@ -1,0 +1,32 @@
+{
+    "id": "urn:device:temperature:B4t5DdfR5",
+    "type": "temperature",
+    "measuringMedium": {
+        "type": "Property",
+        "value": "air"
+    },
+    "dephtOrAltitude": {
+        "type": "Property",
+        "value": 525
+    },
+    "measuredValue": {
+        "type": "Property",
+        "value": -2
+    },
+    "observationDateTime": {
+        "type": "Property",
+        "value": {
+            "@type": "DateTime",
+            "@value": "2022-08-12T07:58:07+00:00"
+        }
+    },
+    "refDevice": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q"
+    },
+
+  "@context": [
+  "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+  "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Sensors/Temperature/Context/context-normalized.jsonld"
+  ]
+}
