@@ -5,7 +5,7 @@
   "dephtOrAltitude": 5,
   "measuredValue": 45,
   "dateObserved": "2022-08-12T07:58:07+00:00",
-  "refDevice": "urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q",
+  "refDevices": "urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q",
   "@context": [
   "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
   "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Sensors/Moisture/Context/context-normalized.jsonld"
