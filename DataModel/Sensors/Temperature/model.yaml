@@ -12,9 +12,6 @@ temperature:
         type: Property
     measuringMedium:
       description: Define tthe medium from where the measurement is taken
-          * `air` - Air temperature
-          * `soil` - Soil temperatture
-          * `water` - Water temperature    
       items:
         enum:
           - air
