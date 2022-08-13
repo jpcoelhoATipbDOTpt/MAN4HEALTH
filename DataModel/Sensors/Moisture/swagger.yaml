@@ -40,7 +40,7 @@ paths:
                   summary: "Key-Values Pairs"
                   value: 
                     - 
-                      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Sensors/Moisture/examples/example-keypairs.jsonld"
+                      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Sensors/Moisture/examples/example-keypvalues.jsonld"
                 normalized: 
                   summary: "Normalized NGSI-LD"
                   value: 
