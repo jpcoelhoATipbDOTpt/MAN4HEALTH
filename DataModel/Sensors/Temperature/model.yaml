@@ -1,5 +1,5 @@
 temperature:
-  title: Temperature Sensor
+  title: temperature
   type: object
   description: Defines a given temperature sensor to be used in a -Device-
   properties:
