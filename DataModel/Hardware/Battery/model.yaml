@@ -78,3 +78,4 @@ battery:
   required:
     - id
     - refDevice
+  x-model-schema: https://smart-data-models.github.io/dataModel.Device/Device/schema.json
