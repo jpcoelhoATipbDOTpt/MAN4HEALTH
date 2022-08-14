@@ -1,1 +1,34 @@
+{
+    "id": "urn:device:hardware:battery:B4t5DdfR5",
+    "type": "battery",
+    "batteryLevel": {
+        "type": "Property",
+        "value": 0.8
+    },
+    "observationDateTime": {
+        "type": "Property",
+        "value": {
+            "@type": "DateTime",
+            "@value": "2022-08-12T07:58:07+00:00"
+        }
+    },
+    "batteryDetails": {
+        "batteryTechnology": {
+            "type": "Property",
+            "value": "LiIon"
+        },
+        "batteryCharge": {
+            "type": "Property",
+            "value": 2200
+        }
+    },
+    "refDevice": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q"
+    },
 
+  "@context": [
+  "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+  "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/Battery/Context/context-normalized.jsonld"
+  ]
+}
