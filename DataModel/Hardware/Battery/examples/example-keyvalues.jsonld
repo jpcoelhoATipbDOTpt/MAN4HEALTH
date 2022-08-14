@@ -1,1 +1,16 @@
 
+{
+  "id": "urn:device:hardware_battery:B4t5DdfR5",
+  "type": "battery",
+  "batteryLevel": 0.8,
+  "dateObserved": "2022-08-12T07:58:07+00:00",
+  "batteryDetails": {
+    "batteryTechnology": "LiIon",
+    "batteryCharge": 2200
+  },
+  "refDevice": "urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q",
+  "@context": [
+  "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+  "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/Battery/Context/context-keyvalues.jsonld"
+  ]
+}
