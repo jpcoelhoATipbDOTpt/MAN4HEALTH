@@ -11,7 +11,7 @@
             "@id": "fiware:CPU",
             "@type": "xsd:string"
         },
-        "Parcel": "fiware:Parcel",
+        "Device": "fiware:Device",
         "dateInstalled": {
             "@id": "fiware:dateInstalled",
             "@type": "xs:dateTime"
@@ -48,7 +48,7 @@
     },
     "@graph": [
         {
-            "@id": "fiware:Parcel",
+            "@id": "fiware:Device",
             "@type": "rdfs:Class",
             "rdfs:comment": [
                 {
@@ -59,7 +59,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "Parcel"
+                    "@value": "Device"
                 }
             ],
             "rdfs:subClassOf": {
