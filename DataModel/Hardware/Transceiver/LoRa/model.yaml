@@ -29,27 +29,31 @@ lora:
           x-ngsi:
             model: https://schema.org/DateTime
             type: Property
-    NwkSkey:
-      description: Network session key (16 bytes)
-      title: NwkSkey
-      type: string
-      example: "{0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C}"
-      x-ngsi:
-          type: Text    
-    AppSkey:
-      description: Application session key (16 bytes)
-      title: AppSkey
-      type: string
-      example: "{0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C}"
-      x-ngsi:
-          type: Text
-    DevAddr:
-      description: Device address (4 bytes)
-      title: DevAddr
-      type: string
-      example: "{0x03, 0xFF, 0x00, 0x01}"
-      x-ngsi:
-          type: Text
+    abp:
+      description: ABP credentials
+      title: ABP
+      properties:
+        NwkSkey:
+          description: Network session key (16 bytes)
+          title: NwkSkey
+          type: string
+          example: "{0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C}"
+          x-ngsi:
+              type: Text    
+        AppSkey:
+          description: Application session key (16 bytes)
+          title: AppSkey
+          type: string
+          example: "{0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C}"
+          x-ngsi:
+              type: Text
+        DevAddr:
+          description: Device address (4 bytes)
+          title: DevAddr
+          type: string
+          example: "{0x03, 0xFF, 0x00, 0x01}"
+          x-ngsi:
+              type: Text
     refDevice:
       description: 'Reference of the -Device- to which this transceiver belongs.'
       anyOf:
