@@ -4,6 +4,9 @@ Defines the battery status of a given -Device-
 -  `id`: Battery identifier
    -  Attribute type: **Property**. 
    -  Required
+-  `type`: NGSI Entity type. It has to be battery. One of : `battery`.
+   -  Attribute type: **Property**. 
+   -  Optional
 -  `batteryLevel`: Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when cannot be determined.
    -  Attribute type: **Property**. [Number](https://schema.org/Number)
    -  Optional
