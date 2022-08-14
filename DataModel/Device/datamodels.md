@@ -1,4 +1,4 @@
-# Parcel
+# Device
 
 An IoT device that will be used to get and relay measurement values from sensors
 -  `id`: Unique identifier of the entity
@@ -32,24 +32,31 @@ An IoT device that will be used to get and relay measurement values from sensors
 ```json
 [
     {
-        "id": "urn:ngsi-ld:Parcel:a1",
-        "type": "Parcel",
-        "location": {
-            "type": "Point",
-            "coordinates": [
-                41.488698,
-                -7.248216
+        "id": "urn:Terrain:Parcel:Device:QwW4rF3A",
+        "type": "Device",
+        "dateInstalled": "2022-08-12T07:58:07+00:00",
+        "name": "Nó IoT em a1",
+        "hardware": {
+            "CPU": "ATMega328",
+            "hardwareVersion": "1.0",
+            "firmwareVersion": "1.5",
+            "refTransceiver": [
+                "uri:device:hardware:transceiver:lora:A8X9df4",
+                "uri:device:transceiver:gnss:W1ad45F"
+            ],
+            "refPowerSupply": [
+                "uri:device:hardware:battery:A01T54gH"
+            ],
+            "refSensors": [
+                "uri:device:hardware:sensors:temperature:X9dfGg8",
+                "uri:device:hardware:sensors:moisture:MyU7IO"
             ]
         },
-        "specification": "Parcela com coordenada A1 associada ao terreno localizado em Mirandela",
-        "refDevice": [
-            "urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q",
-            "urn:ngsi-ld:Device:k8w8C8O868Y8N838889"
-        ],
-        "refExperimental": [
-            "urn:ngsi-ld:Experimental:C8g8B8R8j818V8F8p8n"
-        ],
-        "refTerrain": "urn:ngsi-ld:Terrain:MDLA4172"
+        "refParcel": "urn:ngsi-ld:Terrain:Parcel:MDLA4172",
+        "@context": [
+            "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+            "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Device/Context/context-keyvalues.jsonld"
+        ]
     }
 ]
 ```
@@ -59,27 +66,51 @@ An IoT device that will be used to get and relay measurement values from sensors
 ```json
 [
     {
-        "id": "urn:ngsi-ld:Parcel:a1",
-        "type": "Parcel",
-        "location": {
-            "coordinates": [
-                41.488698,
-                -7.248216
-            ],
-            "type": "Point"
+        "id": "urn:Terrain:Parcel:Device:QwW4rF3A",
+        "type": "Device",
+        "dateInstalled": {
+            "type": "Property",
+            "value": {
+                "@type": "DateTime",
+                "@value": "2022-08-12T07:58:07+00:00"
+            }
         },
-        "specification": "Parcela com coordenada A1 associada ao terreno localizado em Mirandela",
-        "refDevice": [
-            "urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q",
-            "urn:ngsi-ld:Device:k8w8C8O868Y8N838889"
-        ],
-        "refExperimental": [
-            "urn:ngsi-ld:Experimental:C8g8B8R8j818V8F8p8n"
-        ],
-        "refTerrain": "urn:ngsi-ld:Terrain:MDLA4172",
+        "name": {
+            "type": "Property",
+            "value": "Nó IoT em a1"
+        },
+        "hardware": {
+            "CPU": {},
+            "hardwareVersion": {},
+            "firmwareVersion": {},
+            "refTransceiver": {
+                "type": "Relationship",
+                "object": [
+                    "uri:device:hardware:transceiver:lora:A8X9df4",
+                    "uri:device:transceiver:gnss:W1ad45F"
+                ]
+            },
+            "refPowerSupply": {
+                "type": "Relationship",
+                "object": [
+                    "uri:device:hardware:battery:A01T54gH"
+                ]
+            },
+            "refSensors": {
+                "type": "Relationship",
+                "object": [
+                    "uri:device:hardware:sensors:temperature:X9dfGg8",
+                    "uri:device:hardware:sensors:moisture:MyU7IO"
+                ]
+            }
+        },
+        "refParcel": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Terrain:Parcel:MDLA4172"
+        },
         "@context": [
             "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-            "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/Context/context-normalized.jsonld"
+            "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Device/Context/context-normalized.jsonld"
         ]
     }
 ]
