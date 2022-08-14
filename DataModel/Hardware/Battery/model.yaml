@@ -11,6 +11,14 @@ battery:
       example: urn:device:hardware:battery:battery_number_id
       x-ngsi:
         type: Property
+    type:
+      description: 'NGSI Entity type. It has to be battery'
+      title: 'Type'
+      enum:
+        - battery
+      type: string
+      x-ngsi:
+        type: Property        
     batteryLevel:
       description: Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when cannot be determined.  
       title: Battery Level
