@@ -1,0 +1,16 @@
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "fiware": "https://uri.fiware.org/ns/data-models#",
+        "schema": "https://schema.org/",
+        "battery": "fiware:battery",
+        "batteryCharge": "fiware:batteryCharge",
+        "batteryDetails": "fiware:batteryDetails",
+        "batteryLevel": "fiware:batteryLevel",
+        "batteryTechnology": "fiware:batteryTechnology",
+        "dateObserved": "fiware:dateObserved",
+        "refDevice": "fiware:refDevice"
+    }
+}
