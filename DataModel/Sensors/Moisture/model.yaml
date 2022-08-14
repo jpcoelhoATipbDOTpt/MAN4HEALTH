@@ -10,6 +10,14 @@ moisture:
       example: 'urn:device:moisture:AF95DdfR5'
       x-ngsi:
         type: Property
+    type:
+      description: 'NGSI Entity type. It has to be moisture'
+      title: 'Type'
+      enum:
+        - moisture
+      type: string
+      x-ngsi:
+        type: Property        
     measuringMedium:
       description: 'Define the medium from where the measurement is taken'
       items:
