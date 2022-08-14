@@ -10,6 +10,14 @@ lora:
       example: urn:device:transceiver:lora:lora_number_id
       x-ngsi:
         type: Property
+    type:
+      description: 'NGSI Entity type. It has to be lora'
+      title: 'Type'
+      enum:
+        - lora
+      type: string
+      x-ngsi:
+        type: Property    
     rssi:
       description: Indicate the value of the RSSI
       title: RSSI
