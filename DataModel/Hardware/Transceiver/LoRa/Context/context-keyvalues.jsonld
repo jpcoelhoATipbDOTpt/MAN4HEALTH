@@ -1,0 +1,113 @@
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "fiware": "https://uri.fiware.org/ns/data-models#",
+        "schema": "https://schema.org/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "abp": {
+            "@id": "fiware:abp",
+            "@type": "xsd:undefined"
+        },
+        "dateObserved": {
+            "@id": "fiware:dateObserved",
+            "@type": "xs:dateTime"
+        },
+        "lora": "fiware:lora",
+        "refDevice": {
+            "@id": "fiware:refDevice",
+            "@type": "@id"
+        },
+        "rssi": {
+            "@id": "fiware:rssi",
+            "@type": "xsd:undefined"
+        }
+    },
+    "@graph": [
+        {
+            "@id": "fiware:lora",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Defines the LoRA transceiver and protocol associated to a given -Device-"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "lora"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "LoR transceiver identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:rssi",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Indicate the value of the RSSI"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "rssi"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:abp",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ABP credentials"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "abp"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:refDevice",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Reference of the -Device- to which this transceiver belongs."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "refDevice"
+                }
+            ]
+        }
+    ]
+}
