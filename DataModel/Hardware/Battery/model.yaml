@@ -13,7 +13,7 @@ battery:
     batteryLevel:
       description: Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when cannot be determined.
       type: Property      
-      title: Battery details
+      title: Battery Level
       oneOf:
         - maximum: 1
           minimum: 0
@@ -23,6 +23,7 @@ battery:
           type: number
       x-ngsi:
         model: https://schema.org/Number
+        type: Property
     dateObserved:
       description: The date and time of this observation as defined by RFC 3339.
       type: string
