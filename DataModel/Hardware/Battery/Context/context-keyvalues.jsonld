@@ -5,12 +5,130 @@
         "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
         "fiware": "https://uri.fiware.org/ns/data-models#",
         "schema": "https://schema.org/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
         "battery": "fiware:battery",
-        "batteryCharge": "fiware:batteryCharge",
+        "batteryCharge": {
+            "@id": "fiware:batteryCharge",
+            "@type": "xsd:number"
+        },
         "batteryDetails": "fiware:batteryDetails",
-        "batteryLevel": "fiware:batteryLevel",
-        "batteryTechnology": "fiware:batteryTechnology",
-        "dateObserved": "fiware:dateObserved",
-        "refDevice": "fiware:refDevice"
-    }
+        "batteryLevel": {
+            "@id": "fiware:batteryLevel",
+            "@type": "xsd:undefined"
+        },
+        "batteryTechnology": {
+            "@id": "fiware:batteryTechnology",
+            "@type": "xsd:string"
+        },
+        "dateObserved": {
+            "@id": "fiware:dateObserved",
+            "@type": "xs:dateTime"
+        },
+        "refDevice": {
+            "@id": "fiware:refDevice",
+            "@type": "@id"
+        }
+    },
+    "@graph": [
+        {
+            "@id": "fiware:battery",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Defines the battery status of a given -Device-"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "battery"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Battery identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:batteryLevel",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when cannot be determined."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "batteryLevel"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dateObserved",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The date and time of this observation as defined by RFC 3339."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateObserved"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:batteryDetails",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Technical details about the batteries"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "batteryDetails"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:refDevice",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Reference of the -Device- to which this sensor belongs."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "refDevice"
+                }
+            ]
+        }
+    ]
 }
