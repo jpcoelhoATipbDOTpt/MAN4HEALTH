@@ -10,6 +10,14 @@ temperature:
       example: urn:device:temperature:sensorNBR
       x-ngsi:
         type: Property
+    type:
+      description: 'NGSI Entity type. It has to be temperature'
+      title: 'Type'
+      enum:
+        - temperature
+      type: string
+      x-ngsi:
+        type: Property        
     measuringMedium:
       description: Define tthe medium from where the measurement is taken
       items:
