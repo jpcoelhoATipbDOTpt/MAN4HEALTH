@@ -14,7 +14,7 @@ info:
   
 components:
   schemas: 
-    Parcel: 
+    Device: 
       $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Device/model.yaml#/Device"
 
 paths: 
