@@ -6,7 +6,7 @@
         "fiware": "https://uri.fiware.org/ns/data-models#",
         "schema": "https://schema.org/",
         "CPU": "fiware:CPU",
-        "Parcel": "fiware:Parcel",
+        "Device": "fiware:Device",
         "dateInstalled": "fiware:dateInstalled",
         "firmwareVersion": "fiware:firmwareVersion",
         "hardware": "fiware:hardware",
