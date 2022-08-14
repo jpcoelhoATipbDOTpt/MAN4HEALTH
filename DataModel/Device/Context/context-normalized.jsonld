@@ -5,10 +5,16 @@
         "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
         "fiware": "https://uri.fiware.org/ns/data-models#",
         "schema": "https://schema.org/",
+        "CPU": "fiware:CPU",
         "Parcel": "fiware:Parcel",
-        "refDevices": "fiware:refDevices",
-        "refExperimental": "fiware:refExperimental",
-        "refTerrain": "fiware:refTerrain",
-        "specification": "fiware:specification"
+        "dateInstalled": "fiware:dateInstalled",
+        "firmwareVersion": "fiware:firmwareVersion",
+        "hardware": "fiware:hardware",
+        "hardwareVersion": "fiware:hardwareVersion",
+        "name": "fiware:name",
+        "refParcel": "fiware:refParcel",
+        "refPowerSupply": "fiware:refPowerSupply",
+        "refSensors": "fiware:refSensors",
+        "refTransceivers": "fiware:refTransceivers"
     }
 }
