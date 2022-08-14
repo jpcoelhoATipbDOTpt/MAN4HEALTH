@@ -7,22 +7,43 @@
         "schema": "https://schema.org/",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "Parcel": "fiware:Parcel",
-        "refDevices": {
-            "@id": "fiware:refDevices",
-            "@type": "@id"
-        },
-        "refExperimental": {
-            "@id": "fiware:refExperimental",
-            "@type": "@id"
-        },
-        "refTerrain": {
-            "@id": "fiware:refTerrain",
-            "@type": "@id"
-        },
-        "specification": {
-            "@id": "fiware:specification",
+        "CPU": {
+            "@id": "fiware:CPU",
             "@type": "xsd:string"
+        },
+        "Parcel": "fiware:Parcel",
+        "dateInstalled": {
+            "@id": "fiware:dateInstalled",
+            "@type": "xs:dateTime"
+        },
+        "firmwareVersion": {
+            "@id": "fiware:firmwareVersion",
+            "@type": "xsd:string"
+        },
+        "hardware": "fiware:hardware",
+        "hardwareVersion": {
+            "@id": "fiware:hardwareVersion",
+            "@type": "xsd:string"
+        },
+        "name": {
+            "@id": "fiware:name",
+            "@type": "xsd:string"
+        },
+        "refParcel": {
+            "@id": "fiware:refParcel",
+            "@type": "@id"
+        },
+        "refPowerSupply": {
+            "@id": "fiware:refPowerSupply",
+            "@type": "@id"
+        },
+        "refSensors": {
+            "@id": "fiware:refSensors",
+            "@type": "@id"
+        },
+        "refTransceivers": {
+            "@id": "fiware:refTransceivers",
+            "@type": "@id"
         }
     },
     "@graph": [
@@ -32,7 +53,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Entity that represent a parcel within a terrain"
+                    "@value": "An IoT device that will be used to get and relay measurement values from sensors"
                 }
             ],
             "rdfs:label": [
@@ -62,82 +83,66 @@
             ]
         },
         {
-            "@id": "fiware:location",
-            "@type": "ngsi-ld:Geoproperty",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Geogrphic location of a -Parcel- in one of two possible formats: point or polygon"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "location"
-                }
-            ]
-        },
-        {
-            "@id": "fiware:specification",
+            "@id": "fiware:dateInstalled",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Description of relevant parcel characteristics"
+                    "@value": "A timestamp which denotes when the - Device- was deployed"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "specification"
+                    "@value": "dateInstalled"
                 }
             ]
         },
         {
-            "@id": "fiware:refDevices",
-            "@type": "ngsi-ld:Relationship",
+            "@id": "fiware:name",
+            "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "List of entities of type -Device- associated to the current -Parcel-. Topological integrity must exist between the device and parcel locations since a -Device. must be within a -Parcel-."
+                    "@value": "The name of this -Device-"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "refDevices"
+                    "@value": "name"
                 }
             ]
         },
         {
-            "@id": "fiware:refExperimental",
-            "@type": "ngsi-ld:Relationship",
+            "@id": "fiware:hardware",
+            "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "List of entities of type -Experimental- associated to the current -Parcel-."
+                    "@value": "Describes the -Device- hardware"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "refExperimental"
+                    "@value": "hardware"
                 }
             ]
         },
         {
-            "@id": "fiware:refTerrain",
+            "@id": "fiware:refParcel",
             "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Reference to the -Terrain- that this -Parcel- belongs to."
+                    "@value": "The -Parcel- to which the -Device- is associated"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "refTerrain"
+                    "@value": "refParcel"
                 }
             ]
         }
