@@ -40,7 +40,7 @@ paths:
                   summary: "Key-Values Pairs"
                   value: 
                     - 
-                      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/Transceiver/LoRa/examples/example-keyvalues.json"
+                      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/Transceiver/LoRa/examples/example-keyvalues.jsonld"
                 normalized: 
                   summary: "Normalized NGSI-LD"
                   value: 
