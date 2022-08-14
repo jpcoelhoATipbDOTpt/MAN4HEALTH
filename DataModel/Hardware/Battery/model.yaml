@@ -7,11 +7,11 @@ battery:
       description: Battery identifier
       type: string
       format: uri
-      example: urn:device:battery:battery_number_id
+      example: urn:device:hardware:battery:battery_number_id
       x-ngsi:
         type: Property
     batteryLevel:
-      description: 'Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when cannot be determined.'
+      description: Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when cannot be determined.
       type: Property      
       title: Battery details
       oneOf:
@@ -62,14 +62,14 @@ battery:
                   model: https://schema.org/Number
                   units: E09
     refDevice:
-      description: 'Reference of the -Device- to which this sensor belongs.'
+      description: Reference of the -Device- to which this sensor belongs.
       anyOf:
-      - description: 'Property. Identifier format of any NGSI entity'
+      - description: Property. Identifier format of any NGSI entity
         maxLength: 256
         minLength: 1
         pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
         type: string
-      - description: 'Property. Identifier format of any NGSI entity'
+      - description: Property. Identifier format of any NGSI entity
         format: uri
         type: string
       x-ngsi:
