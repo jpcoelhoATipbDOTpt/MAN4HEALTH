@@ -4,6 +4,9 @@ Defines a given humidity sensor to be used in a -Device-
 -  `id`: Sensor identifier
    -  Attribute type: **Property**. 
    -  Required
+-  `type`: NGSI Entity type. It has to be moisture. One of : `moisture`.
+   -  Attribute type: **Property**. 
+   -  Optional
 -  `measuringMedium`: Define the medium from where the measurement is taken
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
