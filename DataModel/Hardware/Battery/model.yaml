@@ -6,31 +6,32 @@ battery:
     id:
       description: Battery identifier
       type: string
+      title: ID
       format: uri
       example: urn:device:hardware:battery:battery_number_id
       x-ngsi:
         type: Property
+    batteryLevel:
+      description: Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when cannot be determined.  
+      title: Battery Level
+      oneOf:
+        - maximum: 1
+          minimum: 0
+          type: number
+        - maximum: -1
+          minimum: -1
+          type: number
+      x-ngsi:
+        model: https://schema.org/Number
+        type: Property
 #    batteryLevel:
 #      description: Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when cannot be determined.
-#      type: Property      
-#      title: Battery Level
-#      oneOf:
-#        - maximum: 1
-#          minimum: 0
-#          type: number
-#        - maximum: -1
-#          minimum: -1
-#          type: number
-#      x-ngsi:
-#        model: https://schema.org/Number
-#        type: Property
-    batteryLevel:
-      description: Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when cannot be determined.
-      type: number      
-      title: Battery Level  
+#      type: number      
+#      title: Battery Level  
     dateObserved:
       description: The date and time of this observation as defined by RFC 3339.
       type: string
+      title: Date Observed
       format: date-time
       x-ngsi:
           model: https://schema.org/DateTime
@@ -38,7 +39,7 @@ battery:
     batteryDetails:
         description: Technical details about the batteries
         type: object
-        title: Battery details
+        title: Battery Details
         properties:
           batteryTechnology:
               description: Battery technology
@@ -59,7 +60,7 @@ battery:
                   type: Property              
           batteryCharge:
               description: Battery charge value expressed in mAh. In the case of battery packs, this is the charge sum of all batteries in the pack.
-              title: Battery charge in mAh
+              title: Battery Charge (mAh)
               type: number
               minimum: 0
               example: 2300
@@ -67,6 +68,7 @@ battery:
                   model: https://schema.org/Number
                   units: E09
     refDevice:
+      title: Reference to -Device-
       description: Reference of the -Device- to which this sensor belongs.
       anyOf:
       - description: Property. Identifier format of any NGSI entity
@@ -82,4 +84,3 @@ battery:
   required:
     - id
     - refDevice
-  x-model-schema: https://smart-data-models.github.io/dataModel.Device/Device/schema.json
