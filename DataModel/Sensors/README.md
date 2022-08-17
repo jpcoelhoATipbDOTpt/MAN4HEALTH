@@ -1,4 +1,4 @@
-# Sesnors
+# Sensors
 Version: 0.1.0
 
 ## Descrição
