@@ -7,7 +7,7 @@ Modelo de dados associado ao projeto Man4Health.
 ### Lista dos modelos de dados
 
 Definem-se as seguintes entidades:
-- [Terrain](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/DataModel/Terrain/README.md). O terreno onde os ensaios são efetuados.
+- [Terrain](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Terrain/README.md). O terreno onde os ensaios são efetuados.
 
 - [Parcel](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Parcel/README.md). A parcela, dentro do terreno, a monitorizar.
 
