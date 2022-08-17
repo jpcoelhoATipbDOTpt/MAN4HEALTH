@@ -21,9 +21,9 @@ Terrain:
       x-ngsi:    
         type: Property
     location:    
-      description: Geographic location of a -Terrain- in one of two possible formats: point or polygon'
+      description: Geographic location of a -Terrain- in point or polygon format
       oneOf:
-        - description: 'Geojson point format for the -Terrain- entity location'  
+        - description: Geojson point format for the -Terrain- entity location 
           title: 'GeoJSON Point'    
           type: object    
           properties:    
@@ -44,8 +44,8 @@ Terrain:
           required:    
             - type    
             - coordinates    
-        - description: 'Geojson polygon format for the -Terrain- entity location'
-          title: 'GeoJSON polygon'    
+        - description: Geojson polygon format for the -Terrain- entity location
+          title: GeoJSON polygon
           type: object 
           properties:    
             bbox:    
