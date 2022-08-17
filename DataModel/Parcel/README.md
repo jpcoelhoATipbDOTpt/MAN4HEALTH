@@ -14,6 +14,6 @@ Link para [especificação](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blo
 
 ### Examplos
 
-Link para [exemplo](https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/examples/example.jsonld) (keyvalues).
+Link para [exemplo](https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/examples/example-keyvalues.jsonld) (keyvalues).
 
-Link para [exemplo](https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/example-normalized.jsonld) (normalized).
+Link para [exemplo](https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/examples/example-normalized.jsonld) (normalized).
