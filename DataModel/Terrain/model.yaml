@@ -88,22 +88,4 @@ Terrain:
       description: Description of relevant terrain characteristics
       type: string
       x-ngsi:
-        type: Property            
-    refParcel:    
-      description: List of entities of type -Parcel- associated to the current -Terrain-. Topological integrity must exist between the -Terrain- and -Parcel- locations since one must be within the other 
-      type: array    
-      uniqueItems: true
-      minItems: 1
-      items:    
-        anyOf:    
-          - description: -Parcel- entity identifier 
-            maxLength: 256    
-            minLength: 1    
-            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
-            type: string    
-          - description: -Parcel- NGSI entity identifier     
-            format: uri    
-            type: string    
-      x-ngsi:
-        type: Relationship
-  x-version: 0.1.0
+        type: Property
