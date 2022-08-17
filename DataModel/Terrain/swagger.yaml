@@ -40,7 +40,7 @@ paths:
                   summary: "Key-Values Pairs"
                   value: 
                     - 
-                      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Terrain/examples/example.json"
+                      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Terrain/examples/example-keyvalues.jsonld"
                 normalized: 
                   summary: "Normalized NGSI-LD"
                   value: 
