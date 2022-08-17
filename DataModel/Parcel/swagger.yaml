@@ -6,7 +6,7 @@ openapi: 3.0.0
 # Informação sobre o modelo
 info:
   title: Parcel@MAN4HEALTH
-  description: Modelo de dados da entidade "Parcela"
+  description: Modelo de dados da entidade -Parcel-
   version: 0.0.1
   contact:
     name: New management strategies in olive groves for improving soil health and crop yield
