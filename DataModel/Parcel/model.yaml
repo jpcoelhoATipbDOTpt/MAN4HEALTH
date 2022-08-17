@@ -21,7 +21,7 @@ Parcel:
       x-ngsi:    
         type: Property
     location:    
-      description: Geographic location of a -Parcel- in one of two possible formats: point or polygon
+      description: Geographic location of a -Parcel- as a point or polygon
       oneOf:
         - description: Geojson point format for the -Parcel- entity location
           title: GeoJSON Point
