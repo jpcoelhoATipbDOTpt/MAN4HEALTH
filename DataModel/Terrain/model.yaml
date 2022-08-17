@@ -21,7 +21,7 @@ Terrain:
       x-ngsi:    
         type: Property
     location:    
-      description: Geogrphic location of a -Terrain- in one of two possible formats: point or polygon'
+      description: Geographic location of a -Terrain- in one of two possible formats: point or polygon'
       oneOf:
         - description: 'Geojson point format for the -Terrain- entity location'  
           title: 'GeoJSON Point'    
