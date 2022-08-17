@@ -1,4 +1,4 @@
-Parcel:
+Terrain:
   description: Entity that represent a farmland
   title: Terrain
   type: object
