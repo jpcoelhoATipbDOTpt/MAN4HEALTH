@@ -52,6 +52,31 @@ Entity that represent a farmland
 
 ```json
 [
-    "{\n  \"id\": \"urn:ngsi-ld:Parcel:a1\",\n  \n  \"type\": \"Parcel\",\n  \n  \"location\": {\n    \"type\": \"geo:json\",\n    \"value\": {\n      \"type\": \"Point\",\n      \"coordinates\": [41.488698, -7.248216]\n    }\n  }, \n\n  \"ownerName\": {\n    \"type\": \"Property\",\n    \"value\": \"Nome do dono do terreno\"\"\n  },\n\n  \"specification\": {\n    \"type\": \"Property\",\n    \"value\": \"Terreno localizado perto de Mirandela\"\n  },\n \n  \"@context\": [\n  \"https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld\",\n  \"https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Terrain/Context/context-normalized.jsonld\"\n  ]\n\n}\n"
+    {
+        "id": "urn:ngsi-ld:Parcel:a1",
+        "type": "Parcel",
+        "location": {
+            "type": "geo:json",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    41.488698,
+                    -7.248216
+                ]
+            }
+        },
+        "ownerName": {
+            "type": "Property",
+            "value": "Nome do dono do terreno"
+        },
+        "specification": {
+            "type": "Property",
+            "value": "Terreno localizado perto de Mirandela"
+        },
+        "@context": [
+            "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+            "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Terrain/Context/context-normalized.jsonld"
+        ]
+    }
 ]
 ```
