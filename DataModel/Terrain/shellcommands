@@ -1,0 +1,6 @@
+jpcoelho@Mr-Maldoror:~$ cd tutorials.Understanding-At-Context
+jpcoelho@Mr-Maldoror:~/tutorials.Understanding-At-Context$ code . (abre o Visual Studio. Procurar o ficheiro swagger.yaml e trocar o conteúdo)
+jpcoelho@Mr-Maldoror:~/tutorials.Understanding-At-Context$ ./services validate swagger.yaml
+jpcoelho@Mr-Maldoror:~/tutorials.Understanding-At-Context$ ./services ngsi swagger.yaml
+jpcoelho@Mr-Maldoror:~/tutorials.Understanding-At-Context$ ./services jsonld swagger.yaml
+jpcoelho@Mr-Maldoror:~/tutorials.Understanding-At-Context$ ./services markdown swagger.yaml
