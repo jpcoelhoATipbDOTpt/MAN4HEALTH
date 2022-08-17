@@ -1,21 +1,23 @@
 Device:
-  description: 'An IoT device that will be used to get and relay measurement values from sensors'
+  description: An IoT device that will be used to get and relay measurement values from sensors
   type: object
   required:
     - id
     - type
+    - refParcel
+    
   properties:
   
     id:
-      description: 'Unique identifier of the entity'
+      description: Unique identifier of the entity
       title: "ID"
       anyOf: &device_-_properties_-_owner_-_items_-_anyof    
-        - description: 'Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity   
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity
           format: uri
           example: urn:Terrain:Parcel:Device:device_number_id
           type: string    
@@ -23,7 +25,7 @@ Device:
         type: Property
         
     type:
-      description: 'NGSI Entity type. It has to be Device'
+      description: NGSI Entity type. It has to be Device
       title: 'Type'
       enum:
         - Device
@@ -32,7 +34,7 @@ Device:
         type: Property
         
     dateInstalled:
-      description: 'A timestamp which denotes when the - Device- was deployed'
+      description: A timestamp which denotes when the - Device- was deployed
       title: 'Date Installed'
       format: date-time
       type: string
@@ -40,79 +42,46 @@ Device:
         model: https://schema.org/DateTime
         type: Property      
     
-    name:
-      description: 'The name of this -Device-'
+    specification:
+      description: -Device- description
       title: 'Name'
       type: string
       x-ngsi:
         type: Property
         
     hardware:
-        description: 'Describes the -Device- hardware'
+        description: Describes the -Device- hardware
         type: object
-        title: 'Hardware'
+        title: Hardware
         
         properties:
             CPU:
-              description: 'CPU installed on the -Device-'
-              title: 'CPU'
+              description: CPU installed on the -Device-
+              title: CPU
               type: string
               example: ARM Cortex M4
               x-ngsi:
                 type: Property
                 
             hardwareVersion:
-              description: 'The hardware version of this -Device-'
-              title: 'Hardware Version'
+              description: The hardware version of this -Device-
+              title: Hardware Version
               type: string
               x-ngsi:
                 model: https://schema.org/Text
                 type: Property
         
             firmwareVersion:
-              description: 'The firmware version of this -Device-'
-              title: 'Firmware Version'
+              description: The firmware version of this -Device-
+              title: Firmware Version
               type: string
               x-ngsi:
                 model: https://schema.org/Text
-                
-            refTransceivers:
-              description: 'Array of transceivers associated to the current -Device-'
-              type: array
-              title: 'Transceivers Installed'
-              items:
-                type: string
-                format: uri
-              example: ["uri:device:hardware:transceiver:lora:A8X9df4","uri:device:transceiver:gnss:W1ad45F"]
-              x-ngsi:
-                type: Relationship                                  
-                                 
-            refPowerSupply:
-              description: 'Describes the power supply options vailble on the -Device-'
-              title: 'Power Supply'
-              type: array
-              items:
-                type: string
-                format: uri
-              example: ["uri:device:hardware:battery:A01T54gH"]
-              x-ngsi:
-                  type: Relationship                     
-                                 
-            refSensors:
-              description: 'Enumerate the sensors attached to the IoT -Device-'
-              title: 'Sensors'
-              type: array
-              items: 
-                type: string
-                format: uri
-              example: ["uri:device:hardware:sensors:temperature:X9dfGg8","uri:device:hardware:sensors:moisture:MyU7IO"]    
-              x-ngsi:
-                type: Relationship
     
     refParcel:
-      description: 'The -Parcel- to which the -Device- is associated'
+      description: The -Parcel- to which the -Device- is associated
       type: string
       format: uri
-      example: "uri:parcel:a1"
+      example: "uri:terrain:parcel:a1"
       x-ngsi:
         type: Relationship
