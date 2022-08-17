@@ -13,6 +13,8 @@ Definem-se as seguintes entidades:
 
 - [Device](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Device/README.md). Os dispositivos IoT colocados numa parcela.
 
+  - [Hardware]. bla
+  
 - [Experimental](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Experimental/README.md). As observações e resultados dos ensaios experimentais realizados manualmente sobre uma parcela (e.g. valor do NPK)
 
 - [ControlBoard](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/ControlBoard/README.md).O quadro elétrico geral do dispositivo concentrador.
