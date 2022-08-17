@@ -2,7 +2,7 @@
 ## Versão: 0.0.1
 
 ## Descrição 
-Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.Blá blá blá.
+Modelo de dados associado ao projeto Man4Health.
 
 ### Lista dos modelos de dados
 
