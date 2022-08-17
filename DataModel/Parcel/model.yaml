@@ -1,6 +1,6 @@
 Parcel:
-  description: 'Entity that represent a parcel within a terrain'
-  title: 'Parcel'
+  description: Entity that represent a parcel within a terrain
+  title: Parcel
   type: object
   required:
     - id    
@@ -8,23 +8,23 @@ Parcel:
     - refTerrain
   properties:
     id:
-      description: 'Unique identifier of the entity'    
+      description: Unique identifier of the entity 
       anyOf: &parcel_-_properties_-_owner_-_items_-_anyof    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Property. Identifier format of any NGSI entity   
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Property. Identifier format of any NGSI entity
           format: uri    
           type: string    
       x-ngsi:    
         type: Property
     location:    
-      description: 'Geogrphic location of a -Parcel- in one of two possible formats: point or polygon'
+      description: Geographic location of a -Parcel- in one of two possible formats: point or polygon
       oneOf:
-        - description: 'Geojson point format for the -Parcel- entity location'  
-          title: 'GeoJSON Point'    
+        - description: Geojson point format for the -Parcel- entity location
+          title: GeoJSON Point
           type: object    
           properties:    
             bbox:
@@ -44,8 +44,8 @@ Parcel:
           required:    
             - type    
             - coordinates    
-        - description: 'Geojson polygon format for the -Parcel- entity location'
-          title: 'GeoJSON polygon'    
+        - description: Geojson polygon format for the -Parcel- entity location
+          title: GeoJSON polygon
           type: object 
           properties:    
             bbox:    
@@ -73,63 +73,61 @@ Parcel:
       x-ngsi:
         type: Geoproperty
     type:
-      description: 'NGSI entity type for -Parcel-.'
+      description: NGSI entity type for -Parcel-
       enum:
         - Parcel
       type: string
       x-ngsi:
         type: Property
     specification:
-      description: 'Description of relevant parcel characteristics'
+      description: Description of relevant parcel characteristics
       type: string
       x-ngsi:
         type: Property            
     refDevice:    
-      description: 'List of entities of type -Device- associated to the current -Parcel-. Topological integrity must exist between the device and parcel locations since a -Device. must be within a -Parcel-.' 
+      description: List of entities of type -Device- associated to the current -Parcel-. Topological integrity must exist between the device and parcel locations since a -Device. must be within a -Parcel-
       type: array    
       uniqueItems: true
       minItems: 1
       items:    
         anyOf:    
-          - description: '-Device- NGSI entity identifier'    
+          - description: -Device- entity identifier
             maxLength: 256    
             minLength: 1    
             pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
             type: string    
-          - description: 'Identificador NGSI da entidade -Device-'    
+          - description: -Device- NGSI entity identifier 
             format: uri    
             type: string    
       x-ngsi:
         type: Relationship
     refExperimental:    
-      description: 'List of entities of type -Experimental- associated to the current -Parcel-.' 
+      description: List of entities of type -Experimental- associated to the current -Parcel-
       type: array    
       uniqueItems: true
       minItems: 1
       items:    
         anyOf:    
-          - description: '-Experimental- NGSI entity identifier'    
+          - description: -Experimental- entity identifier   
             maxLength: 256    
             minLength: 1    
             pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
             type: string    
-          - description: 'Identificador NGSI da entidade -Experimental-'    
+          - description: -Experimental- NGSI entity identifier   
             format: uri    
             type: string    
       x-ngsi:
         type: Relationship
     refTerrain:
-      description: 'Reference to the -Terrain- that this -Parcel- belongs to.'
+      description: Reference to the -Terrain- that this -Parcel- belongs to.
       anyOf:
-      - description: 'Property. Identifier format of any NGSI entity'
+      - description: -Terrain - entity identifier
         maxLength: 256
         minLength: 1
         pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
         type: string
-      - description: 'Property. Identifier format of any NGSI entity'
+      - description: -Terrain- NGSI entity identifier
         format: uri
         type: string
       x-ngsi:
-        type: Relationship        
-  #x-model-schema: https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Parcel/schema.json
-  x-version: 0.1.0
+        type: Relationship
