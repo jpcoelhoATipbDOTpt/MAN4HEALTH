@@ -19,7 +19,7 @@
   "refTerrain": {
     "type": "Relationship",
     "value":"urn:ngsi-ld:Terrain:MDLA4172"
-  }
+  },
   
   "@context": [
   "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
