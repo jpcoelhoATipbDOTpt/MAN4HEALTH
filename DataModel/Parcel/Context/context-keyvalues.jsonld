@@ -8,14 +8,6 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "Parcel": "fiware:Parcel",
-        "refDevices": {
-            "@id": "fiware:refDevices",
-            "@type": "@id"
-        },
-        "refExperimental": {
-            "@id": "fiware:refExperimental",
-            "@type": "@id"
-        },
         "refTerrain": {
             "@id": "fiware:refTerrain",
             "@type": "@id"
@@ -67,7 +59,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Geogrphic location of a -Parcel- in one of two possible formats: point or polygon"
+                    "@value": "Geographic location of a -Parcel- as a point or polygon"
                 }
             ],
             "rdfs:label": [
@@ -90,38 +82,6 @@
                 {
                     "@language": "en",
                     "@value": "specification"
-                }
-            ]
-        },
-        {
-            "@id": "fiware:refDevices",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "List of entities of type -Device- associated to the current -Parcel-. Topological integrity must exist between the device and parcel locations since a -Device. must be within a -Parcel-."
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "refDevices"
-                }
-            ]
-        },
-        {
-            "@id": "fiware:refExperimental",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "List of entities of type -Experimental- associated to the current -Parcel-."
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "refExperimental"
                 }
             ]
         },
