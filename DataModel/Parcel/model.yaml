@@ -131,5 +131,5 @@ Parcel:
         type: string
       x-ngsi:
         type: Relationship        
-  x-model-schema: https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Parcel/schema.json
+  #x-model-schema: https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Parcel/schema.json
   x-version: 0.1.0
