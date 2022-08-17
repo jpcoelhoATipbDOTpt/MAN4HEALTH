@@ -10,25 +10,21 @@
       "coordinates": [41.488698, -7.248216]
     }
   }, 
-  
-  "specification": {
-    "value": "Parcela com coordenada A1 associada ao terreno localizado em Mirandela"
+
+  "ownerName": {
+    "type": "Property",
+    "value": "Nome do dono do terreno""
   },
 
-  "refDevice": {
-    "type": "Relationship",
-    "value":  ["urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q", "urn:ngsi-ld:Device:k8w8C8O868Y8N838889"]
+  "specification": {
+    "type": "Property",
+    "value": "Terreno localizado perto de Mirandela"
   },
-  
-  "refExperimental": {
+
+  "refParcel": {
     "type": "Relationship",
-    "value": ["urn:ngsi-ld:Experimental:C8g8B8R8j818V8F8p8n"]
+    "value":  ["urn:ngsi-ld:Terrain:Parcel:S8Q858P868W8P8p8l8Q", "urn:ngsi-ld:Terrain:Parcel:k8w8C8O868Y8N838889"]
   },
-  
-  "refTerrain": {
-    "type": "Relationship",
-    "value":"urn:ngsi-ld:Terrain:MDLA4172"
-  }
   
   "@context": [
   "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
