@@ -6,8 +6,6 @@
         "fiware": "https://uri.fiware.org/ns/data-models#",
         "schema": "https://schema.org/",
         "Parcel": "fiware:Parcel",
-        "refDevices": "fiware:refDevices",
-        "refExperimental": "fiware:refExperimental",
         "refTerrain": "fiware:refTerrain",
         "specification": "fiware:specification"
     }
