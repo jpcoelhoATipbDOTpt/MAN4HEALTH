@@ -1,26 +1,15 @@
 {
-  "id": "urn:ngsi-ld:Parcel:a1",
-  
+  "id": "urn:ngsi-ld:Parcel:a1", 
   "type": "Parcel",
-  
   "location": {
-    "type": "geo:json",
-    "value": {
-      "type": "Point",
-      "coordinates": [41.488698, -7.248216]
-    }
+    "type": "Point",
+    "coordinates": [41.488698, -7.248216]
   }, 
-  
-  "specification": {
-    "type": "Property",
-    "value": "Parcela com coordenada A1 associada ao terreno localizado em Mirandela"
-  },
-  
+  "specification": "Parcela com coordenada A1 associada ao terreno localizado em Mirandela",
   "refTerrain": {
     "type": "Relationship",
     "value":"urn:ngsi-ld:Terrain:MDLA4172"
   },
-  
   "@context": [
   "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
   "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/Context/context-keyvalues.jsonld"
