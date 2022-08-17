@@ -12,6 +12,7 @@
   }, 
   
   "specification": {
+    "type": "Property",
     "value": "Parcela com coordenada A1 associada ao terreno localizado em Mirandela"
   },
 
