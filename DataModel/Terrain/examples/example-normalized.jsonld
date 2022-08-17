@@ -20,15 +20,10 @@
     "type": "Property",
     "value": "Terreno localizado perto de Mirandela"
   },
-
-  "refParcel": {
-    "type": "Relationship",
-    "value":  ["urn:ngsi-ld:Terrain:Parcel:S8Q858P868W8P8p8l8Q", "urn:ngsi-ld:Terrain:Parcel:k8w8C8O868Y8N838889"]
-  },
-  
+ 
   "@context": [
   "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-  "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/Context/context-normalized.jsonld"
+  "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Terrain/Context/context-normalized.jsonld"
   ]
 
 }
