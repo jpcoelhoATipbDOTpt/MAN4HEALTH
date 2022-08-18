@@ -1,0 +1,156 @@
+supplybox:
+    title: Power Supply Box
+    type: object
+    description: Tecnical details regarding the power supply box
+    properties:
+        id:
+            description: Power supply box identifier
+            title: ID
+            type: string
+            format: uri
+            example: urn:basestation:supplyboxNbr1
+            x-ngsi:
+                type: Property
+        powerSupply:
+            description: Describes the power supply elements within the supply box
+            title: Power Supply
+            type: object
+            properties:
+                battery:
+                    description: Technical characteristics of the battery.
+                    type: object
+                    title: Battery
+                    properties:
+                        brand:
+                            description: Battery brand.
+                            type: string
+                            title: Battery Brand
+                            example: UltraCell
+                            x-ngsi:
+                                type: Property
+                        model:
+                            description: Battery model
+                            type: string
+                            title: Model
+                            example: UL18-12
+                            x-ngsi:
+                                type: Property
+                        technology:
+                            description: Type of battery tecnology.
+                            type: string
+                            title: Technology
+                            enum:
+                                - LiPo
+                                - LiIon
+                                - LiFePO
+                                - NiCd
+                                - NiMH
+                                - Lead-Acid
+                                - Gel-Acid
+                                - Non-recheargeable
+                                - Other
+                            example: Gel-Acid
+                            x-ngsi:
+                                type: Property
+                        capacity:
+                            description: Battery charge value expressed in Ah. In the case of battery packs, the total charge must be indicated.
+                            type: integer
+                            title: Capacity
+                            minimum: 0
+                            example: 65
+                            x-ngsi:
+                                units: AMH
+                                type: Property
+                        chargeLevel:
+                            description: Actual battery charge level in percentage.
+                            type: integer
+                            title: Charge Level
+                            minimum: 0
+                            maximum: 100
+                            example: 75
+                            x-ngsi:
+                                units: P1
+                                type: Property
+                solarPanel:
+                    description: Technical characteristics of the solar pannels.
+                    type: object
+                    title: Solar Panel
+                    properties:
+                        brand:
+                            description: Solar panel brand.
+                            type: string
+                            title: Brand Name
+                            example: Hyundai
+                            x-ngsi:
+                                type: Property                                               
+                        model:
+                            description: Solar panel model
+                            type: string
+                            title: Model
+                            example: MS10
+                            x-ngsi:
+                                type: Property
+                        technology:
+                            description: Type of solar panel tecnology.
+                            type: string
+                            title: Technology
+                            enum:
+                                - Monocrystalline
+                                - Polycrystalline
+                                - Other
+                            example: Polycrystalline
+                            x-ngsi:
+                                type: Property                                                   
+                        power:
+                            description: Total installed power in watt-peak.
+                            type: integer
+                            title: Power
+                            minimum: 0
+                            example: 480
+                            x-ngsi:
+                                units: WTT
+                                type: Property
+                        powerLevel:
+                              description: Actual power generated by the solar panels.
+                              type: integer
+                              title: Actual Power
+                              minimum: 0
+                              example: 235
+                              x-ngsi:
+                                  units: WTT
+                                  type: Property
+                chargeRegulator:
+                    description: Technical characteristics of the battery charge controller.
+                    type: object
+                    title: Charge controller
+                    properties:
+                        brand:
+                            description: Charge controller brand.
+                            type: string
+                            title: Brand Name
+                            example: EPEVER
+                            x-ngsi:
+                                type: Property                                               
+                        model:
+                            description: Charge controller model
+                            type: string
+                            title: Model
+                            example: Tracer-AN
+                            x-ngsi:
+                                type: Property
+                        nominalLoad:
+                            description: Nominal load current
+                            title: Nominal Load Current
+                            type: integer
+                            example: 10
+                            x-ngsi:
+                                units: AMP
+                                type: Property                                                   
+                        temperature:
+                              description: Charge controller temperature
+                              type: float
+                              title: Actual Temperature
+                              example: 45.3
+                              x-ngsi:
+                                  units: CEL
+                                  type: Property                                  
