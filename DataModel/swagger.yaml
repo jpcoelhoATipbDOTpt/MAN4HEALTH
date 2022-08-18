@@ -21,13 +21,13 @@ components:
       $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Parcel/model.yaml#/Parcel"
     Device:
       $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Device/model.yaml#/Device"
-    Moisture:
+    moisture:
       $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Sensors/Moisture/model.yaml#/moisture"
-    Temperature:
+    temperature:
       $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Sensors/Temperature/model.yaml#/temperature"
-    Battery:
+    battery:
       $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Sensors/Moisture/model.yaml#/battery"
-    LoRa:
+    lora:
       $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/Transceiver/LoRa/model.yaml#/lora"      
 
 paths:
