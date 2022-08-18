@@ -11,10 +11,7 @@
         "firmwareVersion": "fiware:firmwareVersion",
         "hardware": "fiware:hardware",
         "hardwareVersion": "fiware:hardwareVersion",
-        "name": "fiware:name",
         "refParcel": "fiware:refParcel",
-        "refPowerSupply": "fiware:refPowerSupply",
-        "refSensors": "fiware:refSensors",
-        "refTransceivers": "fiware:refTransceivers"
+        "specification": "fiware:specification"
     }
 }
