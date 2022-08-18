@@ -1,0 +1,58 @@
+gateway:
+  title: Gateway
+  type: object
+  description: LoRa gateway
+  properties:
+    id:
+      description: Gateway Identifier
+      type: string
+      format: uri
+      example: urn:dragino-20f208
+      x-ngsi:
+        type: Property
+
+    model: 
+      description: Gateway model
+      type: string
+      example: DLOS8
+      x-ngsi:
+        model: https://schema.org/legalName
+        type: Property
+
+    maker:
+      description: Gateway brand
+      type: string
+      example: Dragino
+      x-ngsi:
+        model: https://schema.org/taxID
+        type: Property
+
+    frequency:
+      description: Gateway frequency
+      type: string
+      example: 868 MHz
+      x-ngsi:
+        type: Property
+
+    mqtt:
+      description: MQTT brocker URL
+      type: string
+      example: broker.hivemq.com
+      x-ngsi:
+        type: Property
+
+    LTE_WAN_RSSI:
+      description: LTE RSSI
+      type: string
+      example: -20 dBm
+      x-ngsi:
+        type: Property
+
+    WiFi_WAN_RSSI:
+      description: WiFi RSSI
+      type: string
+      example: -20 dBm
+      x-ngsi:
+        type: Property            
+  required:
+    - id
