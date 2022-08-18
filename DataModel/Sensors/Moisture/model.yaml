@@ -63,4 +63,5 @@ moisture:
         type: Relationship       
   required:
     - id
+    - type
     - refDevice
