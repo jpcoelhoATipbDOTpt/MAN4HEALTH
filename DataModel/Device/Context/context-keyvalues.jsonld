@@ -25,25 +25,13 @@
             "@id": "fiware:hardwareVersion",
             "@type": "xsd:string"
         },
-        "name": {
-            "@id": "fiware:name",
-            "@type": "xsd:string"
-        },
         "refParcel": {
             "@id": "fiware:refParcel",
             "@type": "@id"
         },
-        "refPowerSupply": {
-            "@id": "fiware:refPowerSupply",
-            "@type": "@id"
-        },
-        "refSensors": {
-            "@id": "fiware:refSensors",
-            "@type": "@id"
-        },
-        "refTransceivers": {
-            "@id": "fiware:refTransceivers",
-            "@type": "@id"
+        "specification": {
+            "@id": "fiware:specification",
+            "@type": "xsd:string"
         }
     },
     "@graph": [
@@ -99,18 +87,18 @@
             ]
         },
         {
-            "@id": "fiware:name",
+            "@id": "fiware:specification",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "The name of this -Device-"
+                    "@value": "-Device- description"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "name"
+                    "@value": "specification"
                 }
             ]
         },
@@ -148,3 +136,4 @@
         }
     ]
 }
+
