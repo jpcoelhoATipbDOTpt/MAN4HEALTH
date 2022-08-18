@@ -4,6 +4,14 @@
 ## Descrição 
 Modelo de dados associado ao projeto Man4Health.
 
+### Especificação
+
+Abrir no [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/swagger.yaml).
+
+Abrir no [Swagger FIWARE](https://swagger.lab.fiware.org/?url=https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/swagger.yaml).
+
+Link para [especificação](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/datamodels.md).
+
 ### Lista dos modelos de dados
 
 Definem-se as seguintes entidades:
