@@ -77,4 +77,5 @@ lora:
         type: Relationship       
   required:
     - id
+    - type
     - refDevice
