@@ -1,5 +1,5 @@
 lora:
-  title: LoRa transceiver and protocol
+  title: lora
   type: object
   description: Defines the LoRA transceiver and protocol associated to a given -Device-
   properties:
