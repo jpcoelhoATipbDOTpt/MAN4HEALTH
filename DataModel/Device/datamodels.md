@@ -10,7 +10,7 @@ An IoT device that will be used to get and relay measurement values from sensors
 -  `dateInstalled`: A timestamp which denotes when the - Device- was deployed
    -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
    -  Optional
--  `name`: The name of this -Device-
+-  `specification`: -Device- description
    -  Attribute type: **Property**. 
    -  Optional
 -  `hardware`: Describes the -Device- hardware
@@ -18,7 +18,7 @@ An IoT device that will be used to get and relay measurement values from sensors
    -  Optional
 -  `refParcel`: The -Parcel- to which the -Device- is associated
    -  Attribute type: **Relationship**. 
-   -  Optional
+   -  Required
 
 
 
