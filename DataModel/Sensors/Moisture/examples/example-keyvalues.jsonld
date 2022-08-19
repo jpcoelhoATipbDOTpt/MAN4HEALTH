@@ -1,6 +1,6 @@
 {
-  "id": "urn:device:moisture:AF95DdfR5",
-  "type": "moisture",
+  "id": "urn:Moisture:AF95DdfR5",
+  "type": "Moisture",
   "measuringMedium": "soil",
   "dephtOrAltitude": 5,
   "measuredValue": 45,
