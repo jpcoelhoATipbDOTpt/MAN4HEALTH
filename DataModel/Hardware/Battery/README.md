@@ -13,4 +13,7 @@ Abrir no [Swagger FIWARE](https://swagger.lab.fiware.org/?url=https://raw.github
 Link para [especificação](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/DataModel/Hardware/Battery/datamodels.md).
 
 ### Examplos
-(em construção)
+
+Link para [exemplo](https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/Battery/examples/example-keyvalues.jsonld) (keyvalues).
+
+Link para [exemplo](https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/Battery/examples/example-normalized.jsonld) (normalized).
