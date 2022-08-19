@@ -1,10 +1,10 @@
-# temperature
+# Temperature
 
 Defines a given temperature sensor to be used in a -Device-
 -  `id`: Sensor identifier
    -  Attribute type: **Property**. 
    -  Required
--  `type`: NGSI Entity type. It has to be temperature. One of : `temperature`.
+-  `type`: NGSI Entity type. It has to be temperature. One of : `Temperature`.
    -  Attribute type: **Property**. 
    -  Optional
 -  `measuringMedium`: Define tthe medium from where the measurement is taken
@@ -35,7 +35,7 @@ Defines a given temperature sensor to be used in a -Device-
 ```json
 [
     {
-        "id": "urn:device:temperature:B4t5DdfR5",
+        "id": "urn:ngsi-ld:Temperature:B4t5DdfR5",
         "type": "moisture",
         "measuringMedium": "air",
         "dephtOrAltitude": 525,
@@ -55,8 +55,8 @@ Defines a given temperature sensor to be used in a -Device-
 ```json
 [
     {
-        "id": "urn:device:temperature:B4t5DdfR5",
-        "type": "temperature",
+        "id": "urn:ngsi-ld:Temperature:B4t5DdfR5",
+        "type": "Temperature",
         "measuringMedium": {
             "type": "Property",
             "value": "air"
