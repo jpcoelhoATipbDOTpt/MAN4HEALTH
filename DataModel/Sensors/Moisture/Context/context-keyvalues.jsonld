@@ -23,7 +23,7 @@
             "@id": "fiware:measuringMedium",
             "@type": "xsd:array"
         },
-        "moisture": "fiware:moisture",
+        "Moisture": "fiware:Moisture",
         "refDevice": {
             "@id": "fiware:refDevice",
             "@type": "@id"
@@ -31,7 +31,7 @@
     },
     "@graph": [
         {
-            "@id": "fiware:moisture",
+            "@id": "fiware:Moisture",
             "@type": "rdfs:Class",
             "rdfs:comment": [
                 {
@@ -42,7 +42,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "moisture"
+                    "@value": "Moisture"
                 }
             ],
             "rdfs:subClassOf": {
