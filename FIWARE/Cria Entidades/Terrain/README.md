@@ -39,6 +39,7 @@ curl --location --request POST 'http://localhost:1026/ngsi-ld/v1/entities/' \
 ```console
 curl --location --request GET 'http://localhost:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Terrain:T001' \
 --header 'Fiware-Service: man4health' \
+--header 'Fiware-ServicePath: /terrain' \
 --header 'Accept: application/ld+json' \
 --header 'Link: <https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Terrain/Context/context-normalized.jsonld>'
 ```
