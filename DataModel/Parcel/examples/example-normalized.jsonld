@@ -4,7 +4,7 @@
   "type": "Parcel",
   
   "location": {
-    "type": "geo:json",
+    "type": "GeoProperty",
     "value": {
       "type": "Point",
       "coordinates": [41.488698, -7.248216]
