@@ -1,4 +1,4 @@
-# moisture
+# Moisture
 
 Defines a given humidity sensor to be used in a -Device-
 -  `id`: Sensor identifier
