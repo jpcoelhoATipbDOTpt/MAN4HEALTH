@@ -1,5 +1,5 @@
-lora:
-  title: lora
+LoRa:
+  title: LoRa
   type: object
   description: Defines the LoRA transceiver and protocol associated to a given -Device-
   properties:
@@ -7,14 +7,14 @@ lora:
       description: LoR transceiver identifier
       type: string
       format: uri
-      example: urn:device:transceiver:lora:lora_number_id
+      example: urn:LoRa:AfGT56Trf
       x-ngsi:
         type: Property
     type:
-      description: 'NGSI Entity type. It has to be lora'
+      description: NGSI Entity type. It has to be lora
       title: 'Type'
       enum:
-        - lora
+        - LoRa
       type: string
       x-ngsi:
         type: Property    
@@ -63,14 +63,14 @@ lora:
           x-ngsi:
               type: Text
     refDevice:
-      description: 'Reference of the -Device- to which this transceiver belongs.'
+      description: Reference of the -Device- to which this transceiver belongs.
       anyOf:
-      - description: 'Property. Identifier format of any NGSI entity'
+      - description: Property. Identifier format of any NGSI entity
         maxLength: 256
         minLength: 1
         pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
         type: string
-      - description: 'Property. Identifier format of any NGSI entity'
+      - description: Property. Identifier format of any NGSI entity
         format: uri
         type: string
       x-ngsi:
