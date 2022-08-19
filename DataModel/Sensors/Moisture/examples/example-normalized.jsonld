@@ -1,6 +1,6 @@
 {
-    "id": "urn:device:moisture:AF95DdfR5",
-    "type": "moisture",
+    "id": "urn:ngsi-ld:Moisture:AF95DdfR5",
+    "type": "Moisture",
     "measuringMedium": {
         "type": "Property",
         "value": "soil"
