@@ -15,7 +15,7 @@
             "@id": "fiware:dateObserved",
             "@type": "xs:dateTime"
         },
-        "lora": "fiware:lora",
+        "LoRa": "fiware:LoRa",
         "refDevice": {
             "@id": "fiware:refDevice",
             "@type": "@id"
@@ -27,7 +27,7 @@
     },
     "@graph": [
         {
-            "@id": "fiware:lora",
+            "@id": "fiware:LoRa",
             "@type": "rdfs:Class",
             "rdfs:comment": [
                 {
@@ -38,7 +38,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "lora"
+                    "@value": "LoRa"
                 }
             ],
             "rdfs:subClassOf": {
