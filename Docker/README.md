@@ -2,7 +2,7 @@
 
 ## Clonar repositório:
 ```console
-$ git clone https://github.com/FIWARE/tutorials.Getting-Started.git 
-$ cd tutorials.Getting-Started 
-$ git checkout NGSI-LD
+$ git clone https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH.git 
+$ cd XXXXXX
+$ git checkout XXXXXX
 ```
