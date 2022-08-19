@@ -1,6 +1,6 @@
 {
-  "id": "urn:device:hardware:transceiver:lora:XpX5DdfR5",
-  "type": "lora",
+  "id": "urn:ngsi-ld:LoRa:AfGT56Trf",
+  "type": "LoRa",
   "rssi": {
     "measuredValue": -85,
     "dateObserved": "2022-08-12T07:58:07+00:00"
