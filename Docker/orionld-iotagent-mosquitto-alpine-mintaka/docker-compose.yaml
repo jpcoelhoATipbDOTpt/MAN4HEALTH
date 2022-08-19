@@ -69,7 +69,7 @@ services:
             - IOTA_PROVIDER_URL=http://iot-agent:4041
             - IOTA_DEFAULT_RESOURCE=/iot/json
             - IOTA_CB_NGSI_VERSION=ld # use NGSI-LD when sending updates for active attributes
-            - IOTA_JSON_LD_CONTEXT=https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/BIOMA/main/bioma-datamodel.jsonld #!!!!!!!!!!!!!!!
+            - IOTA_JSON_LD_CONTEXT=https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Context/context-normalized.jsonld #!!!!!!!!!!!!!!!
             - IOTA_FALLBACK_TENANT=openiot
             - IOTA_MQTT_HOST=mosquitto # The host name of the MQTT Broker
             - IOTA_MQTT_PORT=1883 # The port the MQTT Broker is listening on to receive topics            
