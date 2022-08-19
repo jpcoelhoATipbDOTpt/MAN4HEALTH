@@ -1,6 +1,6 @@
 {
-    "id": "urn:device:hardware:battery:B4t5DdfR5",
-    "type": "battery",
+    "id": "urn:ngsi-ld:Battery:B4t5DdfR5",
+    "type": "Battery",
     "batteryLevel": {
         "type": "Property",
         "value": 0.8
