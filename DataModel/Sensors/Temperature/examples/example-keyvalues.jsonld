@@ -1,6 +1,6 @@
 {
-  "id": "urn:device:temperature:B4t5DdfR5",
-  "type": "moisture",
+  "id": "urn:Temperature:B4t5DdfR5",
+  "type": "Temperature",
   "measuringMedium": "air",
   "dephtOrAltitude": 525,
   "measuredValue": -2,
