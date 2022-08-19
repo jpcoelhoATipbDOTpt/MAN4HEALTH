@@ -14,8 +14,8 @@ info:
   
 components:
   schemas: 
-    moisture: 
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Sensors/Moisture/model.yaml#/moisture"
+    Moisture: 
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Sensors/Moisture/model.yaml#/Moisture"
 
 paths: 
   /ngsi-ld/v1/entities: 
@@ -28,7 +28,7 @@ paths:
           required: true
           schema: 
             enum: 
-              - moisture
+              - Moisture
             type: string
       responses: 
         ? "200"
