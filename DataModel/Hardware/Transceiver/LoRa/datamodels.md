@@ -1,10 +1,10 @@
-# lora
+# LoRa
 
 Defines the LoRA transceiver and protocol associated to a given -Device-
 -  `id`: LoR transceiver identifier
    -  Attribute type: **Property**. 
    -  Required
--  `type`: NGSI Entity type. It has to be lora. One of : `lora`.
+-  `type`: NGSI Entity type. It has to be lora. One of : `LoRa`.
    -  Attribute type: **Property**. 
    -  Optional
 -  `rssi`: Indicate the value of the RSSI
@@ -29,8 +29,8 @@ Defines the LoRA transceiver and protocol associated to a given -Device-
 ```json
 [
     {
-        "id": "urn:device:hardware:transceiver:lora:XpX5DdfR5",
-        "type": "lora",
+        "id": "urn:ngsi-ld:LoRa:AfGT56Trf",
+        "type": "LoRa",
         "rssi": {
             "measuredValue": -85,
             "dateObserved": "2022-08-12T07:58:07+00:00"
