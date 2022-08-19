@@ -1,7 +1,7 @@
 
 {
-  "id": "urn:device:hardware_battery:B4t5DdfR5",
-  "type": "battery",
+  "id": "urn:ngsi-ld:Battery:B4t5DdfR5",
+  "type": "Battery",
   "batteryLevel": 0.8,
   "dateObserved": "2022-08-12T07:58:07+00:00",
   "batteryDetails": {
