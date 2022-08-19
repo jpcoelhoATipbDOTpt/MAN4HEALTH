@@ -18,7 +18,7 @@
 
   "refTerrain": {
     "type": "Relationship",
-    "value":"urn:ngsi-ld:Terrain:MDLA4172"
+    "object": "urn:ngsi-ld:Terrain:MDLA4172"
   },
   
   "@context": [
