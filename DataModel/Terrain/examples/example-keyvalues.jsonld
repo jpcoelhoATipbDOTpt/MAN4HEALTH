@@ -1,5 +1,5 @@
 {
-  "id": "urn:ngsi-ld:Terrain:AWQ2FrqwT",
+  "id": "urn:ngsi-ld:Terrain:T001",
   "type": "Terrain",
   "location": {
     "coordinates": [41.488698, -7.248216],
