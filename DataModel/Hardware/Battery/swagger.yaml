@@ -14,8 +14,8 @@ info:
   
 components:
   schemas: 
-    battery: 
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/Battery/model.yaml#/battery"
+    Battery: 
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/Battery/model.yaml#/Battery"
 
 paths: 
   /ngsi-ld/v1/entities: 
@@ -28,7 +28,7 @@ paths:
           required: true
           schema: 
             enum: 
-              - battery
+              - Battery
             type: string
       responses: 
         ? "200"
