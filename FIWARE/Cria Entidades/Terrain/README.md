@@ -4,7 +4,7 @@ curl --location --request POST 'http://localhost:1026/ngsi-ld/v1/entities/' \
 --header 'Content-Type: application/ld+json' \
 --header 'Accept: application/ld+json' \
 --header 'Fiware-Service: man4health' \
---header 'Fiware-ServicePath: terrain' \
+--header 'Fiware-ServicePath: /terrain' \
 --data-raw '{
   "id": "urn:ngsi-ld:Terrain:T001",
   
