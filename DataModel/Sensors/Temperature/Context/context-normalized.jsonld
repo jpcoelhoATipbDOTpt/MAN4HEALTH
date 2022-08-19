@@ -10,6 +10,6 @@
         "measuredValue": "fiware:measuredValue",
         "measuringMedium": "fiware:measuringMedium",
         "refDevice": "fiware:refDevice",
-        "temperature": "fiware:temperature"
+        "Temperature": "fiware:Temperature"
     }
 }
