@@ -14,8 +14,8 @@ info:
   
 components:
   schemas: 
-    lora: 
-      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/Transceiver/LoRa/model.yaml#/lora"
+    LoRa: 
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/Transceiver/LoRa/model.yaml#/LoRa"
 
 paths: 
   /ngsi-ld/v1/entities: 
@@ -28,7 +28,7 @@ paths:
           required: true
           schema: 
             enum: 
-              - lora
+              - LoRa
             type: string
       responses: 
         ? "200"
