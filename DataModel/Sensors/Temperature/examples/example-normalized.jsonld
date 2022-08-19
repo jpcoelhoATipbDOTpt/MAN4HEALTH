@@ -1,6 +1,6 @@
 {
-    "id": "urn:device:temperature:B4t5DdfR5",
-    "type": "temperature",
+    "id": "urn:Temperature:B4t5DdfR5",
+    "type": "Temperature",
     "measuringMedium": {
         "type": "Property",
         "value": "air"
