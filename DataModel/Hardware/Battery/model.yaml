@@ -1,5 +1,5 @@
-battery:
-  title: battery
+Battery:
+  title: Battery
   type: object
   description: Defines the battery status of a given -Device-
   properties:
@@ -15,7 +15,7 @@ battery:
       description: 'NGSI Entity type. It has to be battery'
       title: 'Type'
       enum:
-        - battery
+        - Battery
       type: string
       x-ngsi:
         type: Property        
