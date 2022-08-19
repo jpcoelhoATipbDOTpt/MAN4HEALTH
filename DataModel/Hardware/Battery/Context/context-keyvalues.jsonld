@@ -7,7 +7,7 @@
         "schema": "https://schema.org/",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "battery": "fiware:battery",
+        "Battery": "fiware:Battery",
         "batteryCharge": {
             "@id": "fiware:batteryCharge",
             "@type": "xsd:number"
@@ -32,7 +32,7 @@
     },
     "@graph": [
         {
-            "@id": "fiware:battery",
+            "@id": "fiware:Battery",
             "@type": "rdfs:Class",
             "rdfs:comment": [
                 {
@@ -43,7 +43,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "battery"
+                    "@value": "Battery"
                 }
             ],
             "rdfs:subClassOf": {
