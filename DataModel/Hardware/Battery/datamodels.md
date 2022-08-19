@@ -1,10 +1,10 @@
-# battery
+# Battery
 
 Defines the battery status of a given -Device-
 -  `id`: Battery identifier
    -  Attribute type: **Property**. 
    -  Required
--  `type`: NGSI Entity type. It has to be battery. One of : `battery`.
+-  `type`: NGSI Entity type. It has to be battery. One of : `Battery`.
    -  Attribute type: **Property**. 
    -  Optional
 -  `batteryLevel`: Device battery level. It must be equal to 1.0 when battery is full. 0.0 when battery is empty. -1 when cannot be determined.
@@ -32,8 +32,8 @@ Defines the battery status of a given -Device-
 ```json
 [
     {
-        "id": "urn:device:hardware_battery:B4t5DdfR5",
-        "type": "battery",
+        "id": "urn:dngsi-ld:Battery:B4t5DdfR5",
+        "type": "Battery",
         "batteryLevel": 0.8,
         "dateObserved": "2022-08-12T07:58:07+00:00",
         "batteryDetails": {
@@ -54,8 +54,8 @@ Defines the battery status of a given -Device-
 ```json
 [
     {
-        "id": "urn:device:hardware:battery:B4t5DdfR5",
-        "type": "battery",
+        "id": "urn:ngsi-ld:Battery:B4t5DdfR5",
+        "type": "Battery",
         "batteryLevel": {
             "type": "Property",
             "value": 0.8
