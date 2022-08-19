@@ -35,8 +35,8 @@ Defines a given humidity sensor to be used in a -Device-
 ```json
 [
     {
-        "id": "urn:device:moisture:AF95DdfR5",
-        "type": "moisture",
+        "id": "urn:ngsi-ld:Moisture:AF95DdfR5",
+        "type": "Moisture",
         "measuringMedium": "soil",
         "dephtOrAltitude": 5,
         "measuredValue": 45,
@@ -55,8 +55,8 @@ Defines a given humidity sensor to be used in a -Device-
 ```json
 [
     {
-        "id": "urn:device:moisture:AF95DdfR5",
-        "type": "moisture",
+        "id": "urn:ngsi-ld:Moisture:AF95DdfR5",
+        "type": "Moisture",
         "measuringMedium": {
             "type": "Property",
             "value": "soil"
