@@ -1,5 +1,5 @@
 {
-  "id": "urn:Temperature:B4t5DdfR5",
+  "id": "urn:ngsi-ld:Temperature:B4t5DdfR5",
   "type": "Temperature",
   "measuringMedium": "air",
   "dephtOrAltitude": 525,
