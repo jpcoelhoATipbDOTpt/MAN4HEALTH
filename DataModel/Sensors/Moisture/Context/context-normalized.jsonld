@@ -9,7 +9,7 @@
         "dephtOrAltitude": "fiware:dephtOrAltitude",
         "measuredValue": "fiware:measuredValue",
         "measuringMedium": "fiware:measuringMedium",
-        "moisture": "fiware:moisture",
+        "Moisture": "fiware:Moisture",
         "refDevice": "fiware:refDevice"
     }
 }
