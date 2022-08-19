@@ -27,11 +27,11 @@
             "@id": "fiware:refDevice",
             "@type": "@id"
         },
-        "temperature": "fiware:temperature"
+        "Temperature": "fiware:Temperature"
     },
     "@graph": [
         {
-            "@id": "fiware:temperature",
+            "@id": "fiware:Temperature",
             "@type": "rdfs:Class",
             "rdfs:comment": [
                 {
