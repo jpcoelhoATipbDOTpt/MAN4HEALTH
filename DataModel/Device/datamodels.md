@@ -32,7 +32,7 @@ An IoT device that will be used to get and relay measurement values from sensors
 ```json
 [
     {
-        "id": "urn:Terrain:Parcel:Device:QwW4rF3A",
+        "id": "urn:ngsi-ld:Device:QwW4rF3A",
         "type": "Device",
         "dateInstalled": "2022-08-12T07:58:07+00:00",
         "name": "Nó IoT em a1",
@@ -41,7 +41,7 @@ An IoT device that will be used to get and relay measurement values from sensors
             "hardwareVersion": "1.0",
             "firmwareVersion": "1.5"
         },
-        "refParcel": "urn:ngsi-ld:Terrain:Parcel:MDLA4172",
+        "refParcel": "urn:ngsi-ld:Parcel:MDLA4172",
         "@context": [
             "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
             "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Device/Context/context-keyvalues.jsonld"
@@ -55,7 +55,7 @@ An IoT device that will be used to get and relay measurement values from sensors
 ```json
 [
     {
-        "id": "urn:Terrain:Parcel:Device:QwW4rF3A",
+        "id": "urn:ngsi-ld:Device:QwW4rF3A",
         "type": "Device",
         "dateInstalled": {
             "type": "Property",
@@ -84,7 +84,7 @@ An IoT device that will be used to get and relay measurement values from sensors
         },
         "refParcel": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:Terrain:Parcel:MDLA4172"
+            "object": "urn:ngsi-ld:Parcel:MDLA4172"
         },
         "@context": [
             "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
