@@ -7,9 +7,6 @@
     "CPU": "ATMega328",
     "hardwareVersion": "1.0",
     "firmwareVersion": "1.5",
-    "refTransceiver": ["uri:device:hardware:transceiver:lora:A8X9df4","uri:device:transceiver:gnss:W1ad45F"],
-    "refPowerSupply": ["uri:device:hardware:battery:A01T54gH"],
-    "refSensors": ["uri:device:hardware:sensors:temperature:X9dfGg8","uri:device:hardware:sensors:moisture:MyU7IO"]
   },
   "refParcel": "urn:ngsi-ld:Terrain:Parcel:MDLA4172",
   "@context": [
