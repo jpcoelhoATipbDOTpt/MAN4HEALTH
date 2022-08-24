@@ -39,18 +39,7 @@ An IoT device that will be used to get and relay measurement values from sensors
         "hardware": {
             "CPU": "ATMega328",
             "hardwareVersion": "1.0",
-            "firmwareVersion": "1.5",
-            "refTransceiver": [
-                "uri:device:hardware:transceiver:lora:A8X9df4",
-                "uri:device:transceiver:gnss:W1ad45F"
-            ],
-            "refPowerSupply": [
-                "uri:device:hardware:battery:A01T54gH"
-            ],
-            "refSensors": [
-                "uri:device:hardware:sensors:temperature:X9dfGg8",
-                "uri:device:hardware:sensors:moisture:MyU7IO"
-            ]
+            "firmwareVersion": "1.5"
         },
         "refParcel": "urn:ngsi-ld:Terrain:Parcel:MDLA4172",
         "@context": [
@@ -82,27 +71,7 @@ An IoT device that will be used to get and relay measurement values from sensors
         "hardware": {
             "CPU": {},
             "hardwareVersion": {},
-            "firmwareVersion": {},
-            "refTransceiver": {
-                "type": "Relationship",
-                "object": [
-                    "uri:device:hardware:transceiver:lora:A8X9df4",
-                    "uri:device:transceiver:gnss:W1ad45F"
-                ]
-            },
-            "refPowerSupply": {
-                "type": "Relationship",
-                "object": [
-                    "uri:device:hardware:battery:A01T54gH"
-                ]
-            },
-            "refSensors": {
-                "type": "Relationship",
-                "object": [
-                    "uri:device:hardware:sensors:temperature:X9dfGg8",
-                    "uri:device:hardware:sensors:moisture:MyU7IO"
-                ]
-            }
+            "firmwareVersion": {}
         },
         "refParcel": {
             "type": "Relationship",
