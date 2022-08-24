@@ -18,18 +18,6 @@
     "hardwareVersion": {
     },
     "firmwareVersion": {
-    },
-    "refTransceiver":{
-      "type": "Relationship",
-      "object": ["uri:device:hardware:transceiver:lora:A8X9df4","uri:device:transceiver:gnss:W1ad45F"]
-    },
-    "refPowerSupply":{
-      "type": "Relationship",
-      "object": ["uri:device:hardware:battery:A01T54gH"]
-    },
-    "refSensors":{
-      "type": "Relationship",
-      "object": ["uri:device:hardware:sensors:temperature:X9dfGg8","uri:device:hardware:sensors:moisture:MyU7IO"]
     }
   },
   "refParcel": {
