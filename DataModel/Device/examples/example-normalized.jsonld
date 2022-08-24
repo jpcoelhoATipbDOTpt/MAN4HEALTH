@@ -1,32 +1,39 @@
-{
-  "id": "urn:Terrain:Parcel:Device:QwW4rF3A",
-  "type": "Device",
-  "dateInstalled": {
-    "type": "Property",
-    "value": {
-      "@type": "DateTime",
-      "@value": "2022-08-12T07:58:07+00:00"
+[
+    {
+        "id": "urn:Terrain:Parcel:Device:QwW4rF3A",
+        "type": "Device",
+        "dateInstalled": {
+            "type": "Property",
+            "value": {
+                "@type": "DateTime",
+                "@value": "2022-08-12T07:58:07+00:00"
+            }
+        },
+        "name": {
+            "type": "Property",
+            "value": "Nó IoT em a1"
+        },
+        "hardware": {
+            "CPU": {
+               "type": "Property",
+               "value": "ATMega328"
+               },
+            "hardwareVersion": {
+               "type": "Property",
+               "value": "1.5"
+               },
+            "firmwareVersion": {
+               "type": "Property",
+               "value": "1.0"
+            }
+        },
+        "refParcel": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Terrain:Parcel:MDLA4172"
+        },
+        "@context": [
+            "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+            "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Device/Context/context-normalized.jsonld"
+        ]
     }
-  },
-  "name": {
-    "type": "Property",
-    "value": "Nó IoT em a1"
-  },
-  "hardware": {
-    "CPU": {
-    },
-    "hardwareVersion": {
-    },
-    "firmwareVersion": {
-    }
-  },
-  "refParcel": {
-    "type": "Relationship",
-    "object": "urn:ngsi-ld:Terrain:Parcel:MDLA4172"
-  },
-
-  "@context": [
-  "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-  "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Device/Context/context-normalized.jsonld"
-  ]
-}
+]
