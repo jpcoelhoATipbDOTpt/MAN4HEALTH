@@ -44,7 +44,7 @@ Device:
     
     specification:
       description: -Device- description
-      title: 'Name'
+      title: 'Specification'
       type: string
       x-ngsi:
         type: Property
