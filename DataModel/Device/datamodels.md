@@ -69,9 +69,18 @@ An IoT device that will be used to get and relay measurement values from sensors
             "value": "Nó IoT em a1"
         },
         "hardware": {
-            "CPU": {},
-            "hardwareVersion": {},
-            "firmwareVersion": {}
+            "CPU": {
+               "type": "Property",
+               "value": "ATMega328"
+               },
+            "hardwareVersion": {
+               "type": "Property",
+               "value": "1.5"
+               },
+            "firmwareVersion": {
+               "type": "Property",
+               "value": "1.0"
+            }
         },
         "refParcel": {
             "type": "Relationship",
