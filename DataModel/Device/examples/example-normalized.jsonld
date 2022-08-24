@@ -29,7 +29,7 @@
         },
         "refParcel": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:Terrain:Parcel:MDLA4172"
+            "object": "urn:ngsi-ld:Parcel:MDLA4172"
         },
         "@context": [
             "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
