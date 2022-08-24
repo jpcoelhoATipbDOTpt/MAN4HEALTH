@@ -1,6 +1,6 @@
 [
     {
-        "id": "urn:Terrain:Parcel:Device:QwW4rF3A",
+        "id": "urn:ngsi-ld:Device:QwW4rF3A",
         "type": "Device",
         "dateInstalled": {
             "type": "Property",
