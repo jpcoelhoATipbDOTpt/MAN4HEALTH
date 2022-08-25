@@ -1,4 +1,4 @@
-temperature:
+Temperature:
   title: Temperature
   type: object
   description: Defines a given temperature sensor to be used in a -Device-
