@@ -6,7 +6,9 @@ Terrain:
     - id    
     - type    
     - location
+    
   properties:
+  
     id:
       description: Unique identifier of the entity
       anyOf: &parcel_-_properties_-_owner_-_items_-_anyof    
@@ -20,72 +22,143 @@ Terrain:
           type: string    
       x-ngsi:    
         type: Property
-    location:    
-      description: Geographic location of a -Terrain- in point or polygon format
-      oneOf:
-        - description: Geojson point format for the -Terrain- entity location 
-          title: 'GeoJSON Point'    
-          type: object    
-          properties:    
-            bbox:
-              items:    
-                type: number    
-              minItems: 4    
-              type: array    
-            coordinates:    
-              items:    
-                type: number    
-              minItems: 2    
-              type: array    
-            type:    
-              enum:    
-                - Point    
-              type: string
-          required:    
-            - type    
-            - coordinates    
-        - description: Geojson polygon format for the -Terrain- entity location
-          title: GeoJSON polygon
-          type: object 
-          properties:    
-            bbox:    
-              items:    
-                type: number    
-              minItems: 4    
-              type: array    
-            coordinates:    
-              items:    
-                items:    
-                  items:    
-                    type: number    
-                  minItems: 2    
-                  type: array    
-                minItems: 4    
-                type: array    
-              type: array    
-            type:    
-              enum:    
-                - Polygon    
-              type: string    
-          required:    
-            - type    
-            - coordinates
-      x-ngsi:
-        type: Geoproperty
+              
     type:
       description: NGSI entity type for -Terrain-
       enum:
         - Terrain
       type: string
       x-ngsi:
-        type: Property
-    ownerName:
-      description: Owner name
-      type: string
-      x-ngsi:
-        type: Property         
-    specification:
+        type: Property     
+    
+    terrainSpecs:
       description: Description of relevant terrain characteristics
-      type: string
-      x-ngsi:
-        type: Property
+      type: object
+      title: Specifications
+      properties:
+            location:    
+              description: Geographic location of a -Terrain- in point or polygon format
+              oneOf:
+                - description: Geojson point format for the -Terrain- entity location 
+                  title: 'GeoJSON Point'    
+                  type: object    
+                  properties:    
+                    bbox:
+                      items:    
+                        type: number    
+                      minItems: 4    
+                      type: array    
+                    coordinates:    
+                      items:    
+                        type: number    
+                      minItems: 2    
+                      type: array    
+                    type:    
+                      enum:    
+                        - Point    
+                      type: string
+                  required:    
+                    - type    
+                    - coordinates    
+                - description: Geojson polygon format for the -Terrain- entity location
+                  title: GeoJSON polygon
+                  type: object 
+                  properties:    
+                    bbox:    
+                      items:    
+                        type: number    
+                      minItems: 4    
+                      type: array    
+                    coordinates:    
+                      items:    
+                        items:    
+                          items:    
+                            type: number    
+                          minItems: 2    
+                          type: array    
+                        minItems: 4    
+                        type: array    
+                      type: array    
+                    type:    
+                      enum:    
+                        - Polygon    
+                      type: string    
+                  required:    
+                    - type    
+                    - coordinates
+              x-ngsi:
+                type: Geoproperty
+                
+            nearestLocation:
+              description: Name of the nearest locality
+              type: string
+              x-ngsi:
+                model: https://schema.org/location
+                type: Property
+                
+            terrainArea:
+              description: Terrain area (ha)
+              minimum: 0
+              x-ngsi:
+                units: HAR
+                type: Property           
+           
+            aditionalNotes:
+              description: Aditioal notes regarding the terrain
+              type: string
+              x-ngsi:
+                type: Property
+
+    address:
+      description: The owner address
+      type: object
+      title: Address
+      properties:
+        ownerName:
+          description: Owner name
+          type: string
+          x-ngsi:
+            model: https://schema.org/givenName
+            type: Property 
+        streetAddress:
+          description: Street name
+          type: string         
+          example: Rua de São Bento
+          x-ngsi:
+            model: https://schema.org/streetAddress
+            type: Property
+        postalCode:
+          description: Postal code
+          type: string
+          example: 5360-068
+          x-ngsi:
+            model: https://schema.org/postalCode
+            type: Property              
+        addressLocality:
+          description: Adress locality
+          type: string
+          example: Mirandela
+          x-ngsi:
+            model: https://schema.org/addressLocality
+            type: Property             
+        addressCountry:
+          description: Address country
+          type: string
+          example: Portugal
+          x-ngsi:
+            model: https://schema.org/addressCountry
+            type: Property
+         telephone:
+          description: Owner telephone
+          type: string
+          example: (+351) 930 000 000
+          x-ngsi:
+            model: https://schema.org/telephone
+            type: Property
+        email:
+          description: Owner email
+          type: string
+          example: "exemplo@mail.pt"
+          x-ngsi:
+            model: https://schema.org/email
+            type: Property            
