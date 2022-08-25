@@ -3,27 +3,65 @@
   
   "type": "Terrain",
   
-  "location": {
-    "type": "GeoProperty",
-    "value": {
-      "type": "Point",
-      "coordinates": [41.488698, -7.248216]
-    }
-  }, 
-
-  "ownerName": {
+  "terrainSpecs": {
     "type": "Property",
-    "value": "Nome do dono do terreno"
+    "value": {
+      "location": {
+        "type": "GeoProperty",
+        "value": {
+          "type": "Point",
+          "coordinates": [41.488698, -7.248216]
+        }
+      },
+      "nearestLocation": {
+        "type": "Property",
+        "value": "Mirandela"
+      },
+      "terrainArea": {
+        "type": "Property",
+        "value": 2.5
+      },
+      "aditionalNotes": {
+        "type": "Property",
+        "value": "Terreno em Suçães com plantação de oliveiras"
+      }
   },
 
-  "specification": {
+  "address": {
     "type": "Property",
-    "value": "Terreno localizado perto de Mirandela"
+    "value": {
+      "ownerName": {
+        "type": "Property",
+        "value": "---"
+      },
+      "streetAddress": {
+        "type": "Property",
+        "value": "---"
+      },
+      "postalCode": {
+        "type": "Property",
+        "value": "XXXX-XXX"
+      },
+      "addressLocality": {
+        "type": "Property",
+        "value": "---"
+      },
+      "addressCountry": {
+        "type": "Property",
+        "value": "Portugal"
+      },
+      "telephone": {
+        "type": "Property",
+        "value": "(+351) 930 000 000"
+      },
+      "email": {
+        "type": "Property",
+        "value": "exemplo@mail.pt"
+      }
   },
  
   "@context": [
-  "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-  "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Terrain/Context/context-normalized.jsonld"
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Terrain/Context/context-normalized.jsonld"
   ]
-
 }
