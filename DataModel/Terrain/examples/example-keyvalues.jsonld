@@ -14,7 +14,7 @@
     "ownerName": "---",
     "streetAddress": "---",
     "postalCode": "XXXX-XXX",
-    "addressLocalitty": "Mirandela",
+    "addressLocality": "Mirandela",
     "addressCountry": "Portugal",
     "telephone": "(+351) 930 000 000",
     "email": "exemplo@mail.pt"
