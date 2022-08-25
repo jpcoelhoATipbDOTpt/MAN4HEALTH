@@ -1,12 +1,27 @@
 {
   "id": "urn:ngsi-ld:Terrain:T001",
   "type": "Terrain",
-  "location": {
-    "coordinates": [41.488698, -7.248216],
-    "type": "Point"
-  },
+  "terrainSpecs": {
+    "location": {
+      "coordinates": [41.488698, -7.248216],
+      "type": "Point"
+    },
+    "nearestLocation": "Mirandela",
+    "terrainArea": 1.5,
+    "aditionalNotes": "Terreno perto de Suçães, Mirandela, com plantação de oliveiras"
+  }
   "ownerName": "Nome do dono do terreno",
   "specification":"Terreno localizado perto de Mirandela",
+  "address": {
+    "ownerName": "---",
+    "streetAddress": "---",
+    "postalCode": "XXXX-XXX",
+    "addressLocalitty": "Mirandela",
+    "addressCountry": "Portugal",
+    "telephone": "(+351) 930 000 000",
+    "email": "exemplo@mail.pt"
+  },
+  
   "@context": [
   "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
   "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Terrain/Context/context-keyvalues.jsonld"
