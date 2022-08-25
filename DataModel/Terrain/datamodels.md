@@ -4,16 +4,13 @@ Entity that represent a farmland
 -  `id`: Unique identifier of the entity
    -  Attribute type: **Property**. 
    -  Required
--  `location`: Geographic location of a -Terrain- in point or polygon format
-   -  Attribute type: **Geoproperty**. 
-   -  Required
 -  `type`: NGSI entity type for -Terrain-. One of : `Terrain`.
    -  Attribute type: **Property**. 
    -  Required
--  `ownerName`: Owner name
+-  `terrainSpecs`: Description of relevant terrain characteristics
    -  Attribute type: **Property**. 
    -  Optional
--  `specification`: Description of relevant terrain characteristics
+-  `address`: The owner address
    -  Attribute type: **Property**. 
    -  Optional
 
@@ -29,17 +26,31 @@ Entity that represent a farmland
 ```json
 [
     {
-        "id": "urn:ngsi-ld:Terrain:AWQ2FrqwT",
+        "id": "urn:ngsi-ld:Terrain:T001",
         "type": "Terrain",
-        "location": {
-            "coordinates": [
-                41.488698,
-                -7.248216
-            ],
-            "type": "Point"
+        "terrainSpecs": {
+            "location": {
+                "coordinates": [
+                    41.488698,
+                    -7.248216
+                ],
+                "type": "Point"
+            },
+            "nearestLocation": "Mirandela",
+            "terrainArea": 1.5,
+            "aditionalNotes": "Terreno perto de Suçães, Mirandela, com plantação de oliveiras"
         },
         "ownerName": "Nome do dono do terreno",
         "specification": "Terreno localizado perto de Mirandela",
+        "address": {
+            "ownerName": "---",
+            "streetAddress": "---",
+            "postalCode": "XXXX-XXX",
+            "addressLocalitty": "Mirandela",
+            "addressCountry": "Portugal",
+            "telephone": "(+351) 930 000 000",
+            "email": "exemplo@mail.pt"
+        },
         "@context": [
             "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
             "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Terrain/Context/context-keyvalues.jsonld"
@@ -53,25 +64,67 @@ Entity that represent a farmland
 ```json
 [
     {
-        "id": "urn:ngsi-ld:Parcel:a1",
-        "type": "Parcel",
-        "location": {
-            "type": "geo:json",
+        "id": "urn:ngsi-ld:Terrain:T001",
+        "type": "Terrain",
+        "terrainSpecs": {
+            "type": "Property",
             "value": {
-                "type": "Point",
-                "coordinates": [
-                    41.488698,
-                    -7.248216
-                ]
+                "location": {
+                    "type": "GeoProperty",
+                    "value": {
+                        "type": "Point",
+                        "coordinates": [
+                            41.488698,
+                            -7.248216
+                        ]
+                    }
+                },
+                "nearestLocation": {
+                    "type": "Property",
+                    "value": "Mirandela"
+                },
+                "terrainArea": {
+                    "type": "Property",
+                    "value": 2.5
+                },
+                "aditionalNotes": {
+                    "type": "Property",
+                    "value": "Terreno em Suçães com plantação de oliveiras"
+                }
             }
         },
-        "ownerName": {
+        "address": {
             "type": "Property",
-            "value": "Nome do dono do terreno"
-        },
-        "specification": {
-            "type": "Property",
-            "value": "Terreno localizado perto de Mirandela"
+            "value": {
+                "ownerName": {
+                    "type": "Property",
+                    "value": "---"
+                },
+                "streetAddress": {
+                    "type": "Property",
+                    "value": "---"
+                },
+                "postalCode": {
+                    "type": "Property",
+                    "value": "XXXX-XXX"
+                },
+                "addressLocality": {
+                    "type": "Property",
+                    "value": "---"
+                },
+                "addressCountry": {
+                    "type": "Property",
+                    "value": "Portugal"
+                },
+                "telephone": {
+                    "type": "Property",
+                    "value": "(+351) 930 000 000"
+                },
+                "email": {
+                    "type": "Property",
+                    "value": "exemplo@mail.pt"
+                }
+            }
         },
         "@context": [
             "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
