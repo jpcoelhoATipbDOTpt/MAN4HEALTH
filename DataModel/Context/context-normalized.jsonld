@@ -10,6 +10,10 @@
         "Parcel": "fiware:Parcel",
         "Terrain": "fiware:Terrain",
         "abp": "fiware:abp",
+        "address": "fiware:address",
+        "addressCountry": "fiware:addressCountry",
+        "addressLocality": "fiware:addressLocality",
+        "aditionalNotes": "fiware:aditionalNotes",
         "battery": "fiware:battery",
         "batteryCharge": "fiware:batteryCharge",
         "batteryDetails": "fiware:batteryDetails",
@@ -18,6 +22,7 @@
         "dateInstalled": "fiware:dateInstalled",
         "dateObserved": "fiware:dateObserved",
         "dephtOrAltitude": "fiware:dephtOrAltitude",
+        "email": "fiware:email",
         "firmwareVersion": "fiware:firmwareVersion",
         "hardware": "fiware:hardware",
         "hardwareVersion": "fiware:hardwareVersion",
@@ -25,12 +30,18 @@
         "measuredValue": "fiware:measuredValue",
         "measuringMedium": "fiware:measuringMedium",
         "moisture": "fiware:moisture",
+        "nearestLocation": "fiware:nearestLocation",
         "ownerName": "fiware:ownerName",
+        "postalCode": "fiware:postalCode",
         "refDevice": "fiware:refDevice",
         "refParcel": "fiware:refParcel",
         "refTerrain": "fiware:refTerrain",
         "rssi": "fiware:rssi",
         "specification": "fiware:specification",
-        "temperature": "fiware:temperature"
+        "streetAddress": "fiware:streetAddress",
+        "telephone": "fiware:telephone",
+        "temperature": "fiware:temperature",
+        "terrainArea": "fiware:terrainArea",
+        "terrainSpecs": "fiware:terrainSpecs"
     }
 }
