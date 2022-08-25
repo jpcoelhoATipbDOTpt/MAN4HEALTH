@@ -25,6 +25,7 @@
         "type": "Property",
         "value": "Terreno em Suçães com plantação de oliveiras"
       }
+    }
   },
 
   "address": {
@@ -58,6 +59,7 @@
         "type": "Property",
         "value": "exemplo@mail.pt"
       }
+    }
   },
  
   "@context": [
