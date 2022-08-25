@@ -148,7 +148,7 @@ Terrain:
           x-ngsi:
             model: https://schema.org/addressCountry
             type: Property
-         telephone:
+        telephone:
           description: Owner telephone
           type: string
           example: (+351) 930 000 000
@@ -158,7 +158,7 @@ Terrain:
         email:
           description: Owner email
           type: string
-          example: "exemplo@mail.pt"
+          example: exemplo@mail.pt
           x-ngsi:
             model: https://schema.org/email
             type: Property            
