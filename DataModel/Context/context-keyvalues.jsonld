@@ -18,6 +18,19 @@
             "@id": "fiware:abp",
             "@type": "xsd:undefined"
         },
+        "address": "fiware:address",
+        "addressCountry": {
+            "@id": "fiware:addressCountry",
+            "@type": "xsd:string"
+        },
+        "addressLocality": {
+            "@id": "fiware:addressLocality",
+            "@type": "xsd:string"
+        },
+        "aditionalNotes": {
+            "@id": "fiware:aditionalNotes",
+            "@type": "xsd:string"
+        },
         "battery": "fiware:battery",
         "batteryCharge": {
             "@id": "fiware:batteryCharge",
@@ -44,6 +57,10 @@
             "@id": "fiware:dephtOrAltitude",
             "@type": "xsd:number"
         },
+        "email": {
+            "@id": "fiware:email",
+            "@type": "xsd:string"
+        },
         "firmwareVersion": {
             "@id": "fiware:firmwareVersion",
             "@type": "xsd:string"
@@ -63,8 +80,16 @@
             "@type": "xsd:array"
         },
         "moisture": "fiware:moisture",
+        "nearestLocation": {
+            "@id": "fiware:nearestLocation",
+            "@type": "xsd:string"
+        },
         "ownerName": {
             "@id": "fiware:ownerName",
+            "@type": "xsd:string"
+        },
+        "postalCode": {
+            "@id": "fiware:postalCode",
             "@type": "xsd:string"
         },
         "refDevice": {
@@ -87,7 +112,20 @@
             "@id": "fiware:specification",
             "@type": "xsd:string"
         },
-        "temperature": "fiware:temperature"
+        "streetAddress": {
+            "@id": "fiware:streetAddress",
+            "@type": "xsd:string"
+        },
+        "telephone": {
+            "@id": "fiware:telephone",
+            "@type": "xsd:string"
+        },
+        "temperature": "fiware:temperature",
+        "terrainArea": {
+            "@id": "fiware:terrainArea",
+            "@type": "xsd:undefined"
+        },
+        "terrainSpecs": "fiware:terrainSpecs"
     },
     "@graph": [
         {
@@ -240,39 +278,7 @@
             ]
         },
         {
-            "@id": "fiware:location",
-            "@type": "ngsi-ld:Geoproperty",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Geographic location of a -Terrain- in point or polygon format"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "location"
-                }
-            ]
-        },
-        {
-            "@id": "fiware:ownerName",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Owner name"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "ownerName"
-                }
-            ]
-        },
-        {
-            "@id": "fiware:specification",
+            "@id": "fiware:terrainSpecs",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -283,7 +289,23 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "specification"
+                    "@value": "terrainSpecs"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:address",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The owner address"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "address"
                 }
             ]
         },
