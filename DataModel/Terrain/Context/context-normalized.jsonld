@@ -6,7 +6,18 @@
         "fiware": "https://uri.fiware.org/ns/data-models#",
         "schema": "https://schema.org/",
         "Terrain": "fiware:Terrain",
+        "address": "fiware:address",
+        "addressCountry": "fiware:addressCountry",
+        "addressLocality": "fiware:addressLocality",
+        "aditionalNotes": "fiware:aditionalNotes",
+        "email": "fiware:email",
+        "nearestLocation": "fiware:nearestLocation",
         "ownerName": "fiware:ownerName",
-        "specification": "fiware:specification"
+        "postalCode": "fiware:postalCode",
+        "streetAddress": "fiware:streetAddress",
+        "telephone": "fiware:telephone",
+        "terrainArea": "fiware:terrainArea",
+        "terrainSpecs": "fiware:terrainSpecs"
     }
 }
+
