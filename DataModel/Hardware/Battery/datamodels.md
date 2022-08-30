@@ -60,7 +60,7 @@ Defines the battery status of a given -Device-
             "type": "Property",
             "value": 0.8
         },
-        "observationDateTime": {
+        "dateObserved": {
             "type": "Property",
             "value": {
                 "@type": "DateTime",
@@ -68,13 +68,16 @@ Defines the battery status of a given -Device-
             }
         },
         "batteryDetails": {
-            "batteryTechnology": {
-                "type": "Property",
-                "value": "LiIon"
-            },
-            "batteryCharge": {
-                "type": "Property",
-                "value": 2200
+            "type": "Property",
+            "value": {
+               "batteryTechnology": {
+                   "type": "Property",
+                   "value": "LiIon"
+               },
+               "batteryCharge": {
+                   "type": "Property",
+                   "value": 2200
+               }
             }
         },
         "refDevice": {
