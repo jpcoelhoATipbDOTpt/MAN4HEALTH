@@ -69,12 +69,9 @@ Defines a given humidity sensor to be used in a -Device-
             "type": "Property",
             "value": 45
         },
-        "observationDateTime": {
+        "dateObserved": {
             "type": "Property",
-            "value": {
-                "@type": "DateTime",
-                "@value": "2022-08-12T07:58:07+00:00"
-            }
+            "value": "2022-08-12T07:58:07+00:00"
         },
         "refDevice": {
             "type": "Relationship",
