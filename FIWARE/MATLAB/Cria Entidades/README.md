@@ -1,6 +1,8 @@
 # Script e funções MATLAB 
-## Criação, em lote, de entidades
-Terrain
+## Gera JSON para criação, em lote, de entidades
+ - [create_terrain.m]
+
+
 Parcel
 Device
 LoRa
