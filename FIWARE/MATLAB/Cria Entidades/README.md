@@ -9,6 +9,7 @@ Desenvilvido e testado no Matlab 2018b
 ### Subfunções diversas
  - testOrionBroker.m
  - gera_lote_entidades_orion.m
+ - MyProgressMonitor.m
  
 ### Subfunções para criar entidades
  - create_terrain.m
