@@ -1,3 +1,5 @@
-# 
+# Script e funções MATLAB
 
-## Gestão geral da árvore de entidades
+## Intereface gráfica para gestão elementar da árvore de entidades
+
+### Script principal
