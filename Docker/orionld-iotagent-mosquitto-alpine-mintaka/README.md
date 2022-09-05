@@ -1,4 +1,6 @@
-# Criar container
+# Criar stack FIWARE
+Ver 1.0
+## Utilização:
 ```console
-$ docker-compose up
+$ (sudo) docker-compose up
 ```
