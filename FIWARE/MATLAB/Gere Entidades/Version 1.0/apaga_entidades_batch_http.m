@@ -1,11 +1,11 @@
 function response=apaga_entidades_batch_http(json,caminho)
 
-% Detalhes sobre operações de CRUD podem ser consultados neste site:
+% Detalhes sobre operaÃ§Ãµes de CRUD podem ser consultados neste site:
 % https://ngsi-ld-tutorials.readthedocs.io/en/latest/ngsi-ld-operations.html
-% Em resumo, para criar entidades de forma singular, deve ser feito uma operação POST
+% Em resumo, para criar entidades de forma singular, deve ser feito uma operaÃ§Ã£o POST
 % ao seguinte endpoint:
 % http://localhost:1026/ngsi-ld/v1/entities/
-% Para criar entidades em lote, a operação de POST deve ser drigida ao endpoint:
+% Para criar entidades em lote, a operaÃ§Ã£o de POST deve ser drigida ao endpoint:
 % http://localhost:1026/ngsi-ld/v1/entityOperations/upsert
 
 opt = matlab.net.http.HTTPOptions('ProgressMonitorFcn',@MyProgressMonitor,'UseProgressMonitor',true);
