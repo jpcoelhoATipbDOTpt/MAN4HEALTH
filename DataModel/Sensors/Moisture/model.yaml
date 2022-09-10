@@ -39,7 +39,7 @@ Moisture:
       description: Measured humidity (in percentage)
       type: object
       properties:
-        moistureValue:
+        value:
           anyOf:
           - type: string
           - type: number
