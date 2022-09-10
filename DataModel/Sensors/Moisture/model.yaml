@@ -17,15 +17,15 @@ Moisture:
         - Moisture
       type: string
       x-ngsi:
+        model: https://schema.org/Text
         type: Property        
     measuringMedium:
       description: Define the medium from where the measurement is taken
-      items:
-        enum:
-          - air
-          - soil
-        type: string
-      type: array
+      title: Measuring Medium
+      enum:
+        - air
+        - soil
+      type: string
       x-ngsi:
         model: https://schema.org/Text
         type: Property
