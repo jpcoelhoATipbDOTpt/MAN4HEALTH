@@ -8,9 +8,12 @@
       "type": "Property",
       "value": -85
     },
-    "dateObserved": {
+    "unitCode": {
       "type": "Property",
-      "value": "2022-08-12T07:58:07+00:00"
+      "value": "DBM",
+    "observedAt": {
+      "type": "Property",
+      "value": "2022-08-12T07:58:07+00:00Z"
     }
   }, 
   "abp": {
