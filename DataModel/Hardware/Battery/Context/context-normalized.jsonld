@@ -7,10 +7,11 @@
         "schema": "https://schema.org/",
         "Battery": "fiware:Battery",
         "batteryCharge": "fiware:batteryCharge",
-        "batteryDetails": "fiware:batteryDetails",
         "batteryLevel": "fiware:batteryLevel",
         "batteryTechnology": "fiware:batteryTechnology",
-        "dateObserved": "fiware:dateObserved",
-        "refDevice": "fiware:refDevice"
+        "observedAt": "fiware:observedAt",
+        "refDevice": "fiware:refDevice",
+        "unitCode": "fiware:unitCode",
+        "value": "fiware:value"
     }
 }
