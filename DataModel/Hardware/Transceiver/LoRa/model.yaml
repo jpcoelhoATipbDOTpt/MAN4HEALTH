@@ -1,0 +1,83 @@
+LoRa:
+  title: LoRa
+  type: object
+  description: Defines the LoRA transceiver and protocol associated to a given -Device-
+  properties:
+    id:
+      description: LoR transceiver identifier
+      type: string
+      format: uri
+      example: urn:LoRa:AfGT56Trf
+      x-ngsi:
+        type: Property
+    type:
+      description: NGSI Entity type. It has to be lora
+      title: 'Type'
+      enum:
+        - LoRa
+      type: string
+      x-ngsi:
+        type: Property    
+    rssi:
+      description: Indicate the value of the RSSI (in dBm)
+      title: RSSI
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: DBM
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+              model: https://schema.org/DateTime
+              type: Property
+    abp:
+      description: ABP credentials
+      title: ABP
+      properties:
+        NwkSkey:
+          description: Network session key (16 bytes)
+          title: NwkSkey
+          type: string
+          example: "{0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C}"
+          x-ngsi:
+              type: Text    
+        AppSkey:
+          description: Application session key (16 bytes)
+          title: AppSkey
+          type: string
+          example: "{0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C}"
+          x-ngsi:
+              type: Text
+        DevAddr:
+          description: Device address (4 bytes)
+          title: DevAddr
+          type: string
+          example: "{0x03, 0xFF, 0x00, 0x01}"
+          x-ngsi:
+              type: Text
+    refDevice:
+      description: Reference of the -Device- to which this transceiver belongs.
+      anyOf:
+      - description: Property. Identifier format of any NGSI entity
+        maxLength: 256
+        minLength: 1
+        pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+        type: string
+      - description: Property. Identifier format of any NGSI entity
+        format: uri
+        type: string
+      x-ngsi:
+        type: Relationship       
+  required:
+    - id
+    - type
+    - refDevice
