@@ -4,26 +4,17 @@
     "batteryLevel": {
         "type": "Property",
         "value": 0.8
+        "unitCode"; "P1",
+        "observedAt": "2022-08-12T07:58:07+00:00Z"
     },
-    "dateObserved": {
+    "batteryTechnology": {
         "type": "Property",
-        "value": {
-            "@type": "DateTime",
-            "@value": "2022-08-12T07:58:07+00:00"
-        }
+        "value": "LiIon"
     },
-    "batteryDetails": {
+    "batteryCharge": {
         "type": "Property",
-        "value": {
-            "batteryTechnology": {
-                "type": "Property",
-                "value": "LiIon"
-            },
-            "batteryCharge": {
-                "type": "Property",
-                "value": 2200
-            }
-        }
+        "value": 2200,
+        "unitCode": "E01"
     },
     "refDevice": {
         "type": "Relationship",
