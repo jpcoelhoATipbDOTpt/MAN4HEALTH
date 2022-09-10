@@ -3,6 +3,7 @@
   "type": "LoRa",
   "rssi": {
     "value": -85,
+    "unitCode": "DBM",
     "observedAt": "2022-08-12T07:58:07+00:00Z"
   },
   "abp": {
