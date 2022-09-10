@@ -8,20 +8,21 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "LoRa": "fiware:LoRa",
-        "abp": {
-            "@id": "fiware:abp",
-            "@type": "xsd:undefined"
-        },
-        "dateObserved": {
-            "@id": "fiware:dateObserved",
+        "observedAt": {
+            "@id": "fiware:observedAt",
             "@type": "xs:dateTime"
         },
         "refDevice": {
             "@id": "fiware:refDevice",
             "@type": "@id"
         },
-        "rssi": {
-            "@id": "fiware:rssi",
+        "rssi": "fiware:rssi",
+        "unitCode": {
+            "@id": "fiware:unitCode",
+            "@type": "xsd:string"
+        },
+        "value": {
+            "@id": "fiware:value",
             "@type": "xsd:undefined"
         }
     },
@@ -67,7 +68,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Indicate the value of the RSSI"
+                    "@value": "Indicate the value of the RSSI (in dBm)"
                 }
             ],
             "rdfs:label": [
@@ -78,18 +79,50 @@
             ]
         },
         {
-            "@id": "fiware:abp",
-            "@type": "ngsi-ld:Property",
+            "@id": "fiware:NwkSkey",
+            "@type": "ngsi-ld:Text",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "ABP credentials"
+                    "@value": "Network session key (16 bytes)"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "abp"
+                    "@value": "NwkSkey"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:AppSkey",
+            "@type": "ngsi-ld:Text",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Application session key (16 bytes)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "AppSkey"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:DevAddr",
+            "@type": "ngsi-ld:Text",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Device address (4 bytes)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "DevAddr"
                 }
             ]
         },
