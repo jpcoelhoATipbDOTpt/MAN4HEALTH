@@ -17,16 +17,15 @@ Temperature:
         - Temperature
       type: string
       x-ngsi:
+        model: https://schema.org/Text
         type: Property        
     measuringMedium:
       description: Define tthe medium from where the measurement is taken
-      items:
-        enum:
-          - air
-          - soil
-          - water
-        type: string
-      type: array
+      enum:
+        - air
+        - soil
+        - water
+      type: string
       x-ngsi:
         model: https://schema.org/Text
         type: Property
