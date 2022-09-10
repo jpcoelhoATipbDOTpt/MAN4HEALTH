@@ -3,7 +3,11 @@
   "type": "Moisture",
   "measuringMedium": "soil",
   "dephtOrAltitude": {"value":525,"unitCode":"CMT"},
-  "measuredValue": {"value":45,"unitCode":"P1","observedAt":"2022-08-12T07:58:07+00:00Z"},
+  "measuredValue": {
+    "value":45,
+    "unitCode":"P1",
+    "observedAt":"2022-08-12T07:58:07+00:00Z"
+  },
   "refDevice": "urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q",
   "@context": [
   "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
