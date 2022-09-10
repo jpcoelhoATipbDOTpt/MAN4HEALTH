@@ -9,13 +9,11 @@
         "type": "Property",
         "value": 5
     },
-    "measuredValue": {
+    "measurement": {
         "type": "Property",
-        "value": 45
-    },
-    "dateObserved": {
-        "type": "Property",
-        "value": "2022-08-12T07:58:07+00:00"
+        "value": 65,
+        "unitCode": "P1"
+        "observedAt": "2022-08-12T07:58:07+00:00Z"            
     },
     "refDevice": {
         "type": "Relationship",
