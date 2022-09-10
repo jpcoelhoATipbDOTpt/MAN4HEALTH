@@ -7,8 +7,8 @@
     },
     "dephtOrAltitude": {
         "type": "Property",
-        "value": 525
-        "unitCode": "CMT",
+        "value": 525,
+        "unitCode": "CMT"
     },
     "measurementValue": {
         "type": "Property",
