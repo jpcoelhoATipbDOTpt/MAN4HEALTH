@@ -5,11 +5,14 @@
         "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
         "fiware": "https://uri.fiware.org/ns/data-models#",
         "schema": "https://schema.org/",
-        "dateObserved": "fiware:dateObserved",
+        "Temperature": "fiware:Temperature",
         "dephtOrAltitude": "fiware:dephtOrAltitude",
-        "measuredValue": "fiware:measuredValue",
+        "measurementValue": "fiware:measurementValue",
         "measuringMedium": "fiware:measuringMedium",
+        "observedAt": "fiware:observedAt",
         "refDevice": "fiware:refDevice",
-        "Temperature": "fiware:Temperature"
+        "unitCode": "fiware:unitCode",
+        "value": "fiware:value"
     }
 }
+
