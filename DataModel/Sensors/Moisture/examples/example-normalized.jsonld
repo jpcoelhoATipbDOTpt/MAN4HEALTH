@@ -9,7 +9,7 @@
         "type": "Property",
         "value": 5
     },
-    "measurement": {
+    "measurementValue": {
         "type": "Property",
         "value": 65,
         "unitCode": "P1"
