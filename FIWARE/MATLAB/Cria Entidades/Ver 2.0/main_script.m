@@ -146,7 +146,7 @@ for ntrn=1:nterrain
             end
             
             if(terrain(ntrn).parcel(nprcl).device(ndev).bateria.tipo)
-                [terrain(ntrn).parcel(nprcl).device(ndev).bateria.id,terrain(ntrn).parcel(nprcl).device(ndev).bateria.json]=create_bateria(terrain(ntrn).parcel(nprcl).device(ndev).id);
+                [terrain(ntrn).parcel(nprcl).device(ndev).bateria.id,terrain(ntrn).parcel(nprcl).device(ndev).bateria.json]=create_battery(terrain(ntrn).parcel(nprcl).device(ndev).id);
                  tmp = tmp + terrain(ntrn).parcel(nprcl).device(ndev).bateria.json + ", ";
             end
             
@@ -154,8 +154,11 @@ for ntrn=1:nterrain
             for nsens=1:terrain(ntrn).parcel(nprcl).device(ndev).sensor.nsensor
                 switch terrain(ntrn).parcel(nprcl).device(ndev).sensor.type(nsens)
                     case 'Moisture'
-                        [terrain(ntrn).parcel(nprcl).device(ndev).sensor.id(nsens),terrain(ntrn).parcel(nprcl).device(ndev).sensor.json(nsens,:)]=create_moisture(terrain(ntrn).parcel(nprcl).device(ndev).id);
-                        tmp = tmp + terrain(ntrn).parcel(nprcl).device(ndev).sensor.json(nsens,:) + ", ";
+                        [terrain(ntrn).parcel(nprcl).device(ndev).sensor(nsens).id,terrain(ntrn).parcel(nprcl).device(ndev).sensor(nsens).json]=create_moisture(terrain(ntrn).parcel(nprcl).device(ndev).id);
+                        tmp = tmp + terrain(ntrn).parcel(nprcl).device(ndev).sensor(nsens).json + ", ";
+                    case 'Temperature'
+                        [terrain(ntrn).parcel(nprcl).device(ndev).sensor(nsens).id,terrain(ntrn).parcel(nprcl).device(ndev).sensor(nsens).json]=create_temperature(terrain(ntrn).parcel(nprcl).device(ndev).id);
+                        tmp = tmp + terrain(ntrn).parcel(nprcl).device(ndev).sensor(nsens).json + ", ";                        
                     otherwise
                         disp('Em construção');
                 end

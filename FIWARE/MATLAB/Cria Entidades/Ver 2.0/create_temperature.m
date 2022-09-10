@@ -48,7 +48,7 @@ end
 
 function [id]=generateTemperatureAddr(array)
 
-id = "urn:ngsi-ld:Moisture:";
+id = "urn:ngsi-ld:Temperature:";
 for j=1:8
     val=randi(length(array),1,1);
     id=id+array(val);
