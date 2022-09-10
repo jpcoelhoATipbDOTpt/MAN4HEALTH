@@ -32,15 +32,16 @@ Moisture:
     dephtOrAltitude:
       description: Defines the depth or altitude at which the measurement is taken (in centimeters)
       type: object
-         value:
+      properties:
+        value:
           anyOf:
           - type: string
           - type: number   
           x-ngsi:
-            type: Property
-            units: CMT
-          unitCode:
-            type: string  
+          type: Property
+          units: CMT
+        unitCode:
+          type: string  
     measurementValue:
       description: Measured humidity (in percentage)
       type: object
