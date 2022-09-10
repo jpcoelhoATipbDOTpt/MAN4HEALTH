@@ -1,18 +1,18 @@
 Battery:
   title: Battery
   type: object
-  description: Defines the battery status of a given -Device-
+  description: Defines the battery status of a given -Battery-
   properties:
     id:
       description: Battery identifier
       type: string
       title: ID
       format: uri
-      example: urn:device:hardware:battery:battery_number_id
+      example: urn:ngsi-ld:Battery:battery_number_id
       x-ngsi:
         type: Property
     type:
-      description: 'NGSI Entity type. It has to be battery'
+      description: NGSI Entity type. It has to be battery
       title: 'Type'
       enum:
         - Battery
@@ -26,7 +26,7 @@ Battery:
       properties:
         value:
           oneOf:
-          - maximum: 100
+          - maximum: 1
             minimum: 0
             type: number
           - maximum: -1
@@ -45,37 +45,38 @@ Battery:
           x-ngsi:
               model: https://schema.org/DateTime
               type: Property      
-    batteryDetails:
-        description: Technical details about the batteries
+    batteryTechnology:
+      description: Battery technology
+      title: Battery technology
+      type: string
+      enum:
+          - LiPo
+          - LiIon
+          - LiFePO
+          - NiCd
+          - NiMH
+          - Lead-Acid
+          - Non-recheargeable
+          - Other
+      example: LiPo
+      x-ngsi:
+          model: https://schema.org/Text
+          type: Property              
+    batteryCharge:
+        description: Battery charge value expressed in mAh. In the case of battery packs, this is the charge sum of all batteries in the pack.
+        title: Battery Charge (mAh)
         type: object
-        title: Battery Details
         properties:
-          batteryTechnology:
-              description: Battery technology
-              title: Battery technology
-              type: string
-              enum:
-                  - LiPo
-                  - LiIon
-                  - LiFePO
-                  - NiCd
-                  - NiMH
-                  - Lead-Acid
-                  - Non-recheargeable
-                  - Other
-              example: LiPo
-              x-ngsi:
-                  model: https://schema.org/Text
-                  type: Property              
-          batteryCharge:
-              description: Battery charge value expressed in mAh. In the case of battery packs, this is the charge sum of all batteries in the pack.
-              title: Battery Charge (mAh)
-              type: number
-              minimum: 0
-              example: 2300
-              x-ngsi:
-                  model: https://schema.org/Number
-                  units: E09
+          value:
+            minimum: 0
+            example: 2300
+            type: number
+            x-ngsi:
+              model: https://schema.org/Number
+              type: Property        
+              units: E09
+          unitCode:
+            type: string
     refDevice:
       title: Reference to -Device-
       description: Reference of the -Device- to which this sensor belongs.
