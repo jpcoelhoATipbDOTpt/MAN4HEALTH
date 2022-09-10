@@ -7,27 +7,29 @@
         "schema": "https://schema.org/",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "dateObserved": {
-            "@id": "fiware:dateObserved",
-            "@type": "xs:dateTime"
-        },
-        "dephtOrAltitude": {
-            "@id": "fiware:dephtOrAltitude",
-            "@type": "xsd:number"
-        },
-        "measuredValue": {
-            "@id": "fiware:measuredValue",
-            "@type": "xsd:number"
-        },
+        "Temperature": "fiware:Temperature",
+        "dephtOrAltitude": "fiware:dephtOrAltitude",
+        "measurementValue": "fiware:measurementValue",
         "measuringMedium": {
             "@id": "fiware:measuringMedium",
-            "@type": "xsd:array"
+            "@type": "xsd:string"
+        },
+        "observedAt": {
+            "@id": "fiware:observedAt",
+            "@type": "xs:dateTime"
         },
         "refDevice": {
             "@id": "fiware:refDevice",
             "@type": "@id"
         },
-        "Temperature": "fiware:Temperature"
+        "unitCode": {
+            "@id": "fiware:unitCode",
+            "@type": "xsd:string"
+        },
+        "value": {
+            "@id": "fiware:value",
+            "@type": "xsd:undefined"
+        }
     },
     "@graph": [
         {
@@ -42,7 +44,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "temperature"
+                    "@value": "Temperature"
                 }
             ],
             "rdfs:subClassOf": {
@@ -66,22 +68,6 @@
             ]
         },
         {
-            "@id": "fiware:measuringMedium",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Define tthe medium from where the measurement is taken"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "measuringMedium"
-                }
-            ]
-        },
-        {
             "@id": "fiware:dephtOrAltitude",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -98,7 +84,7 @@
             ]
         },
         {
-            "@id": "fiware:measuredValue",
+            "@id": "fiware:measurementValue",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -109,23 +95,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "measuredValue"
-                }
-            ]
-        },
-        {
-            "@id": "fiware:dateObserved",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "The date and time of this observation as defined by RFC 3339."
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "dateObserved"
+                    "@value": "measurementValue"
                 }
             ]
         },
