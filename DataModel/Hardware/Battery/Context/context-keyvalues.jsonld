@@ -8,26 +8,27 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "Battery": "fiware:Battery",
-        "batteryCharge": {
-            "@id": "fiware:batteryCharge",
-            "@type": "xsd:number"
-        },
-        "batteryDetails": "fiware:batteryDetails",
-        "batteryLevel": {
-            "@id": "fiware:batteryLevel",
-            "@type": "xsd:undefined"
-        },
+        "batteryCharge": "fiware:batteryCharge",
+        "batteryLevel": "fiware:batteryLevel",
         "batteryTechnology": {
             "@id": "fiware:batteryTechnology",
             "@type": "xsd:string"
         },
-        "dateObserved": {
-            "@id": "fiware:dateObserved",
+        "observedAt": {
+            "@id": "fiware:observedAt",
             "@type": "xs:dateTime"
         },
         "refDevice": {
             "@id": "fiware:refDevice",
             "@type": "@id"
+        },
+        "unitCode": {
+            "@id": "fiware:unitCode",
+            "@type": "xsd:string"
+        },
+        "value": {
+            "@id": "fiware:value",
+            "@type": "xsd:number"
         }
     },
     "@graph": [
@@ -37,7 +38,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Defines the battery status of a given -Device-"
+                    "@value": "Defines the battery status of a given -Battery-"
                 }
             ],
             "rdfs:label": [
@@ -83,34 +84,18 @@
             ]
         },
         {
-            "@id": "fiware:dateObserved",
+            "@id": "fiware:batteryCharge",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "The date and time of this observation as defined by RFC 3339."
+                    "@value": "Battery charge value expressed in mAh. In the case of battery packs, this is the charge sum of all batteries in the pack."
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "dateObserved"
-                }
-            ]
-        },
-        {
-            "@id": "fiware:batteryDetails",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Technical details about the batteries"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "batteryDetails"
+                    "@value": "batteryCharge"
                 }
             ]
         },
