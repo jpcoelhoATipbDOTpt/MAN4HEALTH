@@ -1,0 +1,75 @@
+Moisture:
+  title: Moisture
+  type: object
+  description: Defines a given humidity sensor to be used in a -Device-
+  properties:
+    id:
+      description: Sensor identifier
+      type: string
+      format: uri
+      example: urn:ngsi-ld:Moisture:AF95DdfR5
+      x-ngsi:
+        type: Property
+    type:
+      description: NGSI Entity type. It has to be moisture
+      title: Type
+      enum:
+        - Moisture
+      type: string
+      x-ngsi:
+        type: Property        
+    measuringMedium:
+      description: Define the medium from where the measurement is taken
+      items:
+        enum:
+          - air
+          - soil
+        type: string
+      type: array
+      x-ngsi:
+        model: https://schema.org/Text
+        type: Property
+    dephtOrAltitude:
+      description: Defines the depth or altitude at which the measurement is taken (in centimeters)
+      type: number
+      x-ngsi:
+        type: Property
+        units: CMT     
+    measuredValue:
+      description: Measured humidity (in percentage)
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: P1
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+              model: https://schema.org/DateTime
+              type: Property
+              
+    refDevice:
+      description: Reference of the -Device- to which this sensor belongs.
+      anyOf:
+      - description: Identifier format of any NGSI entity
+        maxLength: 256
+        minLength: 1
+        pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+        type: string
+      - description: Identifier format of any NGSI entity
+        format: uri
+        type: string
+      x-ngsi:
+        type: Relationship       
+  required:
+    - id
+    - type
+    - refDevice
