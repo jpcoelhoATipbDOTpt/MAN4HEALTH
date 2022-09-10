@@ -8,17 +8,13 @@
     "dephtOrAltitude": {
         "type": "Property",
         "value": 525
+        "unitCode": "CMT",
     },
-    "measuredValue": {
+    "measurementValue": {
         "type": "Property",
-        "value": -2
-    },
-    "observationDateTime": {
-        "type": "Property",
-        "value": {
-            "@type": "DateTime",
-            "@value": "2022-08-12T07:58:07+00:00"
-        }
+        "value": -2,
+        "unitCode": "CEL",
+        "observedAt": "2022-08-12T07:58:07+00:00Z"
     },
     "refDevice": {
         "type": "Relationship",
