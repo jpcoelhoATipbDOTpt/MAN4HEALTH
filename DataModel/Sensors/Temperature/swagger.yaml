@@ -7,7 +7,7 @@ openapi: 3.0.0
 info:
   title: DataModel/Sensors/Temperature@MAN4HEALTH
   description: Modelo de dados da entidade "Temperature Sensor"
-  version: 0.0.1
+  version: 1.0.1
   contact:
     name: New management strategies in olive groves for improving soil health and crop yield
     url: https://man4health.ipb.pt/
