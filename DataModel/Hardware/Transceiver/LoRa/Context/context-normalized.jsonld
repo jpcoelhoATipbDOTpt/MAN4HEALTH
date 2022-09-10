@@ -6,9 +6,11 @@
         "fiware": "https://uri.fiware.org/ns/data-models#",
         "schema": "https://schema.org/",
         "LoRa": "fiware:LoRa",
-        "abp": "fiware:abp",
-        "dateObserved": "fiware:dateObserved",
+        "observedAt": "fiware:observedAt",
         "refDevice": "fiware:refDevice",
-        "rssi": "fiware:rssi"
+        "rssi": "fiware:rssi",
+        "unitCode": "fiware:unitCode",
+        "value": "fiware:value"
     }
 }
+
