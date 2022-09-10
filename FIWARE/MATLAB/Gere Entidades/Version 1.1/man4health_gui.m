@@ -152,7 +152,8 @@ y=get(handles.terrain,'Value');
 x=get(handles.terrain,'String');
 urn=x(y,:);
 
-delete_tree_terrain(urn);
+host=get(handles.orion_ip_address,'String');
+delete_tree_terrain(host,urn);
 
 set(handles.parcel,'String',"");
 set(handles.parcel,'Value',1);
@@ -179,7 +180,7 @@ set(handles.campos,'String',"");
 set(handles.campos,'Value',1);
 
 
-fp=fopen("TerID.txt",'r');
+fp=fopen(get(handles.load_terrain,'UserData'),'r');
 TextAsCells = textscan(fp, '%s', 'Delimiter', '\n');
 fclose(fp);
 
@@ -606,7 +607,7 @@ function purgeall_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-fp=fopen("TerID.txt",'r');
+fp=fopen(get(handles.load_terrain,'UserData'),'r');
 TextAsCells = textscan(fp, '%s', 'Delimiter', '\n');
 fclose(fp);
 [n_terrain,~]=size(TextAsCells{1});
@@ -643,6 +644,7 @@ else
     TextAsCells = textscan(fp, '%s', 'Delimiter', '\n');
     fclose(fp);
     set(handles.terrain,'String',cell2mat(TextAsCells{1}));
+    set(hObject,'UserData',fullfile(pathname, filename));
 end
 
 function resetAllTextBoxes(handles)

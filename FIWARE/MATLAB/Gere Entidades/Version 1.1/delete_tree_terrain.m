@@ -67,15 +67,54 @@ waitbar(0.8,h)
 apaga_entidades_batch_http(host,urn_char,'/terrain');
 
 % .... Remove entradas no ficheiro TerKeys.txt
-remove_entradas_ficheiro(urn_terrain,"TerID.txt");
+[filename, pathname] = uigetfile('TerID.txt', 'Selecione o ficheiro com os urn dos Terrain');
+if isequal(filename,0) || isequal(pathname,0)
+    err=errordlg('Ficheiro TerID.txt não encontrado.', 'Erro:', 'modal');
+    uiwait(err);
+    resetAllTextBoxes(handles)
+    return
+else
+    nomeFicheiro = fullfile(pathname, filename);
+    remove_entradas_ficheiro(urn_terrain,nomeFicheiro);
+end
+
 % .... Remove entradas no ficheiro ParKeys.txt
-remove_entradas_ficheiro(urn_parcel,"ParID.txt");
-% .... Remove entradas no ficheiro DevKeys.txt
-remove_entradas_ficheiro(urn_device,"DevID.txt");
+[filename, pathname] = uigetfile('ParID.txt', 'Selecione o ficheiro com os urn das Parcel');
+if isequal(filename,0) || isequal(pathname,0)
+    err=errordlg('Ficheiro ParID.txt não encontrado.', 'Erro:', 'modal');
+    uiwait(err);
+    resetAllTextBoxes(handles)
+    return
+else
+    nomeFicheiro = fullfile(pathname, filename);
+    remove_entradas_ficheiro(urn_parcel,nomeFicheiro);
+end
+
+% .... Remove entradas no ficheiro DevID.txt
+[filename, pathname] = uigetfile('DevID.txt', 'Selecione o ficheiro com os urn dos Device');
+if isequal(filename,0) || isequal(pathname,0)
+    err=errordlg('Ficheiro DevID.txt não encontrado.', 'Erro:', 'modal');
+    uiwait(err);
+    resetAllTextBoxes(handles)
+    return
+else
+    nomeFicheiro = fullfile(pathname, filename);
+    remove_entradas_ficheiro(urn_device,nomeFicheiro);
+end
 % .... Remove entradas nos ficheiro de hardware/sensores
 hwr_filename=["LoRaID.txt";"BatID.txt";"MoistureID.txt"];
 for nfile=1:length(hwr_filename)
-    remove_entradas_ficheiro(urn_hardware,hwr_filename(nfile));
+    [filename, pathname] = uigetfile(hwr_filename(nfile), 'Selecione o ficheiro com os urn dos Hardware');
+    if isequal(filename,0) || isequal(pathname,0)
+        err=errordlg('Ficheiro não encontrado.', 'Erro:', 'modal');
+        uiwait(err);
+        resetAllTextBoxes(handles)
+        return
+    else
+        nomeFicheiro = fullfile(pathname, filename);
+        remove_entradas_ficheiro(urn_hardware,nomeFicheiro);
+    end
+    
 end
 
 waitbar(1,h)
