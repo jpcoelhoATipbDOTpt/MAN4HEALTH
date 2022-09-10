@@ -35,7 +35,7 @@ Moisture:
       x-ngsi:
         type: Property
         units: CMT     
-    measurement:
+    measurementValue:
       description: Measured humidity (in percentage)
       type: object
       properties:
