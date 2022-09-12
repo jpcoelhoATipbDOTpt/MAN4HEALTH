@@ -3,11 +3,11 @@
 Ver 2.0
 
 ## Aplicações:
-- orion/ld : 1.1.0
-- iotagent : 1.19.0
+- orion/ld : 1.15.0
+- iotagent : 1.25.0
 - mongo : 4.4
-- mosquitto : 1.6.14
-- alpine
+- mosquitto : 2.0.15
+- alpine [Apache/2.4.54]
 - mintaka : 0.3.28
 - timescale-db : 1.7.5
 
