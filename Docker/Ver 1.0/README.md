@@ -1,4 +1,4 @@
-# Criar stack FIWARE
+# Docker-compose para criar stack FIWARE
 
 Ver 1.0
 
