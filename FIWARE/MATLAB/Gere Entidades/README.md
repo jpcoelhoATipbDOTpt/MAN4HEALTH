@@ -1,6 +1,6 @@
 # Script e funções MATLAB
 
-## Intereface gráfica para gestão elementar da árvore de entidades
+## Interface gráfica para gestão elementar da árvore de entidades
 
 Função principal 'man4health_gui.m'
 
