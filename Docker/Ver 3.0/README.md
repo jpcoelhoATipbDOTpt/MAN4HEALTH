@@ -5,5 +5,5 @@
 
 Estrutura do diretório:
  - docker-compose
-   - mosquitto-conf (colocar o ficheiro mosquitto.conf neste diretório)
-   - data-models (colocar o ficheiro ngsi-context.jsonld)
+   - mosquitto-conf (colocar o ficheiro *mosquitto.conf* neste diretório)
+   - data-models (colocar o ficheiro *ngsi-context.jsonld*)
