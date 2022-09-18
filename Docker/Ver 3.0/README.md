@@ -5,6 +5,5 @@
 
 Estrutura do diretório:
  - docker-compose
-   - mosquitto
-     - config
-       - mosquitto.conf
+   - mosquitto-conf
+   - data-models
