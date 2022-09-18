@@ -110,9 +110,7 @@ services:
         networks:
             - default
         volumes:
-          - mosquitto-data:/mosquitto/data
-          - mosquitto-logs:/mosquitto/logs
-          - mosquitto-conf:/mosquitto/config
+          - ../mosquitto-conf:/mosquitto/config
         restart: always
 
     mintaka:
@@ -170,6 +168,4 @@ volumes:
     mongo-db: ~
     data-models: ~
     timescale-db: ~
-    mosquitto-data:
-    mosquitto-logs:
-    mosquitto-conf:
+    mosquitto-conf: ~
