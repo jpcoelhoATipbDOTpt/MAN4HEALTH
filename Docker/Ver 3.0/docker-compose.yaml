@@ -170,3 +170,6 @@ volumes:
     mongo-db: ~
     data-models: ~
     timescale-db: ~
+    mosquitto-data:
+    mosquitto-logs:
+    mosquitto-conf:
