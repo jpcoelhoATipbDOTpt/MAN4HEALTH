@@ -110,7 +110,9 @@ services:
         networks:
             - default
         volumes:
-            - ./mosquitto/:/mosquitto/:rw
+          - mosquitto-data:/mosquitto/data
+          - mosquitto-logs:/mosquitto/logs
+          - mosquitto-conf:/mosquitto/config
         restart: always
 
     mintaka:
