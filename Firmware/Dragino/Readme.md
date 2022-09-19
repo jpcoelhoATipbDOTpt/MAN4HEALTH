@@ -1,3 +1,3 @@
 # Gateway DRAGINO DSL08
-## Firmware associado à atualização da 
-## Script LUA para processamento dos pacotes LoRa (em construção)
+
+Firmware associado à atualização da gateway e script Lua para processamento dos pacotes LoRa.
