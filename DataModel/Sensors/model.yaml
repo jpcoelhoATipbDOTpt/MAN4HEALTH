@@ -1,35 +1,148 @@
-sensors:
+Sensors:
   title: Sensors
   type: object
-  description: Sensor's description and physical variables
+  description: Masurements from a set of sensors related to a Device
   properties:
     id:
       description: Sensor identifier
       type: string
       format: uri
-      example: urn:organization:process:asset:node:sensorNBR
-      x-ngsi:
-        type: Property    
-    energyConsumption:
-      description: Electrical energy consumed by a given asset/kWh
-      minimum: 0
-      type: number
+      example: urn:ngsi-ld:sensor:sensorNBR
       x-ngsi:
         type: Property
-        units: KWH
-    waterConsumption:
-      description: Water consumption by a given asset within a process (e.g. machine, irrigation line, etc.)/m3
-      minimum: 0
-      type: number
-      x-ngsi:
-        type: Property
-        units: MTQ
-    dateObserved:
-      description: The date and time of this observation as defined by RFC 3339.
+        
+    type:
+      description: NGSI Entity type
+      title: 'Type'
+      enum:
+        - Sensors
       type: string
-      format: date-time
       x-ngsi:
-          model: https://schema.org/DateTime
-          type: Property
+        type: Property
+
+    rssi:
+      description: RSSI in dBm
+      title: RSSI
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: DBM
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+              model: https://schema.org/DateTime
+              type: Property
+              
+    snr:
+      description: SNR in dB
+      title: RSSI
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: DB
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+              model: https://schema.org/DateTime
+              type: Property
+    
+    batteryLevel:
+      description: Battery level (1.0 = full, 0.0 = empty, -1 = indetermined)
+      title: Battery Level
+      type: object
+      properties:
+        value:
+          oneOf:
+          - maximum: 1
+            minimum: 0
+            type: number
+          - maximum: -1
+            minimum: -1
+            type: number
+          x-ngsi:
+            model: https://schema.org/Number
+            type: Property        
+            units: P1
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+              model: https://schema.org/DateTime
+              type: Property
+              
+    airMoisture:
+      description: Air moisture (in percentage)
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: P1
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+              model: https://schema.org/DateTime
+              type: Property           
+              
+              
+              
+              
+              
+
+
+
+
+
+
+
+
+    refDevice:
+      title: Reference to -Device-
+      description: Reference of the -Device- to which this sensor belongs.
+      anyOf:
+      - description: Property. Identifier format of any NGSI entity
+        maxLength: 256
+        minLength: 1
+        pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+        type: string
+      - description: Property. Identifier format of any NGSI entity
+        format: uri
+        type: string
+      x-ngsi:
+        type: Relationship       
   required:
     - id
+    - type
+    - refDevice
+    
+    
+    
+    
