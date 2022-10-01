@@ -1,0 +1,40 @@
+{
+  "id": "urn:ngsi-ld:WeatherStation:SenseCAP01",
+  "type": "WeatherSttation",
+  
+  "airTemperature": {
+    "value": 27.05,
+    "unirCode": "CEL",
+    "observedAt": "2022-08-12T07:58:07+00:00Z"
+  },
+  
+  "airMoisture": {
+    "value": 55.28,
+    "unirCode": "CEL",
+    "observedAt": "2022-08-12T07:58:07+00:00Z"
+  },
+  
+  "atmosphericPressure": {
+    "value": 989.9,
+    "unirCode": "PAL",
+    "observedAt": "2022-08-12T07:58:07+00:00Z"
+  },
+  
+  "solarIlluminance": {
+    "value": 25000,
+    "unirCode": "LUX",
+    "observedAt": "2022-08-12T07:58:07+00:00Z"
+  },
+  
+  "solarIrradiance": {
+    "value": 820,
+    "unirCode": "D54",
+    "observedAt": "2022-08-12T07:58:07+00:00Z"
+  },
+  
+  "refTerrain": "urn:ngsi-ld:Terrain:MRDL01",
+  "@context": [
+  "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+  "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/WeatherStation/Context/context-keyvalues.jsonld"
+  ]
+}
