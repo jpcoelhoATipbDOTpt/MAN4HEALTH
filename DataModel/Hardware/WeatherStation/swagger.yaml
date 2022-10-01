@@ -1,0 +1,55 @@
+# DataModel/Hardware/WeatherStation
+# 2021/2022/2023
+
+openapi: 3.0.0
+
+# Informação sobre o modelo
+info:
+  title: DataModel/Hardware/WeatherStation@MAN4HEALTH
+  description: Weather station data model
+  version: 1.0.1
+  contact:
+    name: New management strategies in olive groves for improving soil health and crop yield
+    url: https://man4health.ipb.pt/
+  
+components:
+  schemas: 
+    Moisture: 
+      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/WeatherStation/model.yaml#/WeatherStation"
+
+paths: 
+  /ngsi-ld/v1/entities: 
+    get: 
+      description: "Retrieve a set of entities which matches a specific query from an NGSI-LD system"
+      parameters: 
+        - 
+          in: query
+          name: type
+          required: true
+          schema: 
+            enum: 
+              - WeatherStation
+            type: string
+      responses: 
+        ? "200"
+        : 
+          content: 
+            application/ld+json: 
+              examples: 
+                keyvalues: 
+                  summary: "Key-Values Pairs"
+                  value: 
+                    - 
+                      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/WeatherStation/examples/example-keyvalues.jsonld"
+                normalized: 
+                  summary: "Normalized NGSI-LD"
+                  value: 
+                    - 
+                      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DDataModel/Hardware/WeatherStation/examples/example-normalized.jsonld"
+          description: OK
+      tags: 
+        - ngsi-ld
+tags: 
+  - 
+    description: "NGSI-LD Linked-data Format"
+    name: ngsi-ld
