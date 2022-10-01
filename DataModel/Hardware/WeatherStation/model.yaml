@@ -1,0 +1,150 @@
+WeatherStation:
+  title: Weather Station
+  type: object
+  description: Masurements obtained from a weather station
+  properties:
+    id:
+      description: Weather Station ID
+      type: string
+      format: uri
+      example: urn:ngsi-ld:WeatherSttation:SenseCAP01
+      x-ngsi:
+        type: Property
+        
+    type:
+      description: NGSI Entity type
+      title: 'Type'
+      enum:
+        - WeatherStation
+      type: string
+      x-ngsi:
+        type: Property
+  
+   airTemperature:
+      description: Air temperature (in degree Celsius)
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: CEL
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+              model: https://schema.org/DateTime
+              type: Property
+              
+    airMoisture:
+      description: Air moisture (in percentage)
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: P1
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+              model: https://schema.org/DateTime
+              type: Property           
+              
+    atmosphericPressure:
+      description: Atmospheric Pressure (in Pa)
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: PAL
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+              model: https://schema.org/DateTime
+              type: Property                
+              
+    solarIlluminance:
+      description: Solar illuminance (in Lux)
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: LUX
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+              model: https://schema.org/DateTime
+              type: Property                
+              
+    solarIrradiance:
+      description: Esttimated solar irradiance from illuminance (in W/m2)
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: D54
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+              model: https://schema.org/DateTime
+              type: Property  
+
+    refTerrain:
+      title: Reference to -Terrain-
+      description: Reference of the -Terrain- to which this sensor belongs.
+      anyOf:
+      - description: Property. Identifier format of any NGSI entity
+        maxLength: 256
+        minLength: 1
+        pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+        type: string
+      - description: Property. Identifier format of any NGSI entity
+        format: uri
+        type: string
+      x-ngsi:
+        type: Relationship
+        
+  required:
+    - id
+    - type
+    - refDevice
+    
+    
+    
+    
