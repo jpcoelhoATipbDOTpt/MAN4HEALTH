@@ -4,12 +4,12 @@ WeatherStation:
   description: Masurements obtained from a weather station
   properties:
     id:
-    description: Weather Station ID
-    type: string
-    format: uri
-    example: urn:ngsi-ld:WeatherStation:SenseCAP01
-    x-ngsi:
-      type: Property
+      description: Weather Station ID
+      type: string
+      format: uri
+      example: urn:ngsi-ld:WeatherStation:SenseCAP01
+      x-ngsi:
+        type: Property
 
     type:
       description: NGSI Entity type
