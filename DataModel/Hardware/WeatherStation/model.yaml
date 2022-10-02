@@ -67,64 +67,64 @@ WeatherStation:
       description: Atmospheric Pressure (in Pa)
       type: object
       properties:
-      value:
-        anyOf:
-        - type: string
-        - type: number
-        x-ngsi:
-          type: Property
-          units: PAL
-      unitCode:
-        type: string
-      observedAt:
-        description: The date and time of this observation as defined by RFC 3339
-        type: string
-        format: date-time
-        x-ngsi:
-          model: https://schema.org/DateTime
-          type: Property                
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: PAL
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property                
 
     solarIlluminance:
       description: Solar illuminance (in Lux)
       type: object
       properties:
         value:
-        anyOf:
-        - type: string
-        - type: number
-        x-ngsi:
-          type: Property
-          units: LUX
-      unitCode:
-        type: string
-      observedAt:
-        description: The date and time of this observation as defined by RFC 3339
-        type: string
-        format: date-time
-        x-ngsi:
-          model: https://schema.org/DateTime
-          type: Property                
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: LUX
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property                
 
     solarIrradiance:
       description: Esttimated solar irradiance from illuminance (in W/m2)
       type: object
       properties:
-      value:
-        anyOf:
-        - type: string
-        - type: number
-        x-ngsi:
-        type: Property
-        units: D54
-      unitCode:
-        type: string
-      observedAt:
-        description: The date and time of this observation as defined by RFC 3339
-        type: string
-        format: date-time
-        x-ngsi:
-          model: https://schema.org/DateTime
-          type: Property  
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: D54
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property  
 
     refTerrain:
       title: Reference to -Terrain-
