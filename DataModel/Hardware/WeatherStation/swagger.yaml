@@ -14,7 +14,7 @@ info:
   
 components:
   schemas: 
-    Moisture: 
+    WeatherStation: 
       $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/WeatherStation/model.yaml#/WeatherStation"
 
 paths: 
