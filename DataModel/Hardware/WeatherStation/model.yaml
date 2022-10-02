@@ -7,7 +7,7 @@ WeatherStation:
       description: Weather Station ID
       type: string
       format: uri
-      example: urn:ngsi-ld:WeatherSttation:SenseCAP01
+      example: urn:ngsi-ld:WeatherStation:SenseCAP01
       x-ngsi:
         type: Property
         
@@ -144,7 +144,3 @@ WeatherStation:
     - id
     - type
     - refDevice
-    
-    
-    
-    
