@@ -1,0 +1,19 @@
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "fiware": "https://uri.fiware.org/ns/data-models#",
+        "schema": "https://schema.org/",
+        "WeatherStation": "fiware:WeatherStation",
+        "airMoisture": "fiware:airMoisture",
+        "airTemperature": "fiware:airTemperature",
+        "atmosphericPressure": "fiware:atmosphericPressure",
+        "observedAt": "fiware:observedAt",
+        "refTerrain": "fiware:refTerrain",
+        "solarIlluminance": "fiware:solarIlluminance",
+        "solarIrradiance": "fiware:solarIrradiance",
+        "unitCode": "fiware:unitCode",
+        "value": "fiware:value"
+    }
+}
