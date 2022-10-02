@@ -45,7 +45,7 @@ paths:
                   summary: "Normalized NGSI-LD"
                   value: 
                     - 
-                      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DDataModel/Hardware/WeatherStation/examples/example-normalized.jsonld"
+                      $ref: "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/WeatherStation/examples/example-normalized.jsonld"
           description: OK
       tags: 
         - ngsi-ld
