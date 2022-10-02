@@ -1,0 +1,166 @@
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "fiware": "https://uri.fiware.org/ns/data-models#",
+        "schema": "https://schema.org/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "WeatherStation": "fiware:WeatherStation",
+        "airMoisture": "fiware:airMoisture",
+        "airTemperature": "fiware:airTemperature",
+        "atmosphericPressure": "fiware:atmosphericPressure",
+        "observedAt": {
+            "@id": "fiware:observedAt",
+            "@type": "xs:dateTime"
+        },
+        "refTerrain": {
+            "@id": "fiware:refTerrain",
+            "@type": "@id"
+        },
+        "solarIlluminance": "fiware:solarIlluminance",
+        "solarIrradiance": "fiware:solarIrradiance",
+        "unitCode": {
+            "@id": "fiware:unitCode",
+            "@type": "xsd:string"
+        },
+        "value": {
+            "@id": "fiware:value",
+            "@type": "xsd:undefined"
+        }
+    },
+    "@graph": [
+        {
+            "@id": "fiware:WeatherStation",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Masurements obtained from a weather station"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "WeatherStation"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Weather Station ID"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:airTemperature",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Air temperature (in degree Celsius)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "airTemperature"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:airMoisture",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Air moisture (in percentage)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "airMoisture"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:atmosphericPressure",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Atmospheric Pressure (in Pa)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "atmosphericPressure"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:solarIlluminance",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Solar illuminance (in Lux)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "solarIlluminance"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:solarIrradiance",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Esttimated solar irradiance from illuminance (in W/m2)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "solarIrradiance"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:refTerrain",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Reference of the -Terrain- to which this sensor belongs."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "refTerrain"
+                }
+            ]
+        }
+    ]
+}
