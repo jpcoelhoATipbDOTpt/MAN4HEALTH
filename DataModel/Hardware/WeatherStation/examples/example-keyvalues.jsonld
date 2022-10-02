@@ -1,6 +1,6 @@
 {
   "id": "urn:ngsi-ld:WeatherStation:SenseCAP01",
-  "type": "WeatherSttation",
+  "type": "WeatherStation",
   
   "airTemperature": {
     "value": 27.05,
