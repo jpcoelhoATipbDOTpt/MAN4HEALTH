@@ -1,4 +1,4 @@
-
+// TEsta LED colocado no PCB (ativo baixo)
 #define LED 6
 
 void setup() {
