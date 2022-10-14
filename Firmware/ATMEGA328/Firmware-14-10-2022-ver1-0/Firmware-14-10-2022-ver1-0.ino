@@ -105,7 +105,7 @@ void goToSleep() {
 // INICIALIZA MCU
 // ------------------------------------------------------------------------------------------------------------------
 void setup() {
-  Serial.begin(1000000);    // Debug
+  //Serial.begin(1000000);    // Debug
   SPI.setDataMode(SPI_MODE0); // Inicializa comunicação SPI com RFM95
   SPI.begin();                //
   pinMode(NSS, OUTPUT);       // Configura pinos de I/O para comunicação com RFM95
@@ -118,7 +118,6 @@ void setup() {
   delay(100);                 // Aguarda por estabilização da tensão
   analogReference(EXTERNAL);  // Estabelece tensão de referência da ADC como externo
   watchdogOn();               // Configura e ativa watchdog
-  //Serial.println("Fim do Setup");
 }
 // ------------------------------------------------------------------------------------------------------------------
 // leitura com filtro passa-baixo
@@ -151,7 +150,7 @@ void loop() {
   goToSleep(); // Entra em suspensão
   if (sleep_count >= sleep_total) {  // Depois de acordado verifica se já é hora de transmitir
     watchdogOff();
-    char data[200]="";
+    char data[200]="\0";
     
     digitalWrite(NSS, HIGH);    // Ativa NSS
     digitalWrite(OE,HIGH);      // Liga Buck-boost
