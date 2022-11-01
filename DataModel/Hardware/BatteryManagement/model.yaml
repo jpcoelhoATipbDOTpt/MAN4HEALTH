@@ -1,0 +1,558 @@
+BatteryManagement:
+  title: Battery Management
+  type: object
+  description: Masurements obtained from the battery management systems
+  properties:
+    id:
+      description: Battery Management ID
+      type: string
+      format: uri
+      example: urn:ngsi-ld:WBatteryManagement:EPEVERtracer01
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type
+      title: Type
+      enum:
+        - BatteryManagement
+      type: string
+      x-ngsi:
+        type: Property
+        model: https://schema.org/Text
+        
+    PVarrayInputVoltage:
+      description: PV array input voltage
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: VLT
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property
+
+    PVarrayInputCurrent:
+      description: PV array input current
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: AMP
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property           
+
+    PVarrayInputPower:
+      description: PV array input power
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: WTT
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property                
+
+    loadVoltage:
+      description: Load voltage
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: VLT
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property                
+
+    loadCurrent:
+      description: Load current
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: AMP
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property  
+
+    loadPower:
+      description: Load power
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: WTT
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property
+
+    batteryTemperature:
+      description: Battery temperature
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: CEL
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property           
+
+    deviceTemperature:
+      description: Device temperature
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: CEL
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property                
+
+    batterySOC:
+      description: The remaining capacity percentage of the battery 
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: P1
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property                
+
+    batteryRealRatedVoltage:
+      description: Current system rated voltage
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: VLT
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property  
+            
+    batteryStatus:
+      description: Battery status (16 bits)
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property
+
+    chargingEquipmentStatus:
+      description: Charging equipment status (16 bits)
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property           
+
+    dischargingEquipmentStatus:
+      description: Discharging equipment status (16 bits)
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property                
+
+    maximumBatteryVoltageToday:
+      description: Maximum battery voltage today
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: VLT
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property                
+
+    minimumBatteryVoltageToday:
+      description: Minimum battery voltage today
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: VLT
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property  
+   
+    consumedEnergyToday:
+      description: Consumed energy today
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: KWH
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property
+
+    consumedEnergyMonth:
+      description: Consumed energy this month
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: KWH
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property
+            
+    consumedEnergyYear:
+      description: Consumed energy this year
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: KWH
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property            
+
+    totalConsumedEnergy:
+      description: Total consumed energy
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: KWH
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property    
+
+    generatedEnergyToday:
+      description: Generated energy today
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: KWH
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property
+
+    generatedEnergyMonth:
+      description: Generated energy this month
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: KWH
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property
+            
+    generatedEnergyYear:
+      description: Generated energy this year
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: KWH
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property            
+
+    totalGeneratedEnergy:
+      description: Total generated energy
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: KWH
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property  
+
+    batteryVoltage:
+      description: Battery voltage
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: VLT
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property           
+
+    batteryCurrent:
+      description: PV array input power
+      type: object
+      properties:
+        value:
+          anyOf:
+          - type: string
+          - type: number
+          x-ngsi:
+            type: Property
+            units: AMP
+        unitCode:
+          type: string
+        observedAt:
+          description: The date and time of this observation as defined by RFC 3339
+          type: string
+          format: date-time
+          x-ngsi:
+            model: https://schema.org/DateTime
+            type: Property                
+
+    refControlBoard:
+      title: Reference to -ControlBoard-
+      description: Reference of the -Terrain- to which this sensor belongs.
+      anyOf:
+      - description: Property. Identifier format of any NGSI entity
+        maxLength: 256
+        minLength: 1
+        pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+        type: string
+      - description: Property. Identifier format of any NGSI entity
+        format: uri
+        type: string
+      x-ngsi:
+        type: Relationship
+
+  required:
+    - id
+    - type
+    - refDevice
