@@ -39,7 +39,7 @@
 
     "refTerrain": {
         "type": "Relationship",
-        "object": "urn:ngsi-ld:Terrain:S8Q858P868W8P8p8l8Q"
+        "object": "urn:ngsi-ld:Terrain:MRDL01"
     },
 
     "@context": [
