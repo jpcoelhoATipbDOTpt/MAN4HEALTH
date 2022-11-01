@@ -1,11 +1,11 @@
 {
-    "id": "urn:ngsi-ld:WeatherStation:SenseCAP01",
-    "type": "WeatherStation", 
+    "id": "urn:ngsi-ld:BatteryManagement:EPEVERtracerP01",
+    "type": "BatteryManagement", 
   
-    "airTemperature": {
+    "batteryVoltage": {
       "type": "Property",
-      "value": 27.05,
-      "unirCode": "CEL",
+      "value": 11.95,
+      "unirCode": "VLT",
       "observedAt": "2022-08-12T07:58:07+00:00Z"
     },
   
