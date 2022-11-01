@@ -6,7 +6,7 @@ openapi: 3.0.0
 # Informação sobre o modelo
 info:
   title: DataModel/Hardware/BatteryManagement@MAN4HEALTH
-  description: Weather station data model
+  description: Battery management system data model
   version: 1.0.1
   contact:
     name: New management strategies in olive groves for improving soil health and crop yield
