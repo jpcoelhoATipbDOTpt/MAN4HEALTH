@@ -1,1 +1,17 @@
-
+{
+  "id": "urn:ngsi-ld:BatteryManagement:EPEVERtrace01",
+  "type": "BatteryManagement",
+  
+  "batteryVoltage": {
+    "value": 11.95,
+    "unirCode": "VLT",
+    "observedAt": "2022-08-12T07:58:07+00:00Z"
+  },
+  
+  
+  "refControlBoard": "urn:ngsi-ld:ControlBoard:CTRLBRD01",
+  "@context": [
+  "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+  "https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/DataModel/Hardware/BatteryManagement/Context/context-keyvalues.jsonld"
+  ]
+}
