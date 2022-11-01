@@ -1,1 +1,506 @@
-
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "fiware": "https://uri.fiware.org/ns/data-models#",
+        "schema": "https://schema.org/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "BatteryManagement": "fiware:BatteryManagement",
+        "PVarrayInputCurrent": "fiware:PVarrayInputCurrent",
+        "PVarrayInputPower": "fiware:PVarrayInputPower",
+        "PVarrayInputVoltage": "fiware:PVarrayInputVoltage",
+        "batteryCurrent": "fiware:batteryCurrent",
+        "batteryRealRatedVoltage": "fiware:batteryRealRatedVoltage",
+        "batterySOC": "fiware:batterySOC",
+        "batteryStatus": "fiware:batteryStatus",
+        "batteryTemperature": "fiware:batteryTemperature",
+        "batteryVoltage": "fiware:batteryVoltage",
+        "chargingEquipmentStatus": "fiware:chargingEquipmentStatus",
+        "consumedEnergyMonth": "fiware:consumedEnergyMonth",
+        "consumedEnergyToday": "fiware:consumedEnergyToday",
+        "consumedEnergyYear": "fiware:consumedEnergyYear",
+        "deviceTemperature": "fiware:deviceTemperature",
+        "dischargingEquipmentStatus": "fiware:dischargingEquipmentStatus",
+        "generatedEnergyMonth": "fiware:generatedEnergyMonth",
+        "generatedEnergyToday": "fiware:generatedEnergyToday",
+        "generatedEnergyYear": "fiware:generatedEnergyYear",
+        "loadCurrent": "fiware:loadCurrent",
+        "loadPower": "fiware:loadPower",
+        "loadVoltage": "fiware:loadVoltage",
+        "maximumBatteryVoltageToday": "fiware:maximumBatteryVoltageToday",
+        "minimumBatteryVoltageToday": "fiware:minimumBatteryVoltageToday",
+        "observedAt": {
+            "@id": "fiware:observedAt",
+            "@type": "xs:dateTime"
+        },
+        "refControlBoard": {
+            "@id": "fiware:refControlBoard",
+            "@type": "@id"
+        },
+        "totalConsumedEnergy": "fiware:totalConsumedEnergy",
+        "totalGeneratedEnergy": "fiware:totalGeneratedEnergy",
+        "unitCode": {
+            "@id": "fiware:unitCode",
+            "@type": "xsd:string"
+        },
+        "value": {
+            "@id": "fiware:value",
+            "@type": "xsd:undefined"
+        }
+    },
+    "@graph": [
+        {
+            "@id": "fiware:BatteryManagement",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Masurements obtained from the battery management systems"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "BatteryManagement"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Battery Management ID"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:PVarrayInputVoltage",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "PV array input voltage"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "PVarrayInputVoltage"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:PVarrayInputCurrent",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "PV array input current"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "PVarrayInputCurrent"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:PVarrayInputPower",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "PV array input power"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "PVarrayInputPower"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:loadVoltage",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Load voltage"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "loadVoltage"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:loadCurrent",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Load current"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "loadCurrent"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:loadPower",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Load power"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "loadPower"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:batteryTemperature",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Battery temperature"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "batteryTemperature"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:deviceTemperature",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Device temperature"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "deviceTemperature"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:batterySOC",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The remaining capacity percentage of the battery"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "batterySOC"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:batteryRealRatedVoltage",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Current system rated voltage"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "batteryRealRatedVoltage"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:batteryStatus",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Battery status (16 bits)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "batteryStatus"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:chargingEquipmentStatus",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Charging equipment status (16 bits)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "chargingEquipmentStatus"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dischargingEquipmentStatus",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Discharging equipment status (16 bits)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dischargingEquipmentStatus"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:maximumBatteryVoltageToday",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Maximum battery voltage today"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "maximumBatteryVoltageToday"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:minimumBatteryVoltageToday",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Minimum battery voltage today"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "minimumBatteryVoltageToday"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:consumedEnergyToday",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Consumed energy today"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "consumedEnergyToday"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:consumedEnergyMonth",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Consumed energy this month"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "consumedEnergyMonth"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:consumedEnergyYear",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Consumed energy this year"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "consumedEnergyYear"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:totalConsumedEnergy",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Total consumed energy"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "totalConsumedEnergy"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:generatedEnergyToday",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Generated energy today"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "generatedEnergyToday"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:generatedEnergyMonth",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Generated energy this month"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "generatedEnergyMonth"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:generatedEnergyYear",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Generated energy this year"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "generatedEnergyYear"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:totalGeneratedEnergy",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Total generated energy"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "totalGeneratedEnergy"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:batteryVoltage",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Battery voltage"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "batteryVoltage"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:batteryCurrent",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "PV array input power"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "batteryCurrent"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:refControlBoard",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Reference of the -Terrain- to which this sensor belongs."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "refControlBoard"
+                }
+            ]
+        }
+    ]
+}
