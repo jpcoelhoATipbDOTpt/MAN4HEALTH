@@ -111,9 +111,9 @@ Masurements obtained from a weather station
             "unirCode": "D54",
             "observedAt": "2022-08-12T07:58:07+00:00Z"
         },
-        "refDevice": {
+        "refTerrain": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:Device:S8Q858P868W8P8p8l8Q"
+            "object": "urn:ngsi-ld:Terrain:MRDL01"
         },
         "@context": [
             "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
