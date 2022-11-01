@@ -3,7 +3,7 @@
 https://man4health.ipb.pt/
 
 ## Código para Unidades SI
-- [Lista](https://raw.githubusercontent.com/jpcoelhoATipbDOTpt/MAN4HEALTH/main/UnitCode.md)
+- [Lista](https://github.com/jpcoelhoATipbDOTpt/MAN4HEALTH/blob/main/UnitCode.md)
 ## Modelo de Dados
 - [Fluxograma](https://app.diagrams.net/#G1-Mlrzr9L3VvP6LeKTDme6E2nunEgsq2p)
 ## Firmware
