@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+#! /usr/bin/python3
+
 """
 16/outubro/2022
 @author: jpcoelho
