@@ -157,9 +157,11 @@ totalGeneratedEnergy= (((MSW<<16)+LSW)*0.01)
 # Battery voltage
 batteryVoltage = (instrument.read_register(BAT_MEAS_VOLT_REG,0,4)/100.0)
 # Battery current
-LSW = instrument.read_register(BAT_MEAS_CURT_REG,0,4)
-MSW = instrument.read_register(BAT_MEAS_CURT_REG + 1,0,4)
-batteryCurrent= (((MSW<<16)+LSW)*0.01)
+#LSW = instrument.read_register(BAT_MEAS_CURT_REG,0,4)
+#MSW = instrument.read_register(BAT_MEAS_CURT_REG + 1,0,4)
+MSW = instrument.read_long(BAT_MEAS_CURT_REG,4,true)
+#batteryCurrent= (((MSW<<16)+LSW)*0.01)
+batteryCurrent= (MSW*0.01)
 
 # Mostra valores (debug apenas) 
 print('The Device Temperature is: %.1f ºC\r' % deviceTemperature)
