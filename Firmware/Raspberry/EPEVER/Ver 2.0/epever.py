@@ -85,82 +85,68 @@ instrument.close_port_after_each_call = True
 instrument.clear_buffers_before_each_transaction = True
 
 # PV array input voltage
-PVarrayInputVoltage = (instrument.read_register(PV_IN_VOLTAGE_REG,0,4)/100.0)
+PVarrayInputVoltage = instrument.read_register(PV_IN_VOLTAGE_REG,2,4,True)
 # PV array input current
-PVarrayInputCurrent = (instrument.read_register(PV_IN_CURRENT_REG,0,4)/100.0)
+PVarrayInputCurrent = instrument.read_register(PV_IN_CURRENT_REG,2,4,True)
 # PV array input power
-LSW = instrument.read_register(PV_IN_POWER_REG,0,4)
-MSW = instrument.read_register(PV_IN_POWER_REG + 1,0,4)
-PVarrayInputPower= (((MSW<<16)+LSW)*0.01)
+MSW = instrument.read_long(PV_IN_POWER_REG,4,True,3)
+PVarrayInputPower= (MSW*0.01)
 # Load voltage
-loadVoltage = (instrument.read_register(LOAD_VOLTAGE_REG,0,4)/100.0)
+loadVoltage = instrument.read_register(LOAD_VOLTAGE_REG,2,4,True)
 # Load current
-loadCurrent = (instrument.read_register(LOAD_CURRENT_REG,0,4)/100.0)
+loadCurrent = instrument.read_register(LOAD_CURRENT_REG,2,4,True)
 # Load power
-LSW = instrument.read_register(LOAD_POWER_REG,0,4)
-MSW = instrument.read_register(LOAD_POWER_REG + 1,0,4)
-loadPower= (((MSW<<16)+LSW)*0.01)
+MSW = instrument.read_long(LOAD_POWER_REG,4,True,3)
+loadPower= (MSW*0.01)
 # Battery temperature
-batteryTemperature = (instrument.read_register(BAT_TEMP_REG,0,4)/100.0)
+batteryTemperature = instrument.read_register(BAT_TEMP_REG,2,4,True)
 # Device temperature
-deviceTemperature = (instrument.read_register(DEV_TEMP_REG,0,4)/100.0)
+deviceTemperature = instrument.read_register(DEV_TEMP_REG,2,4,True)
 # Battery SOC
-batterySOC = (instrument.read_register(BAT_CAPACITY_REG,0,4)/100.0)
+batterySOC = instrument.read_register(BAT_CAPACITY_REG,2,4,True)
 # Battery's real rated voltage
-batteryRealRatedVoltage = (instrument.read_register(BAT_REAL_VOLT_REG,0,4)/100.0)
+batteryRealRatedVoltage = instrument.read_register(BAT_REAL_VOLT_REG,2,4,True)
 # Battery status
-batteryStatus = (instrument.read_register(BAT_STATUS_REG,0,4)/100.0)
+batteryStatus = instrument.read_register(BAT_STATUS_REG,2,4,True)
 # Charging equipment status
-chargingEquipmentStatus = (instrument.read_register(CHARG_STATUS_REG,0,4)/100.0)
+chargingEquipmentStatus = instrument.read_register(CHARG_STATUS_REG,2,4,True)
 # Discharging equipment status
-dischargingEquipmentStatus = (instrument.read_register(DCHARG_STATUS_REG,0,4)/100.0)
+dischargingEquipmentStatus = instrument.read_register(DCHARG_STATUS_REG,2,4,True)
 # Maximum battery voltage today
-maximumBatteryVoltageToday = (instrument.read_register(MAX_BAT_V_DAY_REG,0,4)/100.0)
+maximumBatteryVoltageToday = instrument.read_register(MAX_BAT_V_DAY_REG,2,4,True)
 # Minimum battery voltage today
-minimumBatteryVoltageToday = (instrument.read_register(MIN_BAT_V_DAY_REG,0,4)/100.0)
+minimumBatteryVoltageToday = instrument.read_register(MIN_BAT_V_DAY_REG,2,4,True)
 # Consumed energy today
-LSW = instrument.read_register(EGY_COSMD_DAY_REG,0,4)
-MSW = instrument.read_register(EGY_COSMD_DAY_REG + 1,0,4)
-consumedEnergyToday= (((MSW<<16)+LSW)*0.01)
+MSW = instrument.read_long(EGY_COSMD_DAY_REG,4,True,3)
+consumedEnergyToday= (MSW*0.01)
 # Consumed energy today
-LSW = instrument.read_register(EGY_COSMD_DAY_REG,0,4)
-MSW = instrument.read_register(EGY_COSMD_DAY_REG + 1,0,4)
-consumedEnergyToday= (((MSW<<16)+LSW)*0.01)
+MSW = instrument.read_long(EGY_COSMD_DAY_REG,4,True,3)
+consumedEnergyToday= (MSW*0.01)
 # Consumed energy this month
-LSW = instrument.read_register(EGY_COSMD_MTH_REG,0,4)
-MSW = instrument.read_register(EGY_COSMD_MTH_REG + 1,0,4)
-consumedEnergyMonth= (((MSW<<16)+LSW)*0.01)
+MSW = instrument.read_long(EGY_COSMD_MTH_REG,4,True,3)
+consumedEnergyMonth= (MSW*0.01)
 # Consumed energy this year
-LSW = instrument.read_register(EGY_COSMD_YAR_REG,0,4)
-MSW = instrument.read_register(EGY_COSMD_YAR_REG + 1,0,4)
-consumedEnergyYear= (((MSW<<16)+LSW)*0.01)
+MSW = instrument.read_long(EGY_COSMD_YAR_REG,4,True,3)
+consumedEnergyYear= (MSW*0.01)
 # Total consumed energy
-LSW = instrument.read_register(EGY_COSMD_TOT_REG,0,4)
-MSW = instrument.read_register(EGY_COSMD_TOT_REG + 1,0,4)
-totalConsumedEnergy = (((MSW<<16)+LSW)*0.01)
+MSW = instrument.read_long(EGY_COSMD_TOT_REG,4,True,3)
+totalConsumedEnergy = MSW
 # Generated energy today
-LSW = instrument.read_register(EGY_GENTD_DAY_REG,0,4)
-MSW = instrument.read_register(EGY_GENTD_DAY_REG + 1,0,4)
-generatedEnergyToday= (((MSW<<16)+LSW)*0.01)
+MSW = instrument.read_long(EGY_GENTD_DAY_REG,4,True,3)
+generatedEnergyToday= (MSW*0.01)
 # Generated energy this month
-LSW = instrument.read_register(EGY_GENTD_MTH_REG,0,4)
-MSW = instrument.read_register(EGY_GENTD_MTH_REG + 1,0,4)
-generatedEnergyMonth= (((MSW<<16)+LSW)*0.01)
+MSW = instrument.read_long(EGY_GENTD_MTH_REG,4,True,3)
+generatedEnergyMonth= (MSW*0.01)
 # Generated energy this year
-LSW = instrument.read_register(EGY_GENTD_YAR_REG,0,4)
-MSW = instrument.read_register(EGY_GENTD_YAR_REG + 1,0,4)
-generatedEnergyYear= (((MSW<<16)+LSW)*0.01)
+MSW = instrument.read_long(EGY_GENTD_YAR_REG,4,True,3)
+generatedEnergyYear= (MSW*0.01)
 # Total generated energy
-LSW = instrument.read_register(EGY_GENTD_TOT_REG,0,4)
-MSW = instrument.read_register(EGY_GENTD_TOT_REG + 1,0,4)
-totalGeneratedEnergy= (((MSW<<16)+LSW)*0.01)
+MSW = instrument.read_long(EGY_GENTD_TOT_REG,4,True,3)
+totalGeneratedEnergy= (MSW*0.01)
 # Battery voltage
-batteryVoltage = (instrument.read_register(BAT_MEAS_VOLT_REG,0,4)/100.0)
+batteryVoltage = instrument.read_register(BAT_MEAS_VOLT_REG,2,4,True)
 # Battery current
-#LSW = instrument.read_register(BAT_MEAS_CURT_REG,0,4)
-#MSW = instrument.read_register(BAT_MEAS_CURT_REG + 1,0,4)
-MSW = instrument.read_long(BAT_MEAS_CURT_REG,4,true)
-#batteryCurrent= (((MSW<<16)+LSW)*0.01)
+MSW = instrument.read_long(BAT_MEAS_CURT_REG,4,True,3)
 batteryCurrent= (MSW*0.01)
 
 # Mostra valores (debug apenas) 
