@@ -15,9 +15,9 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("M*A*N*4*H*E*A*L*T*H");
-  digitalWrite(LED, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
-  digitalWrite(LED, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000); 
+  Serial.println("M*A*N*4*H*E*A*L*T*H"); // Envia string via porto série
+  digitalWrite(LED, HIGH);               // desliga LED
+  delay(1000);                           // aguarda 1 segundo
+  digitalWrite(LED, LOW);                // liga LED
+  delay(1000);                           // aguarda 1 segundo
 }
