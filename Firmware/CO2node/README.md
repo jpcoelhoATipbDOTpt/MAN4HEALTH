@@ -1,1 +1,1 @@
-# Módulo para monitorização do CO_2
+# Módulo para monitorização do CO2
