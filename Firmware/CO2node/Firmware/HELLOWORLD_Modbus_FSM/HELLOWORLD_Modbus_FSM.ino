@@ -137,7 +137,7 @@ void loop()
                     case 0x03:  estado=RDFUNCTION;
                                 Serial.println("Pedem para enviar qualquer coisa");
                                 break;
-                    case 0x04:  estado=WEFUNCTION;
+                    case 0x06:  estado=WEFUNCTION;
                                 Serial.println("Pedem para alterar qualquer coisa");
                                 break;
                     default:    estado=FUNCNERROR;
