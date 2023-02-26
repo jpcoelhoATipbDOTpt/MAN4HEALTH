@@ -98,7 +98,8 @@ void loop()
  {
     // .................................................................................................
     case SETRCVMODE:
-                  Serial.println("SET MODE");
+                  while (RS485.available()) RS485.receive(); // Limpa buffer
+                  Serial.println("Inicio da maquina de estados");
                   digitalWrite(MAX485_DE,LOW); // Desativa DRIVER
                   digitalWrite(MAX485_RE,LOW); // Ativa RECEIVER
                   estado = WAIT4FRAME;
@@ -221,8 +222,12 @@ void loop()
                   break;
     // .................................................................................................                  
     case ERRORFRAME:   
-                  Serial.println("ERRO");
-                  estado = SETRCVMODE;
+                  Serial.println("ERRO: CRC inválido");
+                  TX[0] = MYID;
+                  TX[1] = RX[1] + 0x80;
+                  TX[2] = 0x03;
+                  TxLen = 3;
+                  estado = ANSWERFRME;                     
                   break;
     // .................................................................................................
   }
