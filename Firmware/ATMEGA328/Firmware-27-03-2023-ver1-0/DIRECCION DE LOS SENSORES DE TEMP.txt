@@ -1,0 +1,138 @@
+03FF0001 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-------
+
+03FF0002 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+------
+
+03FF0003
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0004 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0005 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0006 
+DeviceAddress address10 = {0x28, 0x1B, 0xB2, 0x74, 0x4, 0x0, 0x0, 0x49}; //dirección del sensor 1
+DeviceAddress address20 = {0x28, 0x45, 0x99, 0x75, 0x4, 0x0, 0x0, 0x73}; //dirección del sensor 2 
+DeviceAddress address30 = {0x28, 0x85, 0xEF, 0x36, 0x4, 0x0, 0x0, 0x75}; //dirección del sensor 3
+
+-----
+
+03FF0007 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0008 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0009
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0010 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0011 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0012 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0013 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0014 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0015 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0016 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0017 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0018 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0019 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
+-----
+
+03FF0020 
+DeviceAddress address10 = {};//dirección del sensor 1
+DeviceAddress address20 = {};//dirección del sensor 2
+DeviceAddress address30 = {};//dirección del sensor 3
+
