@@ -143,7 +143,7 @@ void goToSleep() {
 // INICIALIZA MCU
 // ------------------------------------------------------------------------------------------------------------------
 void setup() {
-  Serial.begin(9600);    // Debug
+  //Serial.begin(9600);    // Debug
   sensors.begin();   //Se inicia el sensor
     
   SPI.setDataMode(SPI_MODE0); // Inicializa comunicação SPI com RFM95
@@ -210,10 +210,10 @@ void loop() {
     //dtostrf(leituraAnalogica(A1),0,1,var_1);   // Lê ADC1
     //dtostrf(leituraAnalogica(A2),0,1,var_2);   // Lê ADC2
     //dtostrf(leituraAnalogica(A3),0,1,var_3);   // Lê ADC3
-    //dtostrf(leituraAnalogica(A4),0,1,var_4);   // Lê ADC4 --- Sensor de humedad    
+    //dtostrf(leituraAnalogica(A4),0,1,var_4);   // Lê ADC4     
     //dtostrf(leituraAnalogica(A5),0,1,var_5);   // Lê ADC5
 
-    Serial.println("Inicio de lectura de los sensores");
+    //Serial.println("Inicio de lectura de los sensores");
     
 //----------------------------------------
 //             Lectura DHT22                --> modificar en la condicion del if 11 -> 22
@@ -340,7 +340,7 @@ void loop() {
     
     LORA_Send_Data(data2send, bytes2send(data2send), Frame_Counter_Tx); // Transmite dados
     
-    Serial.println("Paquete enviado");
+    //Serial.println("Paquete enviado");
 
     Wire.end();  // para resolver el problema de los 1.7V en el modo sleep
     
