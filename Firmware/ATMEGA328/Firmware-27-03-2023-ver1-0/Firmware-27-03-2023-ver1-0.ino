@@ -292,6 +292,7 @@ void loop() {
 //----------------------------------------
     while(lectura==0){
       als.begin();
+      als.setGain(VEML7700::ALS_GAIN_d8); //necesario para correcta medición de valores altos de lux
       als.getALSLux(lux);
       if (lux != 0){
         dtostrf(lux,0,1,var_5);
