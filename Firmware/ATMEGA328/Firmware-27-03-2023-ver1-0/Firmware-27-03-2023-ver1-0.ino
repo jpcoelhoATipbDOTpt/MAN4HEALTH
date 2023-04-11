@@ -1,3 +1,18 @@
+/*
+ * Variables del código
+ * 
+ * cd = var_0 = batería
+ * zz = var_1 = temperatura del suelo 10cm
+ * zx = var_2 = temperatura del suelo 20cm   -> RECORDAR IDENTIFICARLOS BIEN ANTES DE PONERLOS EN LA ESTACA
+ * zc = var_3 = temperatura del suelo 30cm
+ * zv = var_4 = humedad del suelo
+ * zb = var_5 = lux      -> SDA - A4
+ *                       -> SCL - A5
+ * al = var_6 = temperatura del aire (DHT22)
+ * ax = var_7 = humedad del aire (DHT22)
+ * 
+ */
+
 #include <SPI.h>
 #include <avr/sleep.h>
 #include <avr/wdt.h>
@@ -222,7 +237,6 @@ void loop() {
   
      while(lectura==0){
       als.begin();
-      //als.setIntegrationTime(VEML7700::ALS_INTEGRATION_200ms);
       als.setGain(VEML7700::ALS_GAIN_d8); //necesario para correcta medición de valores altos de lux
       als.getALSLux(lux);
       if (lux != 0){
