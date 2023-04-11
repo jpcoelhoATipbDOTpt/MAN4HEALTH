@@ -1,18 +1,3 @@
-/*
- * Variables del código
- * 
- * cd = var_0 = batería
- * zz = var_1 = temperatura del suelo 10cm
- * zx = var_2 = temperatura del suelo 20cm   -> RECORDAR IDENTIFICARLOS BIEN ANTES DE PONERLOS EN LA ESTACA
- * zc = var_3 = temperatura del suelo 30cm
- * zv = var_4 = humedad del suelo
- * zb = var_5 = lux      -> SDA - A4
- *                       -> SCL - A5
- * al = var_6 = temperatura del aire (DHT22)
- * ax = var_7 = humedad del aire (DHT22)
- * 
- */
-
 #include <SPI.h>
 #include <avr/sleep.h>
 #include <avr/wdt.h>
@@ -38,7 +23,7 @@
 // VARIÁVEIS GLOBAIS
 // ------------------------------------------------------------------------------------------------------------------
 volatile int sleep_count = 0; // Mantém registo do número de vezes que o MCU acordou desde a última transmissão
-const int sleep_total = 1;   //1 -> 10s   // Define o período entre transmissões calculada como sleep_total x 8s.
+const int sleep_total = 1;    // Define o período entre transmissões calculada como sleep_total x 8s.
                               // Para 1 hora => sleep_total = 450. Poderá ser necessário alterar o valor do prescale
                               // do WDT para outros intervalos de tempo. Por exemplo, se o ciclo de trabalho for 1
                               // minuto, na atual condição, sleep_total = 7.5 o que não é possível dado que sleep_
@@ -55,23 +40,22 @@ char var_7[8]={"\0"};         // Leitura da humidade relativa (DTH@PD2)
 char data2send[150];
 
 float lux;
-int lectura = 0; //bandera para asegurar la correcta lectura de los sensores
-int contador = 0; //para limitar el tiempo que espera respuesta del sensor
+int lectura = 0;
 
 // ------------------------------------------------------------------------------------------------------------------
 // OBJETOS
 // ------------------------------------------------------------------------------------------------------------------
 dht DHT;
-VEML7700 als;
 
-OneWire ourWire(16);                //Se establece el pin analógico 2 como bus OneWire
+OneWire ourWire(16);                //Se establece el pin 2  como bus OneWire
+
 DallasTemperature sensors(&ourWire); //Se declara una variable u objeto para nuestro sensor
 
-DeviceAddress address10 = {0x28, 0x1B, 0xB2, 0x74, 0x4, 0x0, 0x0, 0x49}; //dirección del sensor 1
-DeviceAddress address20 = {0x28, 0x45, 0x99, 0x75, 0x4, 0x0, 0x0, 0x73}; //dirección del sensor 2 
-DeviceAddress address30 = {0x28, 0x85, 0xEF, 0x36, 0x4, 0x0, 0x0, 0x75}; //dirección del sensor 3
+DeviceAddress address5 = {0x28, 0x1B, 0xB2, 0x74, 0x4, 0x0, 0x0, 0x49};//dirección del sensor 1
+DeviceAddress address2 = {0x28, 0x85, 0xEF, 0x36, 0x4, 0x0, 0x0, 0x75};//dirección del sensor 2
+DeviceAddress address3 = {0x28, 0x45, 0x99, 0x75, 0x4, 0x0, 0x0, 0x73};//dirección del sensor 3
 
-
+VEML7700 als;
 // ------------------------------------------------------------------------------------------------------------------
 // VETORES DE INTERRUPÇÃO
 // ------------------------------------------------------------------------------------------------------------------
@@ -81,7 +65,6 @@ ISR(WDT_vect) {
 // ------------------------------------------------------------------------------------------------------------------
 // WATCHDOG
 // ------------------------------------------------------------------------------------------------------------------
-
 void watchdogOn() {
   cli();
   wdt_reset();
@@ -124,11 +107,9 @@ void watchdogOff() {
   sei();
 
 }
-
 // ------------------------------------------------------------------------------------------------------------------
 // SLEEP CONFIG
 // ------------------------------------------------------------------------------------------------------------------
-
 void goToSleep() {
   set_sleep_mode(SLEEP_MODE_PWR_DOWN); // Estabelece tipo de suspensão
   cli ();                              // Desabilita interrupções
@@ -138,12 +119,11 @@ void goToSleep() {
   sleep_cpu();                         // Suspende MCU.
   sleep_disable();                     // o WDT acordou o MCU: resume a partir daqui
 }
-
 // ------------------------------------------------------------------------------------------------------------------
 // INICIALIZA MCU
 // ------------------------------------------------------------------------------------------------------------------
 void setup() {
-  //Serial.begin(9600);    // Debug
+  Serial.begin(9600);    // Debug
   sensors.begin();   //Se inicia el sensor
     
   SPI.setDataMode(SPI_MODE0); // Inicializa comunicação SPI com RFM95
@@ -210,112 +190,53 @@ void loop() {
     //dtostrf(leituraAnalogica(A1),0,1,var_1);   // Lê ADC1
     //dtostrf(leituraAnalogica(A2),0,1,var_2);   // Lê ADC2
     //dtostrf(leituraAnalogica(A3),0,1,var_3);   // Lê ADC3
-    //dtostrf(leituraAnalogica(A4),0,1,var_4);   // Lê ADC4     
+    //dtostrf(leituraAnalogica(A4),0,1,var_4);   // Lê ADC4 --- Sensor de humedad    
     //dtostrf(leituraAnalogica(A5),0,1,var_5);   // Lê ADC5
 
-    //Serial.println("Inicio de lectura de los sensores");
+    Serial.println("Inicio de lectura de los sensores");
     
-//----------------------------------------
-//             Lectura DHT22                --> modificar en la condicion del if 11 -> 22
-//----------------------------------------
-    while (lectura == 0){
-      if(DHT.read22(THar)!=-2){
-        dtostrf(DHT.temperature,0,1,var_6);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
-        dtostrf(DHT.humidity,0,1,var_7);           // Converte float em string dtostrf(valor,minimo,casas decimais,container)
-        lectura = 1;
-      }
-      else{
-        if(contador==500){
-          dtostrf(99999,0,1,var_6);
-          dtostrf(99999,0,1,var_7);
-          lectura = 1;
-        }
-      }
-      contador++;
+    if(DHT.read11(THar)==-2){ // Lê temperatura e humidade do ar com DHT11
+      dtostrf(-2,0,1,var_6);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
+      dtostrf(-2,0,1,var_7);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
+    }
+    else {
+      dtostrf(DHT.temperature,0,1,var_6);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
+      dtostrf(DHT.humidity,0,1,var_7);           // Converte float em string dtostrf(valor,minimo,casas decimais,container)
     }
 
-    contador = 0;
-    lectura = 0;
-    
-//----------------------------------------
-//    Lectura Sensores de temperatura
-//----------------------------------------
-    while(lectura==0){
+    //Serial.print("Temperatura do ar: ");
+    //Serial.println(var_6);
+    //Serial.print("Humidade do ar: ");
+    //Serial.println(var_7);
+
+    delay(500);
+
     sensors.requestTemperatures();   //envía el comando para obtener las temperaturas
-    float temp10= sensors.getTempC(address10);//Se obtiene la temperatura en °C del sensor 1
-    float temp20= sensors.getTempC(address20);//Se obtiene la temperatura en °C del sensor 2
-    float temp30= sensors.getTempC(address30);//Se obtiene la temperatura en °C del sensor 3    
+    float temp5= sensors.getTempC(address5);//Se obtiene la temperatura en °C del sensor 1
+    float temp2= sensors.getTempC(address2);//Se obtiene la temperatura en °C del sensor 2
+    float temp3= sensors.getTempC(address3);//Se obtiene la temperatura en °C del sensor 3
 
-// ------ Temperatura nivel 1 --------   
-    if(temp10 != -127 && temp10 != 85){
-      dtostrf(temp10,0,1,var_1);
-    }
-    else{
-      if(contador == 500){
-        temp10 = 99999;
-        dtostrf(temp10,0,1,var_1); 
-      }
-    }
-// ------ Temperatura nivel 2 --------       
-    if(temp20 != -127 && temp20 != 85){
-      dtostrf(temp20,0,1,var_2);
-    }
-    else{
-      if(contador == 500){
-        temp20 = 99999;
-        dtostrf(temp20,0,1,var_2);
-      }
-    }
-// ------ Temperatura nivel 3 --------    
-    if(temp30 != -127 && temp30 != 85){
-      dtostrf(temp30,0,1,var_3);
-    } 
-    else{
-      if(contador == 500){
-        temp30 = 99999;
-        dtostrf(temp30,0,1,var_3);
-      }
-    }
-    
-    if ((temp10 != -127 && temp20 != -127 && temp30 != -127) && (temp10 != 85 && temp20 != 85 && temp30 != 85)){ 
-      lectura = 1;
-      }
-      
-    contador++;
-    }
-
-    contador = 0;
-    lectura = 0;
-    
-//----------------------------------------
-//           Lectura VEML7700
-//----------------------------------------
-    while(lectura==0){
+    dtostrf(temp5,0,1,var_1);   
+    dtostrf(temp2,0,1,var_2);   
+    dtostrf(temp3,0,1,var_3); 
+  
+     while(lectura==0){
       als.begin();
+      //als.setIntegrationTime(VEML7700::ALS_INTEGRATION_200ms);
       als.setGain(VEML7700::ALS_GAIN_d8); //necesario para correcta medición de valores altos de lux
       als.getALSLux(lux);
       if (lux != 0){
         dtostrf(lux,0,1,var_5);
         lectura = 1;
       }
-      else{
-        if(contador==1000){
-          dtostrf(99999,0,1,var_5);
-          lectura = 1;
-        }
-      }
-      contador ++;
     }
 
-    contador = 0;
     lectura = 0;
-    
-//----------------------------------------
-//        Lectura sensor de humedad
-//----------------------------------------
+    Serial.print("Lux: ");
+    Serial.println(var_5);
+ 
     dtostrf(leituraAnalogica(A3),0,1,var_4); //sensor de humedad
-    
-   
+        
     // Forma payload usando protocolo JSON.
     strcat(data,"\"cd\":");
     strcat(data,var_0);
@@ -340,10 +261,8 @@ void loop() {
     Serial.println(bytes2send(data2send));
     
     LORA_Send_Data(data2send, bytes2send(data2send), Frame_Counter_Tx); // Transmite dados
-    
-    //Serial.println("Paquete enviado");
 
-    Wire.end();  // para resolver el problema de los 1.7V en el modo sleep
+    Serial.println("Paquete enviado");
     
     Frame_Counter_Tx++; // Incrementa frame counter
     sleep_count = 0;  // Reinicia sleep conter
@@ -351,6 +270,6 @@ void loop() {
     digitalWrite(OE,LOW);      // Desliga Buck-boost
     digitalWrite(EN,LOW);      // Desliga Logic Level Controller
     watchdogOn();
-  }
 
+  }
 }
