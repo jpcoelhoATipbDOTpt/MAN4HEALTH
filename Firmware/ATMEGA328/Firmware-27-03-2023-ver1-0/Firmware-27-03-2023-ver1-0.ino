@@ -210,7 +210,7 @@ void loop() {
 
     Serial.println("Inicio de lectura de los sensores");
     
-    if(DHT.read11(THar)==-2){ // Lê temperatura e humidade do ar com DHT11
+    if(DHT.read22(THar)==-2){ // Lê temperatura e humidade do ar com DHT11
       dtostrf(-2,0,1,var_6);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
       dtostrf(-2,0,1,var_7);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
     }
@@ -219,10 +219,10 @@ void loop() {
       dtostrf(DHT.humidity,0,1,var_7);           // Converte float em string dtostrf(valor,minimo,casas decimais,container)
     }
 
-    //Serial.print("Temperatura do ar: ");
-    //Serial.println(var_6);
-    //Serial.print("Humidade do ar: ");
-    //Serial.println(var_7);
+    Serial.print("Temperatura do ar: ");
+    Serial.println(var_6);
+    Serial.print("Humidade do ar: ");
+    Serial.println(var_7);
 
     delay(500);
 
