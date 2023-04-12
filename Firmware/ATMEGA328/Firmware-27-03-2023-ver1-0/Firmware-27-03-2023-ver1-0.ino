@@ -138,7 +138,7 @@ void goToSleep() {
 // INICIALIZA MCU
 // ------------------------------------------------------------------------------------------------------------------
 void setup() {
-  Serial.begin(9600);    // Debug
+  //Serial.begin(9600);    // Debug
   sensors.begin();   //Se inicia el sensor
     
   SPI.setDataMode(SPI_MODE0); // Inicializa comunicação SPI com RFM95
@@ -208,21 +208,27 @@ void loop() {
     //dtostrf(leituraAnalogica(A4),0,1,var_4);   // Lê ADC4 --- Sensor de humedad    
     //dtostrf(leituraAnalogica(A5),0,1,var_5);   // Lê ADC5
 
-    Serial.println("Inicio de lectura de los sensores");
-    
-    if(DHT.read22(THar)==-2){ // Lê temperatura e humidade do ar com DHT11
-      dtostrf(-2,0,1,var_6);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
-      dtostrf(-2,0,1,var_7);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
-    }
-    else {
-      dtostrf(DHT.temperature,0,1,var_6);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
-      dtostrf(DHT.humidity,0,1,var_7);           // Converte float em string dtostrf(valor,minimo,casas decimais,container)
+    //Serial.println("Inicio de lectura de los sensores");
+
+    while(lectura != 1){
+      if(DHT.read22(THar)==-2){ // Lê temperatura e humidade do ar com DHT11
+        dtostrf(-2,0,1,var_6);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
+        dtostrf(-2,0,1,var_7);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
+      }
+      else {
+        if(DHT.temperature <= 50 && DHT.humidity <= 100){
+          dtostrf(DHT.temperature,0,1,var_6);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
+          dtostrf(DHT.humidity,0,1,var_7);           // Converte float em string dtostrf(valor,minimo,casas decimais,container)
+          lectura = 1;
+          }
+        }
     }
 
-    Serial.print("Temperatura do ar: ");
-    Serial.println(var_6);
-    Serial.print("Humidade do ar: ");
-    Serial.println(var_7);
+    lectura = 0;
+    //Serial.print("Temperatura do ar: ");
+    //Serial.println(var_6);
+    //Serial.print("Humidade do ar: ");
+    //Serial.println(var_7);
 
     delay(500);
 
@@ -246,8 +252,8 @@ void loop() {
     }
 
     lectura = 0;
-    Serial.print("Lux: ");
-    Serial.println(var_5);
+    //Serial.print("Lux: ");
+    //Serial.println(var_5);
  
     dtostrf(leituraAnalogica(A3),0,1,var_4); //sensor de humedad
         
@@ -276,7 +282,7 @@ void loop() {
     
     LORA_Send_Data(data2send, bytes2send(data2send), Frame_Counter_Tx); // Transmite dados
 
-    Serial.println("Paquete enviado");
+    //Serial.println("Paquete enviado");
     
     Frame_Counter_Tx++; // Incrementa frame counter
     sleep_count = 0;  // Reinicia sleep conter
