@@ -62,13 +62,13 @@ int lectura = 0;
 // ------------------------------------------------------------------------------------------------------------------
 dht DHT;
 
-OneWire ourWire(16);                //Se establece el pin 2  como bus OneWire
+OneWire ourWire(16);                //Se establece el pin A2 como bus OneWire
 
 DallasTemperature sensors(&ourWire); //Se declara una variable u objeto para nuestro sensor
 
-DeviceAddress address5 = {0x28, 0x1B, 0xB2, 0x74, 0x4, 0x0, 0x0, 0x49};//dirección del sensor 1
-DeviceAddress address2 = {0x28, 0x85, 0xEF, 0x36, 0x4, 0x0, 0x0, 0x75};//dirección del sensor 2
-DeviceAddress address3 = {0x28, 0x45, 0x99, 0x75, 0x4, 0x0, 0x0, 0x73};//dirección del sensor 3
+DeviceAddress address10 = {0x28, 0x45, 0x4B, 0x81, 0xE3, 0xC1, 0x3C, 0x01};//dirección del sensor 1
+DeviceAddress address20 = {0x28, 0x85, 0x1D, 0x57, 0x4, 0xB4, 0x3C, 0x6B};//dirección del sensor 2
+DeviceAddress address30 = {0x28, 0x45, 0x99, 0x75, 0x4, 0x0, 0x0, 0x73};//dirección del sensor 3
 
 VEML7700 als;
 // ------------------------------------------------------------------------------------------------------------------
@@ -138,7 +138,7 @@ void goToSleep() {
 // INICIALIZA MCU
 // ------------------------------------------------------------------------------------------------------------------
 void setup() {
-  //Serial.begin(9600);    // Debug
+  Serial.begin(9600);    // Debug
   sensors.begin();   //Se inicia el sensor
     
   SPI.setDataMode(SPI_MODE0); // Inicializa comunicação SPI com RFM95
@@ -208,38 +208,38 @@ void loop() {
     //dtostrf(leituraAnalogica(A4),0,1,var_4);   // Lê ADC4 --- Sensor de humedad    
     //dtostrf(leituraAnalogica(A5),0,1,var_5);   // Lê ADC5
 
-    //Serial.println("Inicio de lectura de los sensores");
+    Serial.println("Inicio de lectura de los sensores");
 
-    while(lectura != 1){
+    //while(lectura != 1){
       if(DHT.read22(THar)==-2){ // Lê temperatura e humidade do ar com DHT11
         dtostrf(-2,0,1,var_6);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
         dtostrf(-2,0,1,var_7);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
       }
-      else {
+      /*else {
         if(DHT.temperature <= 50 && DHT.humidity <= 100){
           dtostrf(DHT.temperature,0,1,var_6);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
           dtostrf(DHT.humidity,0,1,var_7);           // Converte float em string dtostrf(valor,minimo,casas decimais,container)
           lectura = 1;
-          }
-        }
-    }
+          }*/
+        //}
+    //}
 
     lectura = 0;
-    //Serial.print("Temperatura do ar: ");
-    //Serial.println(var_6);
-    //Serial.print("Humidade do ar: ");
-    //Serial.println(var_7);
+    Serial.print("Temperatura do ar: ");
+    Serial.println(var_6);
+    Serial.print("Humidade do ar: ");
+    Serial.println(var_7);
 
     delay(500);
-
+        
     sensors.requestTemperatures();   //envía el comando para obtener las temperaturas
-    float temp5= sensors.getTempC(address5);//Se obtiene la temperatura en °C del sensor 1
-    float temp2= sensors.getTempC(address2);//Se obtiene la temperatura en °C del sensor 2
-    float temp3= sensors.getTempC(address3);//Se obtiene la temperatura en °C del sensor 3
+    float temp10= sensors.getTempC(address10);//Se obtiene la temperatura en °C del sensor 1
+    float temp20= sensors.getTempC(address20);//Se obtiene la temperatura en °C del sensor 2
+    float temp30= sensors.getTempC(address30);//Se obtiene la temperatura en °C del sensor 3
 
-    dtostrf(temp5,0,1,var_1);   
-    dtostrf(temp2,0,1,var_2);   
-    dtostrf(temp3,0,1,var_3); 
+    dtostrf(temp10,0,1,var_1);   
+    dtostrf(temp20,0,1,var_2);   
+    dtostrf(temp30,0,1,var_3); 
   
      while(lectura==0){
       als.begin();
@@ -252,8 +252,8 @@ void loop() {
     }
 
     lectura = 0;
-    //Serial.print("Lux: ");
-    //Serial.println(var_5);
+    Serial.print("Lux: ");
+    Serial.println(var_5);
  
     dtostrf(leituraAnalogica(A3),0,1,var_4); //sensor de humedad
         
