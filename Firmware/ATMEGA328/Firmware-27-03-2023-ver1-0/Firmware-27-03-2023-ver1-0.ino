@@ -3,7 +3,7 @@
  * 
  * cd = var_0 = batería
  * zz = var_1 = temperatura del suelo 10cm
- * zx = var_2 = temperatura del suelo 20cm   -> RECORDAR IDENTIFICARLOS BIEN ANTES DE PONERLOS EN LA ESTACA
+ * zx = var_2 = temperatura del suelo 20cm  
  * zc = var_3 = temperatura del suelo 30cm
  * zv = var_4 = humedad del suelo
  * zb = var_5 = lux      -> SDA - A4
@@ -233,9 +233,9 @@ void loop() {
     delay(500);
         
     sensors.requestTemperatures();   //envía el comando para obtener las temperaturas
-    float temp10= sensors.getTempC(address10);//Se obtiene la temperatura en °C del sensor 1
-    float temp20= sensors.getTempC(address20);//Se obtiene la temperatura en °C del sensor 2
-    float temp30= sensors.getTempC(address30);//Se obtiene la temperatura en °C del sensor 3
+    float temp10= sensors.getTempC(address10); //Se obtiene la temperatura en °C del sensor 1
+    float temp20= sensors.getTempC(address20); //Se obtiene la temperatura en °C del sensor 2
+    float temp30= sensors.getTempC(address30); //Se obtiene la temperatura en °C del sensor 3
 
     dtostrf(temp10,0,1,var_1);   
     dtostrf(temp20,0,1,var_2);   
