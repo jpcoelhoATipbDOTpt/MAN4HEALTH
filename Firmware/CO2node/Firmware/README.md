@@ -9,4 +9,5 @@ Testa comunicação com porto série
 Verifica controlo do conversor DC/DC
 ## Hello World CO2 Basic
 Com o sensor de CO2 colocado no socket do PCB, verifica o seu funcionamento
-
+## FIRMWARE_V3_HWSERIAL_V3.3
+Versão em que é utilizada a porta série física do microcontrolador e o baudrate é definido a 9600 bps para estar alinhado com o senseCAP
