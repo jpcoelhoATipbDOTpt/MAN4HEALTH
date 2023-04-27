@@ -37,7 +37,7 @@ protocol = "json"
 topic = "/" + protocol +"/" + apikey + "/" + deviceid + "/attrs"
 
 # Configuração Modbus
-PORT='/dev/ttyUSB0'
+PORT='/dev/SenseCAPdongle'
 TEMP_REGISTER = 0
 HUM_REGISTER  = 1
 BAR_REGISTER  = 2

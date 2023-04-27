@@ -13,7 +13,7 @@ import json
 
 def on_connect(client, usedata,flags,rc):
     if rc==0:
-        print("Client ligado")
+        print("Cliente ligado")
         global connected
         connected=True
     else:
@@ -32,18 +32,15 @@ client.on_connect = on_connect
 
 ## Tópico MQTT
 apikey = "Meteo"
-deviceid = "SenseCAP01"
+deviceid = "CO2DEV01"
 protocol = "json"
 topic = "/" + protocol +"/" + apikey + "/" + deviceid + "/attrs"
 
 # Configuração Modbus
-PORT='/dev/SenseCAPdongle'
-TEMP_REGISTER = 0
-HUM_REGISTER  = 1
-BAR_REGISTER  = 2
-LUX_REGISTER  = 4
+PORT='/dev/RS485dongle'
+REGISTER = 8
 
-SLAVE_ADDRESS = 14
+SLAVE_ADDRESS = 69
 
 # Configura instrumento
 instrument = minimalmodbus.Instrument(PORT,SLAVE_ADDRESS,mode=minimalmodbus.MODE_RTU)
@@ -53,42 +50,31 @@ instrument.serial.baudrate = 9600        # Baud
 instrument.serial.bytesize = 8
 instrument.serial.parity   = minimalmodbus.serial.PARITY_NONE
 instrument.serial.stopbits = 1
-instrument.serial.timeout  = None          # seconds
-
+instrument.serial.timeout  = 1          # seconds
+instrument.precalculate_read_size= False
 # Fecha porto
 instrument.close_port_after_each_call = True
 instrument.clear_buffers_before_each_transaction = True
 
-# Le temperatura
-airTemperature = instrument.read_register(TEMP_REGISTER,2,3,True)
-# Le Humidade
-airMoisture = instrument.read_register(HUM_REGISTER2,3,True)
-# Le Pressão Atmosférica
-MSW = instrument.read_long(BAR_REGISTER,3,True,3)
-atmosphericPressure= (MSW*0.01)
-# Le intensiade de radiação solar
-MSW = instrument.read_long(LUX_REGISTER,3,True,3)
-solarIlluminance= (MSW*0.01)
-solarIrradiance = round(solarIlluminance * 0.008197,2)
-
+# Le dados
+try:
+    dados = instrument.read_registers(REGISTER,3,3)
+except:
+    dados = [0,0,0]
+    
 # Mostra valores (debug apenas) 
-print('The Air Temperature is: %.1f ºC\r' % airTemperature)
-print('The Air Humidity is: %.1f percent\r' % airMoisture)
-print('The Atmospheric Pressure is: %.1f Pa\r' % atmosphericPressure)
-print('The Light Intensity is: %.1f lux\r' % solarIlluminance)
-print('The Solar Irradiance is: %.1f W/m2\r' % solarIrradiance)
+# print(*dados, sep=",")
 
 # Criar payload json
 
-payload = {"AT": airTemperature,
-           "AM": airMoisture,
-           "AP": atmosphericPressure,
-           "SI": solarIlluminance,
-           "SR": solarIrradiance }
+payload = { "AT": dados[1]/100, # Air Temperature   (ºC)
+            "AM": dados[2]/100, # Air Moisture      (%)
+           "CO2": dados[0]/10   # CO2 concentration (ppm)
+           }
 
 
 message = json.dumps(payload)
-
+# Mostra valores (debug apenas) 
 print(message)
 
 # Publicar dados no broker
@@ -104,4 +90,3 @@ try:
     client.loop_stop()
 except:
     print("Impossível conetar ao broker MQTT ")
-    
