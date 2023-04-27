@@ -6,5 +6,5 @@ Scripts criado para o Raspberry Pi e usados para comunicação com
 O modo dos ficheiros devem ser alterados para executável e adicionados ao CRON
 
 ```
-sudo chmod +x epever.py
+sudo chmod +x nome_do_ficheiro.py
 ```
