@@ -1,3 +1,3 @@
-'''
-contab -e
-'''
+```
+sudo crontab -e
+```
