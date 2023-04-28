@@ -1,3 +1,3 @@
 ```console
-sudo crontab -e
+$ sudo crontab -e
 ```
