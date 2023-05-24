@@ -67,9 +67,9 @@ OneWire ourWire(16);                //Se establece el pin A2 como bus OneWire
 
 DallasTemperature sensors(&ourWire); //Se declara una variable u objeto para nuestro sensor
  
-DeviceAddress address10 = {0x28, 0xB8, 0x24, 0x81, 0xE3, 0x9F, 0x3C, 0xEC}; //dirección del sensor 25
-DeviceAddress address20 = {0x28, 0xF8, 0x99, 0x81, 0xE3, 0x5A, 0x3C, 0x71}; //dirección del sensor 26
-DeviceAddress address30 = {0x28, 0x1B, 0x78, 0x81, 0xE3, 0x2E, 0x3C, 0x9B}; //dirección del sensor 27
+DeviceAddress address10 = {0x28, 0x1B, 0xB2, 0x74, 0x4, 0x0, 0x0, 0x49}; //dirección del sensor 5a
+DeviceAddress address20 = {0x28, 0x45, 0x99, 0x75, 0x4, 0x0, 0x0, 0x73}; //dirección del sensor 2a
+DeviceAddress address30 = {0x28, 0x85, 0xEF, 0x36, 0x4, 0x0, 0x0, 0x75}; //dirección del sensor 3a
 
 VEML7700 als;
 // ------------------------------------------------------------------------------------------------------------------
@@ -139,7 +139,7 @@ void goToSleep() {
 // INICIALIZA MCU
 // ------------------------------------------------------------------------------------------------------------------
 void setup() {
-  Serial.begin(9600);    // Debug
+ //Serial.begin(9600);    // Debug
   sensors.begin();   //Se inicia el sensor
     
   SPI.setDataMode(SPI_MODE0); // Inicializa comunicação SPI com RFM95
@@ -211,30 +211,19 @@ void loop() {
 
     Serial.println("Inicio de lectura de los sensores");
 
-    //while(contador <= 9999 && lectura != 1){
       if(DHT.read22(THar)==-2){ // Lê temperatura e humidade do ar com DHT11
         dtostrf(-2,0,1,var_6);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
         dtostrf(-2,0,1,var_7);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
-        //contador++;
       }
       else {
-        if(DHT.temperature <= 50 && DHT.humidity <= 100){
+        //if(DHT.temperature <= 50 && DHT.humidity <= 100){
           dtostrf(DHT.temperature,0,1,var_6);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
           dtostrf(DHT.humidity,0,1,var_7);           // Converte float em string dtostrf(valor,minimo,casas decimais,container)
-          lectura = 1;
           }
-        }
-    //}
 
     contador = 0;
     lectura = 0;
 
-   /* 
-    Serial.print("Temperatura do ar: ");
-    Serial.println(var_6);
-    Serial.print("Humidade do ar: ");
-    Serial.println(var_7);
-   */
     delay(500);
         
     sensors.requestTemperatures();   //envía el comando para obtener las temperaturas
@@ -245,7 +234,7 @@ void loop() {
     dtostrf(temp10,0,1,var_1);   
     dtostrf(temp20,0,1,var_2);   
     dtostrf(temp30,0,1,var_3); 
-  
+  /*
      while(contador<=9999 && lectura != 1){
       als.begin();
       als.setGain(VEML7700::ALS_GAIN_d8); //necesario para correcta medición de valores altos de lux
@@ -259,14 +248,10 @@ void loop() {
         dtostrf(-2,0,1,var_5);
       }
     }
-    //dtostrf(0,0,1,var_5); //sensor de humedad
-    
+    */
+    dtostrf(-2,0,1,var_5);
     lectura = 0;
     contador = 0;
-    /*
-    Serial.print("Lux: ");
-    Serial.println(var_5);
-    */
     
     dtostrf(leituraAnalogica(A3),0,1,var_4); //sensor de humedad
         
@@ -295,7 +280,7 @@ void loop() {
     
     LORA_Send_Data(data2send, bytes2send(data2send), Frame_Counter_Tx); // Transmite dados
 
-    Serial.println("Paquete enviado");
+    //Serial.println("Paquete enviado");
 
     Wire.end();  // para resolver el problema de los 1.7V en el modo sleep
     

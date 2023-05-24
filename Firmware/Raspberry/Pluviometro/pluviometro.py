@@ -1,5 +1,3 @@
-# Código con MQTT
-
 #! /usr/bin/python3
 
 import paho.mqtt.client as mqttclient
