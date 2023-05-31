@@ -38,7 +38,7 @@
 // VARIÁVEIS GLOBAIS
 // ------------------------------------------------------------------------------------------------------------------
 volatile int sleep_count = 0; // Mantém registo do número de vezes que o MCU acordou desde a última transmissão
-const int sleep_total = 1;    // Define o período entre transmissões calculada como sleep_total x 8s.
+const int sleep_total = 450;    // Define o período entre transmissões calculada como sleep_total x 8s.
                               // Para 1 hora => sleep_total = 450. Poderá ser necessário alterar o valor do prescale
                               // do WDT para outros intervalos de tempo. Por exemplo, se o ciclo de trabalho for 1
                               // minuto, na atual condição, sleep_total = 7.5 o que não é possível dado que sleep_
@@ -67,9 +67,10 @@ OneWire ourWire(16);                //Se establece el pin A2 como bus OneWire
 
 DallasTemperature sensors(&ourWire); //Se declara una variable u objeto para nuestro sensor
  
-DeviceAddress address10 = {0x28, 0x1B, 0xB2, 0x74, 0x4, 0x0, 0x0, 0x49}; //dirección del sensor 5a
-DeviceAddress address20 = {0x28, 0x45, 0x99, 0x75, 0x4, 0x0, 0x0, 0x73}; //dirección del sensor 2a
-DeviceAddress address30 = {0x28, 0x85, 0xEF, 0x36, 0x4, 0x0, 0x0, 0x75}; //dirección del sensor 3a
+
+DeviceAddress address10 = {0x28, 0xBB, 0x7E, 0x81, 0xE3, 0x6B, 0x3C, 0x3F};//dirección del sensor 46
+DeviceAddress address20 = {0x28, 0xCC, 0x69, 0x81, 0xE3, 0x60, 0x3C, 0x2C};//dirección del sensor 47
+DeviceAddress address30 = {0x28, 0x87, 0xCC, 0x81, 0xE3, 0xBF, 0x3C, 0x00};//dirección del sensor 48
 
 VEML7700 als;
 // ------------------------------------------------------------------------------------------------------------------
@@ -216,7 +217,7 @@ void loop() {
         dtostrf(-2,0,1,var_7);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
       }
       else {
-        //if(DHT.temperature <= 50 && DHT.humidity <= 100){
+       //if(DHT.temperature <= 50 && DHT.humidity <= 100){
           dtostrf(DHT.temperature,0,1,var_6);        // Converte float em string dtostrf(valor,minimo,casas decimais,container)
           dtostrf(DHT.humidity,0,1,var_7);           // Converte float em string dtostrf(valor,minimo,casas decimais,container)
           }
@@ -244,12 +245,12 @@ void loop() {
         lectura = 1;
       }
       else{
-        contador++;
+        contador++;    */
         dtostrf(-2,0,1,var_5);
-      }
-    }
-    */
-    dtostrf(-2,0,1,var_5);
+   //   }
+  //  }
+    
+    //dtostrf(-2,0,1,var_5);
     lectura = 0;
     contador = 0;
     
