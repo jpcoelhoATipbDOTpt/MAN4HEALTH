@@ -1,0 +1,1520 @@
+[
+    {
+        "id": "372908dc184ef308",
+        "type": "tab",
+        "label": "Meteo / Pluviometro / Epever",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9a36bf91e8518919",
+        "type": "mqtt in",
+        "z": "372908dc184ef308",
+        "name": "",
+        "topic": "/man4health/json/energia/epeverdev1/attrs",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "ca2a5d61d3d94a55",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8d6bd740f703b521",
+        "type": "function",
+        "z": "372908dc184ef308",
+        "name": "Splitter",
+        "func": "var now = new Date();\n\nvar horas = now.getHours();\nvar minutos = now.getMinutes();\n\nvar PV_Vin = msg.payload.A3;\nvar PV_Iin = msg.payload.A4;\nvar PV_Pin = msg.payload.A5;\nvar Vl = msg.payload.A7;\nvar Il = msg.payload.A8;\nvar Pl = msg.payload.A9;\nvar Temp_bat = msg.payload.A11;\nvar Temp_disp = msg.payload.A12;\nvar SOC_bat = msg.payload.A13;\nvar volt_bat = msg.payload.A14;\nvar estado_bat = msg.payload.A15;\nvar esado_equip_carga = msg.payload.A16;\nvar estado_equip_descarga = msg.payload.A17;\nvar vmax_bat = msg.payload.A18;\nvar vmin_bat = msg.payload.A19;\nvar energia_consumida_dia = msg.payload.A20;\nvar energia_consumida_mes = msg.payload.A22;\nvar energia_consumida_anio = msg.payload.A24;\nvar energia_consumida_total = msg.payload.A26;\nvar energia_generada_hoy = msg.payload.A28;\nvar energia_generada_mes = msg.payload.A30;\nvar energia_generada_anio = msg.payload.A32;\nvar energia_generada_total = msg.payload.A34;\nvar Vbat = msg.payload.A36;\nvar Ibat = msg.payload.A37;\n\nvar mes = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dia = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar anio = now.getFullYear();\n\nif (minutos < 10)\n    var tiempo = horas + \":0\" + minutos;\nelse\n    var tiempo = horas + \":\" + minutos;\n\nvar fecha = dia + \"/\" + mes + \"/\" + anio;\n\nvar n = {\n    //'Data' : fecha,\n    'Hora': tiempo,\n    'PV Voltage(V)' : PV_Vin,\n    'PV Current(I)': PV_Iin,\n    'PV Power(W)': PV_Pin,\n    'Load Voltage(V)': Vl,\n    'Load Current(I)': Il,\n    'Load Power(W)': Pl,\n    'Battery Temperature(ºC)': Temp_bat,\n    'Device Temperature(ºC)': Temp_disp,\n    'Battery SOC(%)': SOC_bat,\n    'Battery real rated Voltage(V)': volt_bat,\n    'Battery Status': estado_bat,\n    'Charging Equipment Status': esado_equip_carga,\n    'Discharging Equipment Status' : estado_equip_descarga,\n    'Maximum Battery Voltage(V)' : vmax_bat,\n    'Minimun Battery Voltage(V)' : vmin_bat,\n    'Consumed Energy Today(KWh)' : energia_consumida_dia,\n    'Consumed Energy this Month(KWh)' : energia_consumida_mes,\n    'Consumed Energy this Year(KWh)' : energia_consumida_anio,\n    'Total Consumed Energy(KWh)' : energia_generada_total,\n    'Generated Energy Today(KWh)' : energia_generada_hoy,\n    'Generated Energy this Month(KWh)' : energia_generada_mes,\n    'Generated Energy this Year(KWh)' : energia_generada_anio,\n    'Total Generated Energy(KWh)' : energia_generada_total,\n    'Battery Voltage(V)' : Vbat,\n    'Battery Current(I)' : Ibat\n    };\n\nreturn { payload: n };",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 100,
+        "wires": [
+            [
+                "2307709fc6a4901c"
+            ]
+        ]
+    },
+    {
+        "id": "74c3530cfda4a8a2",
+        "type": "json",
+        "z": "372908dc184ef308",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 370,
+        "y": 100,
+        "wires": [
+            [
+                "8d6bd740f703b521"
+            ]
+        ]
+    },
+    {
+        "id": "4ba5d349b159d038",
+        "type": "function",
+        "z": "372908dc184ef308",
+        "name": "Filename generator",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"Weather_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Estação Meteorologica/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "4aad93c17acba8d8"
+            ]
+        ]
+    },
+    {
+        "id": "4aad93c17acba8d8",
+        "type": "switch",
+        "z": "372908dc184ef308",
+        "name": "",
+        "property": "$count(msg.payload)",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 710,
+        "y": 240,
+        "wires": [
+            [
+                "57e1d193995f755e"
+            ],
+            [
+                "fe1c9ea07a2bf3e5"
+            ]
+        ]
+    },
+    {
+        "id": "56d4bb25a4f21519",
+        "type": "csv",
+        "z": "372908dc184ef308",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "Hora,Temperatura,Humidade,Pressao,Intensidade da Luz(lux),Intensidade da Luz(W/m2)",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 1010,
+        "y": 220,
+        "wires": [
+            [
+                "6bb60b26c2b59a73"
+            ]
+        ]
+    },
+    {
+        "id": "6bb60b26c2b59a73",
+        "type": "file",
+        "z": "372908dc184ef308",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1140,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "85e83e7ed4a574a4",
+        "type": "csv",
+        "z": "372908dc184ef308",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "once",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "Hora,Temperatura,Humidade,Pressao,Intensidade da Luz(lux),Intensidade da Luz(W/m2)",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 1010,
+        "y": 260,
+        "wires": [
+            [
+                "6bb60b26c2b59a73"
+            ]
+        ]
+    },
+    {
+        "id": "57e1d193995f755e",
+        "type": "change",
+        "z": "372908dc184ef308",
+        "name": "Get file content",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "filecontent",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 220,
+        "wires": [
+            [
+                "56d4bb25a4f21519"
+            ]
+        ]
+    },
+    {
+        "id": "fe1c9ea07a2bf3e5",
+        "type": "change",
+        "z": "372908dc184ef308",
+        "name": "Get file content",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "filecontent",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 260,
+        "wires": [
+            [
+                "85e83e7ed4a574a4"
+            ]
+        ]
+    },
+    {
+        "id": "32b864c86ed9368b",
+        "type": "mqtt in",
+        "z": "372908dc184ef308",
+        "name": "",
+        "topic": "/man4health/json/meteo/sensecapdev1/attrs",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ca2a5d61d3d94a55",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 200,
+        "wires": [
+            [
+                "1bb565aeb5649dc2",
+                "33cfd19f332857e0",
+                "ae984576e0cc88ad"
+            ]
+        ]
+    },
+    {
+        "id": "33cfd19f332857e0",
+        "type": "function",
+        "z": "372908dc184ef308",
+        "name": "Splitter",
+        "func": "var temp = msg.payload.AT;\nvar hum = msg.payload.AM;\nvar pres = msg.payload.AP;\nvar lux = msg.payload.SI;\nvar wm2 = msg.payload.SR;\nvar now = new Date();\n\nvar horas = now.getHours();\nvar minutos = now.getMinutes();\nvar mes = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dia = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar anio = now.getFullYear();\n\nif (minutos < 10)\n    var tiempo = horas + \":0\" + minutos;\nelse\n    var tiempo = horas + \":\" + minutos;\n\n\nvar fecha = dia + \"/\" + mes + \"/\" + anio;\n\n    \nvar m = {\n    //'Data' : fecha,\n    'Hora': tiempo,\n    'Temperatura': temp, \n    'Humidade': hum, \n    'Pressao': pres,\n    'Intensidade da Luz(lux)' : lux,\n    'Intensidade da Luz(W/m2)' : wm2\n    };\n\nreturn { payload: m };",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "4ba5d349b159d038"
+            ]
+        ]
+    },
+    {
+        "id": "fc6fb6f9af3642bb",
+        "type": "switch",
+        "z": "372908dc184ef308",
+        "name": "",
+        "property": "$count(msg.payload)",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 850,
+        "y": 100,
+        "wires": [
+            [
+                "e5fc1cc5903444cb"
+            ],
+            [
+                "35da6117421e61ea"
+            ]
+        ]
+    },
+    {
+        "id": "e3e4dd212b0d053d",
+        "type": "csv",
+        "z": "372908dc184ef308",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "Hora,PV Voltage(V), PV Current(I), PV Power(W),Load Voltage(V),Load Current(I),Load Power(W),Battery Temperature(ºC),Device Temperature(ºC),Battery SOC(%),Battery´s real rated Voltage(V),Battery Status,Charging Equipment Status,Discharging Equipment Status,Maximum Battery Voltage(V),Minimun Battery Voltage(V),Consumed Energy Today(KWh),Consumed Energy this Month(KWh),Consumed Energy this Year(KWh),Total Consumed Energy(KWh),Generated Energy Today(KWh),Generated Energy this Month(KWh),Generated Energy this Year(KWh),Total Generated Energy(KWh),Battery Voltage(V),Battery Current(I)",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 1150,
+        "y": 80,
+        "wires": [
+            [
+                "fe3edf847bdadcb6"
+            ]
+        ]
+    },
+    {
+        "id": "fe3edf847bdadcb6",
+        "type": "file",
+        "z": "372908dc184ef308",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1280,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9521b4c0c92f8e31",
+        "type": "csv",
+        "z": "372908dc184ef308",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "once",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "Hora,PV Voltage(V), PV Current(I), PV Power(W),Load Voltage(V),Load Current(I),Load Power(W),Battery Temperature(ºC),Device Temperature(ºC),Battery SOC(%),Battery´s real rated Voltage(V),Battery Status,Charging Equipment Status,Discharging Equipment Status,Maximum Battery Voltage(V),Minimun Battery Voltage(V),Consumed Energy Today(KWh),Consumed Energy this Month(KWh),Consumed Energy this Year(KWh),Total Consumed Energy(KWh),Generated Energy Today(KWh),Generated Energy this Month(KWh),Generated Energy this Year(KWh),Total Generated Energy(KWh),Battery Voltage(V),Battery Current(I)",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 1150,
+        "y": 120,
+        "wires": [
+            [
+                "fe3edf847bdadcb6"
+            ]
+        ]
+    },
+    {
+        "id": "e5fc1cc5903444cb",
+        "type": "change",
+        "z": "372908dc184ef308",
+        "name": "Get file content",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "filecontent",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 80,
+        "wires": [
+            [
+                "e3e4dd212b0d053d"
+            ]
+        ]
+    },
+    {
+        "id": "35da6117421e61ea",
+        "type": "change",
+        "z": "372908dc184ef308",
+        "name": "Get file content",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "filecontent",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 120,
+        "wires": [
+            [
+                "9521b4c0c92f8e31"
+            ]
+        ]
+    },
+    {
+        "id": "2307709fc6a4901c",
+        "type": "function",
+        "z": "372908dc184ef308",
+        "name": "Filename generator",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"PV Solar_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"/Users/Mariano/Desktop/Man4Health/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 100,
+        "wires": [
+            [
+                "fc6fb6f9af3642bb"
+            ]
+        ]
+    },
+    {
+        "id": "1bb565aeb5649dc2",
+        "type": "debug",
+        "z": "372908dc184ef308",
+        "name": "debug SeseCAP",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "1cb88785b90f04bb",
+        "type": "mqtt in",
+        "z": "372908dc184ef308",
+        "name": "",
+        "topic": "/man4health/json/meteo/pluviodev1/attrs",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "ca2a5d61d3d94a55",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 540,
+        "wires": [
+            [
+                "a1c655f4d006fa5a",
+                "27e828cf8d444dec",
+                "8c86f58c1b08b3fc"
+            ]
+        ]
+    },
+    {
+        "id": "a3d52c3ab83c7a72",
+        "type": "function",
+        "z": "372908dc184ef308",
+        "name": "Splitter",
+        "func": "// @ts-ignore\nmsg1 = {};\n// @ts-ignore\nmsg2 = {};\n// @ts-ignore\nmsg3 = {};\n// @ts-ignore\nmsg4 = {};\n\n\nmsg1.payload = msg.payload.AC;\nmsg2.payload = msg.payload.EA;\nmsg3.payload = msg.payload.TA;\nmsg4.payload = msg.payload.RI;\n\nreturn [msg1, msg2, msg3, msg4];",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 600,
+        "wires": [
+            [
+                "d5322cc1a9ef5ab9",
+                "b00b807b5c456eb3"
+            ],
+            [
+                "ee59873d4cb3198a",
+                "82364f37a6bdc940"
+            ],
+            [
+                "1243c3d4bf27a2e0",
+                "993bed4247c12005"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a1c655f4d006fa5a",
+        "type": "debug",
+        "z": "372908dc184ef308",
+        "name": "debug pluviometro",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "27e828cf8d444dec",
+        "type": "json",
+        "z": "372908dc184ef308",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 330,
+        "y": 600,
+        "wires": [
+            [
+                "a3d52c3ab83c7a72"
+            ]
+        ]
+    },
+    {
+        "id": "3602ac215d2dd9de",
+        "type": "comment",
+        "z": "372908dc184ef308",
+        "name": "Epever",
+        "info": "",
+        "x": 70,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "50314daaed63cd5f",
+        "type": "comment",
+        "z": "372908dc184ef308",
+        "name": "Estación Meteorológica",
+        "info": "",
+        "x": 100,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "467338195c59922c",
+        "type": "comment",
+        "z": "372908dc184ef308",
+        "name": "Pluviómetro",
+        "info": "",
+        "x": 70,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "ae984576e0cc88ad",
+        "type": "function",
+        "z": "372908dc184ef308",
+        "name": "function 18",
+        "func": "// @ts-ignore\nmsg1 = {};\n// @ts-ignore\nmsg2 = {};\n// @ts-ignore\nmsg3 = {};\n// @ts-ignore\nmsg4 = {};\n// @ts-ignore\nmsg5 = {};\n\nmsg1.payload = msg.payload.AT;\nmsg2.payload = msg.payload.AM;\nmsg3.payload = msg.payload.SI;\nmsg4.payload = msg.payload.SR;\nmsg5.payload = msg.payload.AP;\n\nreturn [msg1, msg2, msg3, msg4, msg5]",
+        "outputs": 5,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 360,
+        "wires": [
+            [
+                "608556e7382f7284",
+                "afba77d957889734"
+            ],
+            [
+                "517d6439c0208fe5",
+                "5582796b2611dce2"
+            ],
+            [
+                "165a8c7713678896",
+                "eed65a83bc0e03b3"
+            ],
+            [
+                "ce07e51684437942",
+                "7ab3d4aa7f5ce801"
+            ],
+            [
+                "2fed2dbc3d3fab2d",
+                "72cec868c5a8c764"
+            ]
+        ]
+    },
+    {
+        "id": "608556e7382f7284",
+        "type": "ui_gauge",
+        "z": "372908dc184ef308",
+        "name": "temperatura ",
+        "group": "cfb85e2580e69389",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "-20",
+        "max": "50",
+        "colors": [
+            "#0000ff",
+            "#00dd00",
+            "#ff0000"
+        ],
+        "seg1": "-1",
+        "seg2": "10",
+        "className": "",
+        "x": 550,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "517d6439c0208fe5",
+        "type": "ui_gauge",
+        "z": "372908dc184ef308",
+        "name": "humedad ",
+        "group": "276d29628fa24ba0",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "wave",
+        "title": "",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#6464ff",
+            "#4848ff",
+            "#0000ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 540,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "165a8c7713678896",
+        "type": "ui_text",
+        "z": "372908dc184ef308",
+        "group": "580c63606dc7e875",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "name": "lux",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 530,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "eed65a83bc0e03b3",
+        "type": "ui_chart",
+        "z": "372908dc184ef308",
+        "name": "Lux",
+        "group": "580c63606dc7e875",
+        "order": 2,
+        "width": 6,
+        "height": 6,
+        "label": "Lux",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#dfdf00",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 710,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5582796b2611dce2",
+        "type": "ui_chart",
+        "z": "372908dc184ef308",
+        "name": "humedad ",
+        "group": "276d29628fa24ba0",
+        "order": 2,
+        "width": 6,
+        "height": 6,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 720,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "afba77d957889734",
+        "type": "ui_chart",
+        "z": "372908dc184ef308",
+        "name": "temperatura",
+        "group": "cfb85e2580e69389",
+        "order": 2,
+        "width": 6,
+        "height": 6,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ca0000",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 730,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ce07e51684437942",
+        "type": "ui_text",
+        "z": "372908dc184ef308",
+        "group": "cb7f1db4910baf4d",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "name": "W/m2",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 530,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "7ab3d4aa7f5ce801",
+        "type": "ui_chart",
+        "z": "372908dc184ef308",
+        "name": "W/m2",
+        "group": "cb7f1db4910baf4d",
+        "order": 2,
+        "width": 6,
+        "height": 6,
+        "label": "W/m2",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#dfdf00",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 710,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72cec868c5a8c764",
+        "type": "ui_chart",
+        "z": "372908dc184ef308",
+        "name": "Pa",
+        "group": "01ccce500164029d",
+        "order": 2,
+        "width": 6,
+        "height": 6,
+        "label": "Pa",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#dfdf00",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 710,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2fed2dbc3d3fab2d",
+        "type": "ui_text",
+        "z": "372908dc184ef308",
+        "group": "01ccce500164029d",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "name": "Pressão",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 540,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "20de610ba7737a72",
+        "type": "function",
+        "z": "372908dc184ef308",
+        "name": "Splitter",
+        "func": "msg2.payload = msg.payload.EA;\nmsg3.payload = msg.payload.TA;\n\n\nvar acumulado = msg.payload.AC;\nvar event_acc = msg.payload.EA;\nvar total_acc = msg.payload.TA;\n\nvar now = new Date();\n\nvar horas = now.getHours();\nvar minutos = now.getMinutes();\nvar mes = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dia = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar anio = now.getFullYear();\n\nif (minutos < 10)\n    var tiempo = horas + \":0\" + minutos;\nelse\n    var tiempo = horas + \":\" + minutos;\n\n\nvar fecha = dia + \"/\" + mes + \"/\" + anio;\n\n    \nvar m = {\n    //'Data' : fecha,\n    'Hora': tiempo,\n    'Acumulado (mm)': acumulado, \n    'Acumulado desde a última mensagem (mm)': event_acc, \n    'Total acumulado (mm)': total_acc\n    };\n\nreturn { payload: m };",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 720,
+        "wires": [
+            [
+                "e423e087b89f1b2f"
+            ]
+        ]
+    },
+    {
+        "id": "e423e087b89f1b2f",
+        "type": "function",
+        "z": "372908dc184ef308",
+        "name": "Filename generator",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"Pluviometro_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Pluviometro/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 720,
+        "wires": [
+            [
+                "a71c8f27ebc4fc0f"
+            ]
+        ]
+    },
+    {
+        "id": "a71c8f27ebc4fc0f",
+        "type": "switch",
+        "z": "372908dc184ef308",
+        "name": "",
+        "property": "$count(msg.payload)",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 810,
+        "y": 720,
+        "wires": [
+            [
+                "28c28c80e4c8de26"
+            ],
+            [
+                "db58a13562e9a6cd"
+            ]
+        ]
+    },
+    {
+        "id": "28c28c80e4c8de26",
+        "type": "change",
+        "z": "372908dc184ef308",
+        "name": "Get file content",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "filecontent",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 700,
+        "wires": [
+            [
+                "df4a4fbc3d37c7f7"
+            ]
+        ]
+    },
+    {
+        "id": "db58a13562e9a6cd",
+        "type": "change",
+        "z": "372908dc184ef308",
+        "name": "Get file content",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "filecontent",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 740,
+        "wires": [
+            [
+                "fc86feb5800722ba"
+            ]
+        ]
+    },
+    {
+        "id": "fc86feb5800722ba",
+        "type": "csv",
+        "z": "372908dc184ef308",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "once",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "Hora,Acumulado (mm), Acumulado desde a última mensagem (mm),Total acumulado (mm)",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 1110,
+        "y": 740,
+        "wires": [
+            [
+                "e97a8519211cb00e"
+            ]
+        ]
+    },
+    {
+        "id": "df4a4fbc3d37c7f7",
+        "type": "csv",
+        "z": "372908dc184ef308",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "Hora,Acumulado (mm), Acumulado desde a última mensagem (mm),Total acumulado (mm)",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 1110,
+        "y": 700,
+        "wires": [
+            [
+                "e97a8519211cb00e"
+            ]
+        ]
+    },
+    {
+        "id": "e97a8519211cb00e",
+        "type": "file",
+        "z": "372908dc184ef308",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1240,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8c86f58c1b08b3fc",
+        "type": "json",
+        "z": "372908dc184ef308",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 330,
+        "y": 720,
+        "wires": [
+            [
+                "20de610ba7737a72"
+            ]
+        ]
+    },
+    {
+        "id": "e89069c73f4b7953",
+        "type": "mqtt in",
+        "z": "372908dc184ef308",
+        "name": "",
+        "topic": "/man4health/json/meteo/co2dev1/attrs",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "ca2a5d61d3d94a55",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 800,
+        "wires": [
+            [
+                "7e5e5d60dfeea376"
+            ]
+        ]
+    },
+    {
+        "id": "7e5e5d60dfeea376",
+        "type": "debug",
+        "z": "372908dc184ef308",
+        "name": "debug CO2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "d5322cc1a9ef5ab9",
+        "type": "ui_gauge",
+        "z": "372908dc184ef308",
+        "name": "acumulado",
+        "group": "149fe865afec805e",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "wave",
+        "title": "Acumulado",
+        "label": "mm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 670,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "ee59873d4cb3198a",
+        "type": "ui_gauge",
+        "z": "372908dc184ef308",
+        "name": "evento acumulado",
+        "group": "f1631243e0f43ddd",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "wave",
+        "title": "Acumulado desde a última mensagem ",
+        "label": "mm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 690,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "1243c3d4bf27a2e0",
+        "type": "ui_gauge",
+        "z": "372908dc184ef308",
+        "name": "total acumulado",
+        "group": "13facac187016560",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "wave",
+        "title": "Total acumulado",
+        "label": "mm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "9999",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 680,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "b00b807b5c456eb3",
+        "type": "ui_chart",
+        "z": "372908dc184ef308",
+        "name": "acumulado chart",
+        "group": "149fe865afec805e",
+        "order": 2,
+        "width": 6,
+        "height": 6,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#00e8e8",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 890,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "82364f37a6bdc940",
+        "type": "ui_chart",
+        "z": "372908dc184ef308",
+        "name": "evento acumulado chart",
+        "group": "f1631243e0f43ddd",
+        "order": 2,
+        "width": 6,
+        "height": 6,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#9dffff",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "993bed4247c12005",
+        "type": "ui_chart",
+        "z": "372908dc184ef308",
+        "name": "total acumulado chart",
+        "group": "13facac187016560",
+        "order": 2,
+        "width": 6,
+        "height": 6,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#04ffff",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 900,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "877d910fd95d0e5b",
+        "type": "comment",
+        "z": "372908dc184ef308",
+        "name": "Rint",
+        "info": "",
+        "x": 650,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "ca2a5d61d3d94a55",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cfb85e2580e69389",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "364b484bc0df9738",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "276d29628fa24ba0",
+        "type": "ui_group",
+        "name": "Humidade",
+        "tab": "364b484bc0df9738",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "580c63606dc7e875",
+        "type": "ui_group",
+        "name": "Iluminosidade (Lux)",
+        "tab": "364b484bc0df9738",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cb7f1db4910baf4d",
+        "type": "ui_group",
+        "name": "Iluminosidade (W/m2)",
+        "tab": "364b484bc0df9738",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "01ccce500164029d",
+        "type": "ui_group",
+        "name": "Pressão Atmosferica",
+        "tab": "364b484bc0df9738",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "149fe865afec805e",
+        "type": "ui_group",
+        "name": "Pluviómetro",
+        "tab": "364b484bc0df9738",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f1631243e0f43ddd",
+        "type": "ui_group",
+        "name": "Pluviometro",
+        "tab": "364b484bc0df9738",
+        "order": 7,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "13facac187016560",
+        "type": "ui_group",
+        "name": "Pluviometro",
+        "tab": "364b484bc0df9738",
+        "order": 8,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "364b484bc0df9738",
+        "type": "ui_tab",
+        "name": "Estação Meteorologica",
+        "icon": "dashboard",
+        "order": 19,
+        "disabled": false,
+        "hidden": false
+    }
+]
