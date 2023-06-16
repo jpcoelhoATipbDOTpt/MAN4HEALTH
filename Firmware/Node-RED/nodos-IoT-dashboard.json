@@ -12,7 +12,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0001/data",
+        "topic": "/man4health/json/iot/NO0001/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -20,13 +20,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 100,
-        "y": 520,
+        "x": 140,
+        "y": 420,
         "wires": [
             [
-                "06494152f5e203fd",
-                "c77571920dce2389",
-                "ad9da5100e639af3"
+                "ad9da5100e639af3",
+                "c77571920dce2389"
             ]
         ]
     },
@@ -51,7 +50,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0003/data",
+        "topic": "/man4health/json/iot/NO0003/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -59,13 +58,13 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 100,
-        "y": 1000,
+        "x": 140,
+        "y": 920,
         "wires": [
             [
-                "6eae511526255a33",
                 "b2be833d2fe8fb6c",
-                "3ec32cdcb528fb31"
+                "3ec32cdcb528fb31",
+                "6eae511526255a33"
             ]
         ]
     },
@@ -90,7 +89,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0002/data",
+        "topic": "/man4health/json/iot/NO0002/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -98,11 +97,10 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1140,
-        "y": 520,
+        "x": 1180,
+        "y": 420,
         "wires": [
             [
-                "20fd8e95ddb3899d",
                 "3fb171c6dc01b97d",
                 "6ab01403e8235d19"
             ]
@@ -129,7 +127,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0004/data",
+        "topic": "/man4health/json/iot/NO0004/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -137,11 +135,10 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1140,
-        "y": 1000,
+        "x": 1200,
+        "y": 920,
         "wires": [
             [
-                "4903a85a336bc667",
                 "d346f02b0fcf1736",
                 "db46c1c6c822d768"
             ]
@@ -168,7 +165,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0005/data",
+        "topic": "/man4health/json/iot/NO0005/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -176,11 +173,10 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 100,
-        "y": 1520,
+        "x": 140,
+        "y": 1440,
         "wires": [
             [
-                "3c85bffe5a6ccb33",
                 "146c16107461ed92",
                 "d1affca3a493650c"
             ]
@@ -207,7 +203,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0006/data",
+        "topic": "/man4health/json/iot/NO0006/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -215,11 +211,10 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1140,
-        "y": 1520,
+        "x": 1180,
+        "y": 1440,
         "wires": [
             [
-                "85bb2c9959ba97bb",
                 "4f398e4675a8a626",
                 "950bc5aa139fb15a"
             ]
@@ -266,7 +261,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0007/data",
+        "topic": "/man4health/json/iot/NO0007/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -274,11 +269,10 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 100,
-        "y": 2080,
+        "x": 140,
+        "y": 2000,
         "wires": [
             [
-                "ab1144bc3517efd8",
                 "beb68077364a5820",
                 "4ab5347ab4f6b56a"
             ]
@@ -313,8 +307,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 260,
-        "y": 2040,
+        "x": 400,
+        "y": 1980,
         "wires": []
     },
     {
@@ -322,7 +316,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "function 1",
-        "func": "// @ts-ignore\nmsg1 = {};\n// @ts-ignore\nmsg2 = {};\n// @ts-ignore\nmsg3 = {};\n// @ts-ignore\nmsg4 = {};\n// @ts-ignore\nmsg5 = {};\n// @ts-ignore\nmsg6 = {};\n// @ts-ignore\nmsg7 = {};\n// @ts-ignore\nmsg8 = {};\n// @ts-ignore\nmsg9 = {};\n// @ts-ignore\nmsg10 = {};\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 695;   //you need to replace this value with Value_1\nvar verywet = 410;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\n//---- Asignación de las salidas ----\nmsg1.payload = msg.payload.al; //temp aire\nmsg2.payload = msg.payload.ax; //hum aire\nmsg3.payload = msg.payload.RSSI;\nmsg4.payload = msg.payload.SNR;\nmsg5.payload = bateria; //bateria\nmsg6.payload = msg.payload.zz; //temp suelo 1\nmsg7.payload = msg.payload.zx; //temp suelo 2\nmsg8.payload = msg.payload.zc; //temp suelo 3\nmsg9.payload = msg.payload.zb; //lux\nmsg10.payload = humedad; //hum suelo\n\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10];",
+        "func": "// @ts-ignore\nmsg1 = {};\n// @ts-ignore\nmsg2 = {};\n// @ts-ignore\nmsg3 = {};\n// @ts-ignore\nmsg4 = {};\n// @ts-ignore\nmsg5 = {};\n// @ts-ignore\nmsg6 = {};\n// @ts-ignore\nmsg7 = {};\n// @ts-ignore\nmsg8 = {};\n// @ts-ignore\nmsg9 = {};\n// @ts-ignore\nmsg10 = {};\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 515;   //you need to replace this value with Value_1\nvar verywet = 410;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\n//---- Asignación de las salidas ----\nmsg1.payload = msg.payload.al; //temp aire\nmsg2.payload = msg.payload.ax; //hum aire\nmsg3.payload = msg.payload.RSSI;\nmsg4.payload = msg.payload.SNR;\nmsg5.payload = bateria; //bateria\nmsg6.payload = msg.payload.zz; //temp suelo 1\nmsg7.payload = msg.payload.zx; //temp suelo 2\nmsg8.payload = msg.payload.zc; //temp suelo 3\nmsg9.payload = msg.payload.zb; //lux\nmsg10.payload = humedad; //hum suelo\n\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10];",
         "outputs": 10,
         "noerr": 0,
         "initialize": "",
@@ -379,8 +373,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 220,
-        "y": 480,
+        "x": 380,
+        "y": 400,
         "wires": []
     },
     {
@@ -396,8 +390,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1320,
-        "y": 480,
+        "x": 1460,
+        "y": 420,
         "wires": []
     },
     {
@@ -405,7 +399,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "function 2",
-        "func": "// @ts-ignore\nmsg1 = {};\n// @ts-ignore\nmsg2 = {};\n// @ts-ignore\nmsg3 = {};\n// @ts-ignore\nmsg4 = {};\n// @ts-ignore\nmsg5 = {};\n// @ts-ignore\nmsg6 = {};\n// @ts-ignore\nmsg7 = {};\n// @ts-ignore\nmsg8 = {};\n// @ts-ignore\nmsg9 = {};\n// @ts-ignore\nmsg10 = {};\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 685;   //you need to replace this value with Value_1\nvar verywet = 531;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\n//---- Asignación de las salidas ----\nmsg1.payload = msg.payload.al; //temp aire\nmsg2.payload = msg.payload.ax; //hum aire\nmsg3.payload = msg.payload.RSSI;\nmsg4.payload = msg.payload.SNR;\nmsg5.payload = bateria; //bateria\nmsg6.payload = msg.payload.zz; //temp suelo 1\nmsg7.payload = msg.payload.zx; //temp suelo 2\nmsg8.payload = msg.payload.zc; //temp suelo 3\nmsg9.payload = msg.payload.zb; //lux\nmsg10.payload = humedad; //hum suelo\n\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10];",
+        "func": "// @ts-ignore\nmsg1 = {};\n// @ts-ignore\nmsg2 = {};\n// @ts-ignore\nmsg3 = {};\n// @ts-ignore\nmsg4 = {};\n// @ts-ignore\nmsg5 = {};\n// @ts-ignore\nmsg6 = {};\n// @ts-ignore\nmsg7 = {};\n// @ts-ignore\nmsg8 = {};\n// @ts-ignore\nmsg9 = {};\n// @ts-ignore\nmsg10 = {};\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 685;   //you need to replace this value with Value_1\nvar verywet = 531;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\n//---- Asignación de las salidas ----\nmsg1.payload = msg.payload.al; //temp aire\nmsg2.payload = msg.payload.ax; //hum aire\nmsg3.payload = msg.payload.RSSI;\nmsg4.payload = msg.payload.SNR;\nmsg5.payload = bateria; //bateria\nmsg6.payload = msg.payload.zz; //temp suelo 1\nmsg7.payload = msg.payload.zx; //temp suelo 2\nmsg8.payload = msg.payload.zc; //temp suelo 3\nmsg9.payload = humedad; //hum suelo\n\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9];",
         "outputs": 9,
         "noerr": 0,
         "initialize": "",
@@ -472,7 +466,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/0184B601/data",
+        "topic": "/man4health/json/iot/PHDEV1/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -480,13 +474,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 100,
+        "x": 140,
         "y": 160,
         "wires": [
             [
                 "85415d37f73292b8",
-                "0c4e6bd9b438403c",
-                "28bd6a363cba05ea"
+                "0c4e6bd9b438403c"
             ]
         ]
     },
@@ -655,7 +648,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"A0_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/A0/\"+ msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"PHDEV1_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/PHDEV1/\"+ msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -732,8 +725,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 260,
-        "y": 940,
+        "x": 400,
+        "y": 900,
         "wires": []
     },
     {
@@ -749,8 +742,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1320,
-        "y": 960,
+        "x": 1460,
+        "y": 900,
         "wires": []
     },
     {
@@ -766,8 +759,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 280,
-        "y": 1480,
+        "x": 400,
+        "y": 1420,
         "wires": []
     },
     {
@@ -783,8 +776,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1320,
-        "y": 1480,
+        "x": 1440,
+        "y": 1420,
         "wires": []
     },
     {
@@ -988,7 +981,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0008/data",
+        "topic": "/man4health/json/iot/NO0008/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -996,11 +989,10 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1140,
-        "y": 2080,
+        "x": 1180,
+        "y": 2000,
         "wires": [
             [
-                "e9223a39d0392dde",
                 "a8e5344e93f7090c",
                 "f4230d44417ddfb4"
             ]
@@ -1035,8 +1027,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1320,
-        "y": 2040,
+        "x": 1440,
+        "y": 1980,
         "wires": []
     },
     {
@@ -1068,8 +1060,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 240,
-        "y": 2540,
+        "x": 400,
+        "y": 2480,
         "wires": []
     },
     {
@@ -1077,7 +1069,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0010/data",
+        "topic": "/man4health/json/iot/NO0010/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -1085,11 +1077,10 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1140,
-        "y": 2580,
+        "x": 1180,
+        "y": 2500,
         "wires": [
             [
-                "1316d963388b8ed7",
                 "0c897ef8fc21681b",
                 "29c977fae837685a"
             ]
@@ -1124,8 +1115,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1320,
-        "y": 2540,
+        "x": 1460,
+        "y": 2480,
         "wires": []
     },
     {
@@ -1133,7 +1124,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0009/data",
+        "topic": "/man4health/json/iot/NO0009/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -1141,11 +1132,10 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 100,
-        "y": 2580,
+        "x": 140,
+        "y": 2500,
         "wires": [
             [
-                "22ff6b80488185a5",
                 "32affe87b658fa8f",
                 "5e44ccf7debf5f4e"
             ]
@@ -1156,7 +1146,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "function 7",
-        "func": "// @ts-ignore\nmsg1 = {};\n// @ts-ignore\nmsg2 = {};\n// @ts-ignore\nmsg3 = {};\n// @ts-ignore\nmsg4 = {};\n// @ts-ignore\nmsg5 = {};\n// @ts-ignore\nmsg6 = {};\n// @ts-ignore\nmsg7 = {};\n// @ts-ignore\nmsg8 = {};\n// @ts-ignore\nmsg9 = {};\n// @ts-ignore\nmsg10 = {};\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 695;   //you need to replace this value with Value_1\nvar verywet = 247;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\n//---- Asignación de las salidas ----\nmsg1.payload = msg.payload.al; //temp aire\nmsg2.payload = msg.payload.ax; //hum aire\nmsg3.payload = msg.payload.RSSI;\nmsg4.payload = msg.payload.SNR;\nmsg5.payload = bateria; //bateria\nmsg6.payload = msg.payload.zz; //temp suelo 1\nmsg7.payload = msg.payload.zx; //temp suelo 2\nmsg8.payload = msg.payload.zc; //temp suelo 3\nmsg9.payload = msg.payload.zb; //lux\nmsg10.payload = humedad; //hum suelo\n\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10];",
+        "func": "// @ts-ignore\nmsg1 = {};\n// @ts-ignore\nmsg2 = {};\n// @ts-ignore\nmsg3 = {};\n// @ts-ignore\nmsg4 = {};\n// @ts-ignore\nmsg5 = {};\n// @ts-ignore\nmsg6 = {};\n// @ts-ignore\nmsg7 = {};\n// @ts-ignore\nmsg8 = {};\n// @ts-ignore\nmsg9 = {};\n// @ts-ignore\nmsg10 = {};\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 568;   //you need to replace this value with Value_1\nvar verywet = 247;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\n//---- Asignación de las salidas ----\nmsg1.payload = msg.payload.al; //temp aire\nmsg2.payload = msg.payload.ax; //hum aire\nmsg3.payload = msg.payload.RSSI;\nmsg4.payload = msg.payload.SNR;\nmsg5.payload = bateria; //bateria\nmsg6.payload = msg.payload.zz; //temp suelo 1\nmsg7.payload = msg.payload.zx; //temp suelo 2\nmsg8.payload = msg.payload.zc; //temp suelo 3\nmsg9.payload = msg.payload.zb; //lux\nmsg10.payload = humedad; //hum suelo\n\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10];",
         "outputs": 10,
         "noerr": 0,
         "initialize": "",
@@ -1205,7 +1195,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "function 8",
-        "func": "// @ts-ignore\nmsg1 = {};\n// @ts-ignore\nmsg2 = {};\n// @ts-ignore\nmsg3 = {};\n// @ts-ignore\nmsg4 = {};\n// @ts-ignore\nmsg5 = {};\n// @ts-ignore\nmsg6 = {};\n// @ts-ignore\nmsg7 = {};\n// @ts-ignore\nmsg8 = {};\n// @ts-ignore\nmsg9 = {};\n// @ts-ignore\nmsg10 = {};\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 697;   //you need to replace this value with Value_1\nvar verywet = 541;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\n//---- Asignación de las salidas ----\nmsg1.payload = msg.payload.al; //temp aire\nmsg2.payload = msg.payload.ax; //hum aire\nmsg3.payload = msg.payload.RSSI;\nmsg4.payload = msg.payload.SNR;\nmsg5.payload = bateria; //bateria\nmsg6.payload = msg.payload.zz; //temp suelo 1\nmsg7.payload = msg.payload.zx; //temp suelo 2\nmsg8.payload = msg.payload.zc; //temp suelo 3\nmsg9.payload = msg.payload.zb; //lux\nmsg10.payload = humedad; //hum suelo\n\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10];",
+        "func": "// @ts-ignore\nmsg1 = {};\n// @ts-ignore\nmsg2 = {};\n// @ts-ignore\nmsg3 = {};\n// @ts-ignore\nmsg4 = {};\n// @ts-ignore\nmsg5 = {};\n// @ts-ignore\nmsg6 = {};\n// @ts-ignore\nmsg7 = {};\n// @ts-ignore\nmsg8 = {};\n// @ts-ignore\nmsg9 = {};\n// @ts-ignore\nmsg10 = {};\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 600;   //you need to replace this value with Value_1\nvar verywet = 541;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\n//---- Asignación de las salidas ----\nmsg1.payload = msg.payload.al; //temp aire\nmsg2.payload = msg.payload.ax; //hum aire\nmsg3.payload = msg.payload.RSSI;\nmsg4.payload = msg.payload.SNR;\nmsg5.payload = bateria; //bateria\nmsg6.payload = msg.payload.zz; //temp suelo 1\nmsg7.payload = msg.payload.zx; //temp suelo 2\nmsg8.payload = msg.payload.zc; //temp suelo 3\nmsg9.payload = msg.payload.zb; //lux\nmsg10.payload = humedad; //hum suelo\n\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10];",
         "outputs": 10,
         "noerr": 0,
         "initialize": "",
@@ -1354,7 +1344,7 @@
         "name": "A1",
         "info": "",
         "x": 70,
-        "y": 480,
+        "y": 380,
         "wires": []
     },
     {
@@ -1364,7 +1354,7 @@
         "name": "A2",
         "info": "",
         "x": 1110,
-        "y": 480,
+        "y": 380,
         "wires": []
     },
     {
@@ -1374,7 +1364,7 @@
         "name": "A3",
         "info": "",
         "x": 70,
-        "y": 960,
+        "y": 880,
         "wires": []
     },
     {
@@ -1383,8 +1373,8 @@
         "z": "0fda059129e02852",
         "name": "A4",
         "info": "",
-        "x": 1110,
-        "y": 960,
+        "x": 1130,
+        "y": 880,
         "wires": []
     },
     {
@@ -1394,7 +1384,7 @@
         "name": "A5",
         "info": "",
         "x": 70,
-        "y": 1480,
+        "y": 1400,
         "wires": []
     },
     {
@@ -1404,7 +1394,7 @@
         "name": "A6",
         "info": "",
         "x": 1110,
-        "y": 1480,
+        "y": 1400,
         "wires": []
     },
     {
@@ -1414,7 +1404,7 @@
         "name": "B1",
         "info": "",
         "x": 70,
-        "y": 2040,
+        "y": 1960,
         "wires": []
     },
     {
@@ -1424,7 +1414,7 @@
         "name": "B2",
         "info": "",
         "x": 1110,
-        "y": 2040,
+        "y": 1960,
         "wires": []
     },
     {
@@ -1434,7 +1424,7 @@
         "name": "B3",
         "info": "",
         "x": 70,
-        "y": 2540,
+        "y": 2460,
         "wires": []
     },
     {
@@ -1444,7 +1434,7 @@
         "name": "B4",
         "info": "",
         "x": 1110,
-        "y": 2540,
+        "y": 2460,
         "wires": []
     },
     {
@@ -1468,7 +1458,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Splitter",
-        "func": "var temp_aire = msg.payload.al;\nvar hum_aire = msg.payload.ax;\nvar temp_10cm = msg.payload.zz;\nvar temp_20cm = msg.payload.zx;\nvar temp_30cm = msg.payload.zc;\nvar luximetro = msg.payload.zb;\nvar now = new Date();\n\nvar horas = now.getHours();\nvar minutos = now.getMinutes();\nvar mes = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dia = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar anio = now.getFullYear();\n\nif (minutos < 10)\n    var tiempo = horas + \":0\" + minutos;\nelse\n    var tiempo = horas + \":\" + minutos;\n\n\nvar fecha = dia + \"/\" + mes + \"/\" + anio;\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 695;   //you need to replace this value with Value_1\nvar verywet = 410;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\nvar m = {\n    //'Data' : fecha,\n    'Hora': tiempo,\n    'Temperatura do Ar (ºC)': temp_aire, \n    'Humidade do Ar (%)': hum_aire, \n    'Temperatura do Solo 10cm (ºC)': temp_10cm,\n    'Temperatura do Solo 20cm (ºC)' : temp_20cm,\n    'Temperatura do Solo 30cm (ºC)' : temp_30cm,\n    'Humidade do Solo (%)' : humedad,\n    'Intensidade luminosa (lux)' : luximetro,\n    'Bateria (%)' : bateria\n    };\n\nreturn { payload: m };",
+        "func": "var temp_aire = msg.payload.al;\nvar hum_aire = msg.payload.ax;\nvar temp_10cm = msg.payload.zz;\nvar temp_20cm = msg.payload.zx;\nvar temp_30cm = msg.payload.zc;\nvar luximetro = msg.payload.zb;\nvar now = new Date();\n\nvar horas = now.getHours();\nvar minutos = now.getMinutes();\nvar mes = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dia = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar anio = now.getFullYear();\n\nif (minutos < 10)\n    var tiempo = horas + \":0\" + minutos;\nelse\n    var tiempo = horas + \":\" + minutos;\n\n\nvar fecha = dia + \"/\" + mes + \"/\" + anio;\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 515;   //you need to replace this value with Value_1\nvar verywet = 410;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\nvar m = {\n    //'Data' : fecha,\n    'Hora': tiempo,\n    'Temperatura do Ar (ºC)': temp_aire, \n    'Humidade do Ar (%)': hum_aire, \n    'Temperatura do Solo 10cm (ºC)': temp_10cm,\n    'Temperatura do Solo 20cm (ºC)' : temp_20cm,\n    'Temperatura do Solo 30cm (ºC)' : temp_30cm,\n    'Humidade do Solo (%)' : humedad,\n    'Intensidade luminosa (lux)' : luximetro,\n    'Bateria (%)' : bateria\n    };\n\nreturn { payload: m };",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1487,7 +1477,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"A1_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/A1/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 1_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 1/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1710,7 +1700,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"A3_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/A3/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 3_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 3/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1799,7 +1789,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"A5_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/A5/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 5_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 5/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1936,7 +1926,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Splitter",
-        "func": "var temp_aire = msg.payload.al;\nvar hum_aire = msg.payload.ax;\nvar temp_10cm = msg.payload.zz;\nvar temp_20cm = msg.payload.zx;\nvar temp_30cm = msg.payload.zc;\nvar luximetro = msg.payload.zb;\nvar now = new Date();\n\nvar horas = now.getHours();\nvar minutos = now.getMinutes();\nvar mes = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dia = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar anio = now.getFullYear();\n\nif (minutos < 10)\n    var tiempo = horas + \":0\" + minutos;\nelse\n    var tiempo = horas + \":\" + minutos;\n\n\nvar fecha = dia + \"/\" + mes + \"/\" + anio;\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 695;   //you need to replace this value with Value_1\nvar verywet = 247;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\nvar m = {\n    //'Data' : fecha,\n    'Hora': tiempo,\n    'Temperatura do Ar (ºC)': temp_aire, \n    'Humidade do Ar (%)': hum_aire, \n    'Temperatura do Solo 10cm (ºC)': temp_10cm,\n    'Temperatura do Solo 20cm (ºC)' : temp_20cm,\n    'Temperatura do Solo 30cm (ºC)' : temp_30cm,\n    'Humidade do Solo (%)' : humedad,\n    'Intensidade luminosa (lux)' : luximetro,\n    'Bateria (%)' : bateria\n    };\n\nreturn { payload: m };",
+        "func": "var temp_aire = msg.payload.al;\nvar hum_aire = msg.payload.ax;\nvar temp_10cm = msg.payload.zz;\nvar temp_20cm = msg.payload.zx;\nvar temp_30cm = msg.payload.zc;\nvar luximetro = msg.payload.zb;\nvar now = new Date();\n\nvar horas = now.getHours();\nvar minutos = now.getMinutes();\nvar mes = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dia = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar anio = now.getFullYear();\n\nif (minutos < 10)\n    var tiempo = horas + \":0\" + minutos;\nelse\n    var tiempo = horas + \":\" + minutos;\n\n\nvar fecha = dia + \"/\" + mes + \"/\" + anio;\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 568;   //you need to replace this value with Value_1\nvar verywet = 247;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\nvar m = {\n    //'Data' : fecha,\n    'Hora': tiempo,\n    'Temperatura do Ar (ºC)': temp_aire, \n    'Humidade do Ar (%)': hum_aire, \n    'Temperatura do Solo 10cm (ºC)': temp_10cm,\n    'Temperatura do Solo 20cm (ºC)' : temp_20cm,\n    'Temperatura do Solo 30cm (ºC)' : temp_30cm,\n    'Humidade do Solo (%)' : humedad,\n    'Intensidade luminosa (lux)' : luximetro,\n    'Bateria (%)' : bateria\n    };\n\nreturn { payload: m };",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1955,7 +1945,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"B1_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/B1/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 7_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 7/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2111,7 +2101,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"B3_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/B3/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 9_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 9/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2267,7 +2257,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"A3_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/A2/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 2_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 2/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2699,7 +2689,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"A4_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/A4/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 4_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 4/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2901,7 +2891,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"A6_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/A6/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 6_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 6/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3084,7 +3074,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Splitter",
-        "func": "var temp_aire = msg.payload.al;\nvar hum_aire = msg.payload.ax;\nvar temp_10cm = msg.payload.zz;\nvar temp_20cm = msg.payload.zx;\nvar temp_30cm = msg.payload.zc;\nvar luximetro = msg.payload.zb;\nvar now = new Date();\n\nvar horas = now.getHours();\nvar minutos = now.getMinutes();\nvar mes = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dia = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar anio = now.getFullYear();\n\nif (minutos < 10)\n    var tiempo = horas + \":0\" + minutos;\nelse\n    var tiempo = horas + \":\" + minutos;\n\n\nvar fecha = dia + \"/\" + mes + \"/\" + anio;\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 697;   //you need to replace this value with Value_1\nvar verywet = 541;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\nvar m = {\n    //'Data' : fecha,\n    'Hora': tiempo,\n    'Temperatura do Ar (ºC)': temp_aire, \n    'Humidade do Ar (%)': hum_aire, \n    'Temperatura do Solo 10cm (ºC)': temp_10cm,\n    'Temperatura do Solo 20cm (ºC)' : temp_20cm,\n    'Temperatura do Solo 30cm (ºC)' : temp_30cm,\n    'Humidade do Solo (%)' : humedad,\n    'Intensidade luminosa (lux)' : luximetro,\n    'Bateria (%)' : bateria\n    };\n\nreturn { payload: m };",
+        "func": "var temp_aire = msg.payload.al;\nvar hum_aire = msg.payload.ax;\nvar temp_10cm = msg.payload.zz;\nvar temp_20cm = msg.payload.zx;\nvar temp_30cm = msg.payload.zc;\nvar luximetro = msg.payload.zb;\nvar now = new Date();\n\nvar horas = now.getHours();\nvar minutos = now.getMinutes();\nvar mes = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dia = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar anio = now.getFullYear();\n\nif (minutos < 10)\n    var tiempo = horas + \":0\" + minutos;\nelse\n    var tiempo = horas + \":\" + minutos;\n\n\nvar fecha = dia + \"/\" + mes + \"/\" + anio;\n\n//---- Cálculo de porcentaje de batería ----\nvar a = msg.payload.cd;\n\nvar num = parseFloat(a);\nvar b = num * 2 / 1023 * 3.3;\n\nvar porcentaje = b * 100 / 4.2;\n\nvar bateria = Math.trunc(porcentaje);\n\n//---- Cálculo de porcentaje de humedad ----\nvar dry = 600;   //you need to replace this value with Value_1\nvar verywet = 541;  //you need to replace this value with Value_2\n\nvar h = msg.payload.zv;\n\nvar humedad = (dry - h) * 100 / (dry - verywet);\n\nvar m = {\n    //'Data' : fecha,\n    'Hora': tiempo,\n    'Temperatura do Ar (ºC)': temp_aire, \n    'Humidade do Ar (%)': hum_aire, \n    'Temperatura do Solo 10cm (ºC)': temp_10cm,\n    'Temperatura do Solo 20cm (ºC)' : temp_20cm,\n    'Temperatura do Solo 30cm (ºC)' : temp_30cm,\n    'Humidade do Solo (%)' : humedad,\n    'Intensidade luminosa (lux)' : luximetro,\n    'Bateria (%)' : bateria\n    };\n\nreturn { payload: m };",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3103,7 +3093,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"B2_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/B2/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 8_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 8/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3305,7 +3295,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"B4_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/B4/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 10_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 10/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3496,8 +3486,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 280,
-        "y": 3040,
+        "x": 440,
+        "y": 3000,
         "wires": []
     },
     {
@@ -3505,7 +3495,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0012/data",
+        "topic": "/man4health/json/iot/NO0012/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -3513,12 +3503,11 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1140,
-        "y": 3080,
+        "x": 1180,
+        "y": 3000,
         "wires": [
             [
                 "eee590d327c8ebbd",
-                "3e8634a1698e1241",
                 "31058c77b70a6b5e"
             ]
         ]
@@ -3528,7 +3517,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0010/data",
+        "topic": "/man4health/json/iot/NO0011/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -3536,11 +3525,10 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 100,
-        "y": 3080,
+        "x": 140,
+        "y": 3000,
         "wires": [
             [
-                "fcb6c63893d09135",
                 "46a994f70349db65",
                 "7810206e25bd3ff4"
             ]
@@ -3590,7 +3578,7 @@
         "name": "B5",
         "info": "",
         "x": 70,
-        "y": 3040,
+        "y": 2960,
         "wires": []
     },
     {
@@ -3600,7 +3588,7 @@
         "name": "B6",
         "info": "",
         "x": 1110,
-        "y": 3040,
+        "y": 2960,
         "wires": []
     },
     {
@@ -3643,7 +3631,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"B5_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/B5/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 11_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 11/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3812,7 +3800,7 @@
         "name": "C1",
         "info": "",
         "x": 70,
-        "y": 3540,
+        "y": 3460,
         "wires": []
     },
     {
@@ -3822,7 +3810,7 @@
         "name": "C2",
         "info": "",
         "x": 1110,
-        "y": 3540,
+        "y": 3460,
         "wires": []
     },
     {
@@ -3832,7 +3820,7 @@
         "name": "C3",
         "info": "",
         "x": 70,
-        "y": 4000,
+        "y": 3920,
         "wires": []
     },
     {
@@ -3842,7 +3830,7 @@
         "name": "C4",
         "info": "",
         "x": 1110,
-        "y": 4000,
+        "y": 3920,
         "wires": []
     },
     {
@@ -3874,8 +3862,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 280,
-        "y": 4480,
+        "x": 440,
+        "y": 4420,
         "wires": []
     },
     {
@@ -3883,7 +3871,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0017/data",
+        "topic": "/man4health/json/iot/NO0017/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -3891,11 +3879,10 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 100,
-        "y": 4520,
+        "x": 140,
+        "y": 4440,
         "wires": [
             [
-                "7465deb2feee906c",
                 "61c1e33e419bf995",
                 "fde066a0959b0bb9"
             ]
@@ -3953,7 +3940,7 @@
         "name": "C5",
         "info": "",
         "x": 70,
-        "y": 4480,
+        "y": 4400,
         "wires": []
     },
     {
@@ -3996,7 +3983,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"C5_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"/Users/Mariano/Desktop/Man4Health/Nos/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 17_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 17/\" + msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4197,8 +4184,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1320,
-        "y": 3040,
+        "x": 1440,
+        "y": 3000,
         "wires": []
     },
     {
@@ -4391,7 +4378,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"B6_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/B6/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 12_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 12/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4469,8 +4456,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 280,
-        "y": 3540,
+        "x": 440,
+        "y": 3500,
         "wires": []
     },
     {
@@ -4478,7 +4465,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0014/data",
+        "topic": "/man4health/json/iot/NO0014/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -4486,12 +4473,11 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1140,
-        "y": 3580,
+        "x": 1180,
+        "y": 3500,
         "wires": [
             [
                 "e0f5640ead4a71ca",
-                "a81f523f77a0fa6e",
                 "407c1ffe1994b3f4"
             ]
         ]
@@ -4501,7 +4487,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0013/data",
+        "topic": "/man4health/json/iot/NO0013/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -4509,11 +4495,10 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 100,
-        "y": 3580,
+        "x": 140,
+        "y": 3500,
         "wires": [
             [
-                "3ed1b11d92376a4a",
                 "f369233c08e5686e",
                 "3aca8b27ea744a28"
             ]
@@ -4596,7 +4581,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"C1_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/C1/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 13_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 13/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4787,8 +4772,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1320,
-        "y": 3540,
+        "x": 1460,
+        "y": 3500,
         "wires": []
     },
     {
@@ -4981,7 +4966,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"C2_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/C2/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 14_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 14/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5059,8 +5044,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 280,
-        "y": 4000,
+        "x": 440,
+        "y": 3960,
         "wires": []
     },
     {
@@ -5068,7 +5053,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0016/data",
+        "topic": "/man4health/json/iot/NO0016/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -5076,12 +5061,11 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1140,
-        "y": 4040,
+        "x": 1180,
+        "y": 3960,
         "wires": [
             [
                 "3f9a9c61160b7007",
-                "3493612951976221",
                 "6f6fd00e5b70125d"
             ]
         ]
@@ -5091,7 +5075,7 @@
         "type": "mqtt in",
         "z": "0fda059129e02852",
         "name": "",
-        "topic": "DLOS8/03FF0015/data",
+        "topic": "/man4health/json/iot/NO0015/attrs",
         "qos": "0",
         "datatype": "auto",
         "broker": "ca2a5d61d3d94a55",
@@ -5099,13 +5083,13 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 100,
-        "y": 4040,
+        "x": 140,
+        "y": 3960,
         "wires": [
             [
-                "bb55184f8de9b39b",
                 "893d1e8847d72300",
-                "71109cbbc6a12e87"
+                "71109cbbc6a12e87",
+                "bb55184f8de9b39b"
             ]
         ]
     },
@@ -5186,7 +5170,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"C3_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/C3/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 15_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 15/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5377,8 +5361,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1320,
-        "y": 4000,
+        "x": 1460,
+        "y": 3960,
         "wires": []
     },
     {
@@ -5571,7 +5555,7 @@
         "type": "function",
         "z": "0fda059129e02852",
         "name": "Filename generator",
-        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"C4_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/C4/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"No 16_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"C:/Man4Health/Nós IoT/No 16/\"+ msg.fname;\n//msg.filename = \"/home/pi/datalog/\" + msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5640,7 +5624,7 @@
             "#00bf00",
             "#000040"
         ],
-        "seg1": "7",
+        "seg1": "5",
         "seg2": "9",
         "className": "",
         "x": 530,
@@ -13570,11 +13554,11 @@
         "z": "0fda059129e02852",
         "group": "cfbfaecde4cb646d",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13593,11 +13577,11 @@
         "z": "0fda059129e02852",
         "group": "b7e431e31bad8a2a",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13616,11 +13600,11 @@
         "z": "0fda059129e02852",
         "group": "75d844a2575b1a64",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13639,11 +13623,11 @@
         "z": "0fda059129e02852",
         "group": "91ca3e29022ee4ac",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13662,11 +13646,11 @@
         "z": "0fda059129e02852",
         "group": "dbfc1b32377f808b",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13685,11 +13669,11 @@
         "z": "0fda059129e02852",
         "group": "776185c0b2950906",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13708,11 +13692,11 @@
         "z": "0fda059129e02852",
         "group": "035b7b0b5cf01db5",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13731,11 +13715,11 @@
         "z": "0fda059129e02852",
         "group": "fdb0c04618d82349",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13754,11 +13738,11 @@
         "z": "0fda059129e02852",
         "group": "1b8d2da97c7e5fdd",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13777,11 +13761,11 @@
         "z": "0fda059129e02852",
         "group": "5cd9ef1aa7e3bd50",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13800,11 +13784,11 @@
         "z": "0fda059129e02852",
         "group": "e182c9a5862133e5",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13823,11 +13807,11 @@
         "z": "0fda059129e02852",
         "group": "97f54dcb6f3f0cc8",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13846,11 +13830,11 @@
         "z": "0fda059129e02852",
         "group": "7c21eba04cbc65f6",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13869,11 +13853,11 @@
         "z": "0fda059129e02852",
         "group": "ae623128105ece22",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13892,11 +13876,11 @@
         "z": "0fda059129e02852",
         "group": "841855b5c007fde8",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13915,11 +13899,11 @@
         "z": "0fda059129e02852",
         "group": "ad4da1b2173b2ad7",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13938,11 +13922,11 @@
         "z": "0fda059129e02852",
         "group": "4e9f0dc477bc96d4",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -13961,11 +13945,11 @@
         "z": "0fda059129e02852",
         "group": "de8a2e5fbc8b219c",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -14089,11 +14073,11 @@
         "z": "0fda059129e02852",
         "group": "4b62784940d0a137",
         "name": "imagen",
-        "width": 6,
-        "height": 6,
+        "width": 10,
+        "height": 10,
         "order": 1,
         "category": "image",
-        "file": "esquema de division con todos los componentes.jpg",
+        "file": "localizacion de los nodos.jpg",
         "layout": "center",
         "showcontrols": true,
         "loop": true,
@@ -14110,7 +14094,7 @@
         "id": "ca2a5d61d3d94a55",
         "type": "mqtt-broker",
         "name": "",
-        "broker": "test.mosquitto.org",
+        "broker": "broker.hivemq.com",
         "port": "1883",
         "clientid": "",
         "autoConnect": true,
@@ -15460,7 +15444,7 @@
         "tab": "b937ec682695d3c7",
         "order": 5,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15471,7 +15455,7 @@
         "tab": "657cf28a65b265cf",
         "order": 9,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15482,7 +15466,7 @@
         "tab": "ae6cd904225434c3",
         "order": 9,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15493,7 +15477,7 @@
         "tab": "defcbd874e74a102",
         "order": 9,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15504,7 +15488,7 @@
         "tab": "04339b9b50bd09fe",
         "order": 9,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15515,7 +15499,7 @@
         "tab": "12d08f395a503dc8",
         "order": 9,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15526,7 +15510,7 @@
         "tab": "08dbb748d7f24d67",
         "order": 9,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15537,7 +15521,7 @@
         "tab": "a5f6dcf8c38d30eb",
         "order": 9,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15548,7 +15532,7 @@
         "tab": "4ab36ddb7f6db7a7",
         "order": 8,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15559,7 +15543,7 @@
         "tab": "288ea94f677e0dbc",
         "order": 9,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15570,7 +15554,7 @@
         "tab": "9c2bda2b2371e487",
         "order": 9,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15581,7 +15565,7 @@
         "tab": "70aef8224eab33e9",
         "order": 6,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15592,7 +15576,7 @@
         "tab": "062b41dbf048891e",
         "order": 6,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15603,7 +15587,7 @@
         "tab": "dc1f46fc99909f56",
         "order": 6,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15614,7 +15598,7 @@
         "tab": "04ed23e2e66ca0bc",
         "order": 6,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15625,7 +15609,7 @@
         "tab": "54e9ee7e480c8462",
         "order": 6,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15636,7 +15620,7 @@
         "tab": "0909b0b579d4d8b1",
         "order": 6,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15647,7 +15631,7 @@
         "tab": "2cf7cb7fbcdf69e6",
         "order": 8,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
@@ -15655,179 +15639,179 @@
         "id": "4b62784940d0a137",
         "type": "ui_group",
         "name": "Distribuição dos Nós",
-        "tab": "364b484bc0df9738",
-        "order": 9,
+        "tab": "a1bef9aa1c30be11",
+        "order": 7,
         "disp": true,
-        "width": "6",
+        "width": 10,
         "collapse": false,
         "className": ""
     },
     {
         "id": "b937ec682695d3c7",
         "type": "ui_tab",
-        "name": "A0",
+        "name": "PHDEV1",
         "icon": "dashboard",
-        "order": 2,
+        "order": 1,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "657cf28a65b265cf",
         "type": "ui_tab",
-        "name": "A1",
+        "name": "NO 1",
         "icon": "dashboard",
-        "order": 3,
+        "order": 2,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "4ab36ddb7f6db7a7",
         "type": "ui_tab",
-        "name": "A2",
+        "name": "NO 2",
         "icon": "dashboard",
-        "order": 4,
+        "order": 3,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "ae6cd904225434c3",
         "type": "ui_tab",
-        "name": "A3",
+        "name": "NO 3",
         "icon": "dashboard",
-        "order": 5,
+        "order": 4,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "defcbd874e74a102",
         "type": "ui_tab",
-        "name": "A4",
+        "name": "NO 4",
         "icon": "dashboard",
-        "order": 6,
+        "order": 5,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "04339b9b50bd09fe",
         "type": "ui_tab",
-        "name": "A5",
+        "name": "NO 5",
         "icon": "dashboard",
-        "order": 7,
+        "order": 6,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "288ea94f677e0dbc",
         "type": "ui_tab",
-        "name": "A6",
+        "name": "NO 6",
         "icon": "dashboard",
-        "order": 8,
+        "order": 7,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "12d08f395a503dc8",
         "type": "ui_tab",
-        "name": "B1",
+        "name": "NO 7",
         "icon": "dashboard",
-        "order": 9,
+        "order": 8,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "08dbb748d7f24d67",
         "type": "ui_tab",
-        "name": "B2",
+        "name": "NO 8",
         "icon": "dashboard",
-        "order": 10,
+        "order": 9,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "a5f6dcf8c38d30eb",
         "type": "ui_tab",
-        "name": "B3",
+        "name": "NO 9",
         "icon": "dashboard",
-        "order": 11,
+        "order": 10,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "9c2bda2b2371e487",
         "type": "ui_tab",
-        "name": "B4",
+        "name": "NO 10",
         "icon": "dashboard",
-        "order": 12,
+        "order": 11,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "70aef8224eab33e9",
         "type": "ui_tab",
-        "name": "B5",
+        "name": "NO 11",
         "icon": "dashboard",
-        "order": 13,
+        "order": 12,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "062b41dbf048891e",
         "type": "ui_tab",
-        "name": "B6",
+        "name": "NO 12",
         "icon": "dashboard",
-        "order": 14,
+        "order": 13,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "dc1f46fc99909f56",
         "type": "ui_tab",
-        "name": "C1",
+        "name": "NO 13",
         "icon": "dashboard",
-        "order": 15,
+        "order": 14,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "04ed23e2e66ca0bc",
         "type": "ui_tab",
-        "name": "C2",
+        "name": "NO 14",
         "icon": "dashboard",
-        "order": 16,
+        "order": 15,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "54e9ee7e480c8462",
         "type": "ui_tab",
-        "name": "C3",
+        "name": "NO 15",
         "icon": "dashboard",
-        "order": 17,
+        "order": 16,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "0909b0b579d4d8b1",
         "type": "ui_tab",
-        "name": "C4",
+        "name": "NO 16",
         "icon": "dashboard",
-        "order": 18,
+        "order": 17,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "2cf7cb7fbcdf69e6",
         "type": "ui_tab",
-        "name": "C5",
+        "name": "NO 17",
         "icon": "dashboard",
-        "order": 19,
+        "order": 18,
         "disabled": false,
         "hidden": false
     },
     {
-        "id": "364b484bc0df9738",
+        "id": "a1bef9aa1c30be11",
         "type": "ui_tab",
-        "name": "Estação Meteorologica",
+        "name": "Pluviometro y CO2",
         "icon": "dashboard",
         "order": 19,
         "disabled": false,
