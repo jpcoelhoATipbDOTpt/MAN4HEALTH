@@ -1,0 +1,10 @@
+Hora,Temperatura do Ar (ºC),Humidade do Ar (%),Temperatura do Solo 10cm (ºC),Temperatura do Solo 20cm (ºC),Temperatura do Solo 30cm (ºC),Humidade do Solo (%),Intensidade luminosa (lux),Bateria (%)
+11:43,37,46.9,25.6,23,22.4,13.80952380952381,346033.9,98
+12:49,39.1,39.9,27.2,23.6,22.4,12.000000000000021,346033.9,98
+Hora,Temperatura do Ar (ºC),Humidade do Ar (%),Temperatura do Solo 10cm (ºC),Temperatura do Solo 20cm (ºC),Temperatura do Solo 30cm (ºC),Humidade do Solo (%),Intensidade luminosa (lux),Bateria (%)
+13:55,38.1,40.1,28.5,24.3,22.6,10.666666666666655,346033.9,98
+19:19,33.6,45.5,28.5,25.9,23.9,10.095238095238116,346033.9,98
+20:23,27,64.9,27.9,26.1,24.1,11.428571428571429,32333,98
+21:27,24,74.2,27.2,26,24.3,12.76190476190474,146.2,98
+22:32,22,79.1,26.4,25.9,24.3,13.333333333333334,-2,98
+23:37,20,90.8,25.6,25.6,24.4,13.99999999999999,-2,98
