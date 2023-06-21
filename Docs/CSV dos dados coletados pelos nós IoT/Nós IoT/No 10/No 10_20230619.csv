@@ -17,3 +17,8 @@ Hora,Temperatura do Ar (ºC),Humidade do Ar (%),Temperatura do Solo 10cm (ºC),T
 15:55,-2,-2,26.6,24.5,23.5,16.55011655011655,346033.9,96
 17:01,-2,-2,26.4,24.8,23.7,16.317016317016318,346033.9,96
 18:07,-2,-2,26.1,24.9,23.8,16.10722610722611,3.7,96
+Hora,Temperatura do Ar (ºC),Humidade do Ar (%),Temperatura do Solo 10cm (ºC),Temperatura do Solo 20cm (ºC),Temperatura do Solo 30cm (ºC),Humidade do Solo (%),Intensidade luminosa (lux),Bateria (%)
+20:18,-2,-2,24.9,24.8,23.9,16.317016317016318,1.4,96
+21:24,-2,-2,24.4,24.7,24,16.55011655011655,38.9,96
+22:30,-2,-2,23.9,24.5,24,16.55011655011655,-2,96
+23:37,-2,-2,23.4,24.3,23.9,16.689976689976696,-2,96
