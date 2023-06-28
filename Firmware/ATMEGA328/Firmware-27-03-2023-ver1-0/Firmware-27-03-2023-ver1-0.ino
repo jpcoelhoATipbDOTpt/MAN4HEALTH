@@ -68,9 +68,9 @@ OneWire ourWire(16);                //Se establece el pin A2 como bus OneWire
 DallasTemperature sensors(&ourWire); //Se declara una variable u objeto para nuestro sensor
  
 
-DeviceAddress address10 = {0x28, 0xBB, 0x7E, 0x81, 0xE3, 0x6B, 0x3C, 0x3F};//dirección del sensor 46
-DeviceAddress address20 = {0x28, 0xCC, 0x69, 0x81, 0xE3, 0x60, 0x3C, 0x2C};//dirección del sensor 47
-DeviceAddress address30 = {0x28, 0x87, 0xCC, 0x81, 0xE3, 0xBF, 0x3C, 0x00};//dirección del sensor 48
+DeviceAddress address10 = {0x28, 0x2C, 0xD0, 0x81, 0xE3, 0x02, 0x3C, 0x72};//dirección del sensor 40
+DeviceAddress address20 = {0x28, 0xFD, 0x37, 0x81, 0xE3, 0x51, 0x3C, 0x28};//dirección del sensor 41
+DeviceAddress address30 = {0x28, 0xEE, 0x71, 0x81, 0xE3, 0x12, 0x3C, 0x91};//dirección del sensor 42
 
 VEML7700 als;
 // ------------------------------------------------------------------------------------------------------------------
@@ -245,12 +245,12 @@ void loop() {
         lectura = 1;
       }
       else{
-        contador++;    */
+        contador++;    
         dtostrf(-2,0,1,var_5);
-   //   }
-  //  }
+      }
+    }*/
     
-    //dtostrf(-2,0,1,var_5);
+    dtostrf(-2,0,1,var_5);
     lectura = 0;
     contador = 0;
     
