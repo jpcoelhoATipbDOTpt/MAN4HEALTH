@@ -7,7 +7,7 @@ Relativamente à anterior, inclui frequency shuffle para ir de encontro à espec
 Resolve o problema associado à referência analógica externa
 ## Firmware-28-06-2023-ver1-0
 Altera forma de comunicar com o sensor de luz
-# Credencias dos nós
+# Credenciais dos nós
 
 | ID do nó | NwkSkey                          | AppSkey                          | DevAddr  | address10                                        | address20                                        | address30                                        |
 | -------- | -------------------------------- | -------------------------------- | -------- | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
