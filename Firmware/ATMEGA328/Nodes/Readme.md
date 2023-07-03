@@ -1,3 +1,10 @@
+# Credenciais para firmaware dos nós
+
+## [Google Sheets](https://docs.google.com/spreadsheets/d/1bKboGhB4KetFv6NlsjX8tsyUUrl9ShbZNsyZqxGGnQU/edit?usp=sharing)
+
+## Tabela local
+
+
 | Loc | ID do nó | NwkSkey                          | AppSkey                          | DevAddr  | address10                                        | address20                                        | address30                                        |
 | --- | -------- | -------------------------------- | -------------------------------- | -------- | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
 | A1  | NO1      | 2B7E151628AED2A6ABF7158809CF4F3C | 2B7E151628AED2A6ABF7158809CF4F3C | 03FF0001 | {0x28, 0xE3, 0x65, 0x81, 0xE3, 0xCC, 0x3C, 0x3C} | {0x28, 0x9F, 0xCC, 0x57, 0x04, 0x98, 0x3C, 0xE0} | {0x28, 0x78, 0x49, 0x81, 0xE3, 0xBE, 0x3C, 0x8B} |
