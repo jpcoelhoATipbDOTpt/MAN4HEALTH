@@ -1,5 +1,5 @@
 /********************************************************************************************************************
- * Nó C3
+   Nó C3
  ********************************************************************************************************************
    Variables del código
 
@@ -141,11 +141,7 @@ void goToSleep() {
 // ------------------------------------------------------------------------------------------------------------------
 void setup() {
 
-  Serial.begin(115200);
-  
   sensorTemperatura1Wire.begin();   //Se inicia el sensor
-      
-  Serial.println("ola");
 
   SPI.setDataMode(SPI_MODE0); // Inicializa comunicação SPI com RFM95
   SPI.begin();                //
@@ -162,7 +158,6 @@ void setup() {
   digitalWrite(EN, LOW);      // Liga Logic Level Controller
   delay(100);                 // Aguarda por estabilização da tensão
   analogReference(EXTERNAL);  // Estabelece tensão de referência da ADC como externo
-    Serial.println("Fim do Setup");
 
   watchdogOn();               // Configura e ativa watchdog
 
@@ -197,17 +192,12 @@ int bytes2send(char *data)
 // AQUISIÇÃO e TRANSMISSÃO
 // ------------------------------------------------------------------------------------------------------------------
 void loop() {
-  
+
 
   goToSleep(); // Entra em suspensão
   if (sleep_count >= sleep_total) {  // Depois de acordado verifica se já é hora de transmitir
 
     watchdogOff();
-
-
-  
-    Serial.println("acordou");
-
 
     char data[200] = "\0";
 
@@ -215,11 +205,11 @@ void loop() {
     digitalWrite(OE, HIGH);     // Liga Buck-boost
     digitalWrite(EN, HIGH);     // Liga Logic Level Controller
     delay(5000);                // Aguarda por estabilização da tensão (necessário para o DHT11)
-        Wire.begin();  // para resolver el problema de los 1.7V en el modo sleep
+    Wire.begin();  // para resolver el problema de los 1.7V en el modo sleep
 
-  als.begin();
-  als.setGain(VEML7700::ALS_GAIN_d8); //necesario para correcta medición de valores altos de lux
-  
+    als.begin();
+    als.setGain(VEML7700::ALS_GAIN_d8); //necesario para correcta medición de valores altos de lux
+
     RFM_Init();                 // Inicializa RFM95
     // ...Mede valor da tensão da bateria...........................................................................
     dtostrf(leituraAnalogica(Vbat), 0, 1, var_0); // Lê valor da bateria
@@ -233,7 +223,6 @@ void loop() {
       // dtostrf(valor,minimo,casas decimais,container)
       dtostrf(DHT.humidity, 0, 1, var_7);        // Converte float em string
     }
-        Serial.println("DHT");
 
     delay(500); // ?? Não sei para que serve
 
@@ -251,16 +240,13 @@ void loop() {
     else temp30 = -999.9;
     dtostrf(temp30, 0, 1, var_3);
 
-        Serial.println("temp");
-
     // ...Sensor de radiação solar...................................................................................
-    if (als.getALSLux(lux)!=0xFF){
-      dtostrf(lux,0,1,var_5);
+    if (als.getALSLux(lux) != 0xFF) {
+      dtostrf(lux, 0, 1, var_5);
     }
-    else{
+    else {
       dtostrf(-1, 0, 1, var_5); // Se não possui sensor de luminosidade, o valor da variável é atribuído o valor -1
     }
-        Serial.println("lux");
 
     // ...Sensor de humidade.........................................................................................
     dtostrf(leituraAnalogica(A3), 0, 1, var_4); //sensor de humedad
@@ -284,11 +270,9 @@ void loop() {
     strcat(data, var_7);
     strcat(data, "\0");
     strcpy(data2send, data);
-    Serial.println(data);
-    
+
     // ... Transmite dados ...........................................................................................
     LORA_Send_Data(data2send, bytes2send(data2send), Frame_Counter_Tx);
-        Serial.println("enviado");
 
     Wire.end();  // para resolver el problema de los 1.7V en el modo sleep
 
@@ -297,8 +281,7 @@ void loop() {
     digitalWrite(NSS, LOW);    // Desativa NSS
     digitalWrite(OE, LOW);     // Desliga Buck-boost
     digitalWrite(EN, LOW);     // Desliga Logic Level Controller
-            Serial.println("dorme");
-delay(500);
+    delay(500);
     watchdogOn();
 
   }
