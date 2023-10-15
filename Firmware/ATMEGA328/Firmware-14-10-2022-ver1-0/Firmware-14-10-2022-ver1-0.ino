@@ -175,11 +175,6 @@ void loop() {
       dtostrf(DHT.humidity,0,1,var_7);           // Converte float em string dtostrf(valor,minimo,casas decimais,container)
     }
 
-//    Serial.print("Temperatura do ar: ");
-//    Serial.println(var_6);
-//    Serial.print("Humidade do ar: ");
-//    Serial.println(var_7);
-
     // Forma payload usando protocolo JSON.
     strcat(data,"\"cd\":");
     strcat(data,var_0);
