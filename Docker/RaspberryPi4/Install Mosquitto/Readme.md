@@ -4,7 +4,7 @@ docker-compose.yaml
 ```
 Executar:
 ```
-docker-compose up -d
+sudo docker-compose up -d
 ```
 Confirmar o estado do container:
 ```
