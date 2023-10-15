@@ -16,3 +16,23 @@ volumes:
   mosquitto_log:
   mosquitto_config:
 
+version: '3.5'
+
+services:
+	image: eclipse-mosquitto
+	hostname: mosquitto
+	container_name: mosquitto
+	expose:
+	    - "1883"
+	    - "9001"
+	ports:
+	    - "1883:1883"
+	    - "9001:9001"
+	networks:
+	    - default
+	volumes:
+	  - ./mosquitto-conf:/mosquitto/config
+	restart: always
+
+volumes:
+	mosquitto-conf: ~
