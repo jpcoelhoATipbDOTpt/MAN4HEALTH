@@ -1,0 +1,2 @@
+-  Funcionou apenas no Raspberry Pi Buster (4.19.97-v7+)
+-  Sem qualquer atualização ou upgrade.
